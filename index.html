@@ -167,6 +167,13 @@
                                     &lt;optgroup&gt;
                                 &lt;/select&gt;
                             </blockcode></li>
+                            <li class="sub-list"><span><blockcode>textarea</blockcode></span>
+                                <ul>
+                                    <li>A multiline input field.</li>
+                                    <li><blockcode>&lt;textarea placeholder="" id=""&gt;&lt;/textarea&gt;</blockcode></li>
+                                    <li>the closing tag has to be on the same line as the end of the start tag.</li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <div class="accordion">
@@ -182,6 +189,8 @@
                                 <dd>Download all files onto website, has multiple sizes for clear for image quality.</dd>
                                 <dd>Copy and paste link text beneath title tag.</dd>
                                 <dd>site.webmanifest lets us show the image on the home screen of our phones when creating a quicklink.</dd>
+                            <dt><a href="https://fontawesome.com/icons" target="_blank" alt="get icons">Font Awesome</a></dt>
+                                <dd>A CDN that allows you to use a ton of pre-made icons (some are free).</dd>
                         </dl>
                     </div>
                     <div class="accordion">
@@ -284,7 +293,7 @@
                             <li>Browser assumes body tag wants margin around.</li>
                             <li>Margin will collapse into eachother, largest margin will take presidence.</li>
                             <li>To center an element <blockcode>display: block; width: whatever; margin-left: auto; margin-right: auto;</blockcode>.</li>
-                            <li>Use <blockcode>line-height</blockcode> instead of <blockcode>height</blockcode> for input fields because more browsers will honor it</li>
+                            <li>Use <blockcode>line-height</blockcode> instead of <blockcode>height</blockcode> for input fields because more browsers will honor it.</li>
                             <li class="sub-list"><span><a href="https://getbootstrap.com/docs/4.0/utilities/flex/" target="_blank"
                                     alt="brings user to bootstraps documentation on how to use flexbox">Flexbox</a> is god.</span>
                                 <ul>
@@ -470,6 +479,8 @@
                                 </ul>
                             </li>
                             <li>To change the color of a radio button checkbox thing, use <blockcode>accent-color: hexCode;</blockcode>.</li>
+                            <li>To change the color of a scrollbar, use <blockcode>scrollbar-color: hexcodeForUpArrowsAndinnerBar hexcodeforBackgroundColorOfBar;</blockcode></li>
+                            <li>To remove a users ability to resize a textarea, add <blockcode>resize: none;</blockcode> to the textarea selector.</li>
                         </ul>
                     </div>
                     <div class="accordion">
@@ -857,6 +868,70 @@
                                     <li>To filter an array of objects, </li>
                                 </ul>
                             </li>
+                            <li>Use get at the begining of the name of a function when you will be returning something.</li>
+                            <li class="sub-list"><span><blockcode>foreach()</blockcode></span>
+                                <ul>
+                                    <li>A method for iterating over arrays.</li>
+                                    <li><blockcode>
+                                        arrayName.foreach(function(arrayItemName, index) {})
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Data Attributes</span>
+                                <ul>
+                                    <li>Sorting Extra Information in HTML Elements</li>
+                                    <li>Often written in documents as data-*, the star representing the name you choose.</li>
+                                    <li><blockcode>data-unique-name = "data"</blockcode></li>
+                                    <li>To call it in js, as an event, it will be under target, in dataset, so it would be <blockcode>event.target.dataset.dataAttributeName(without data)</blockcode>.</li>
+                                    <li>Great way to relate items to an id, without re-using an id.</li>
+                                    <li>If you use capital letters when assinging the data attribute, make them lowercase in js. It is best to just avoid uppercase letters.</li>
+                                    <li>If you use cabob-case when asigning the data attribute, you will need to make it camalCase in js. This is the best practice for multi-word attributes.</li>
+                                </ul>
+                            </li>
+                            <li>One event listener is DRYer than many.</li>
+                            <li class="sub-list"><span>Copying Objects and Arrays</span>
+                                <ul>
+                                    <li>When you copy them in JS you are making a shallow copy.</li>
+                                    <li>To make a real copy, you make a <a href="https://developer.mozilla.org/en-US/docs/Glossary/Deep_copy" target="_blank" alt="MDN Web Documentation on deep copy">deep copy</a>.</li>
+                                </ul>
+                            </li>
+                            <li>To switch the value of a boolean (false to true, true to false) write <blockcode>boolean = !boolean</blockcode></li>
+                            <li>Using <blockcode>else if</blockcode> instead of another <blockcode>if</blockcode> will prevent the system from reading unused code.</li>
+                            <li class="sub-list"><span>Conditionally Render CSS</span>
+                                <ul>
+                                    <li>Giving elements different classes under different conditions.</li>
+                                    <li><blockcode>
+                                        let boolean = false;
+                                        thingToClick.addEventListener('click', function(element){
+                                            boolean = !boolean;
+                                            if(boolean){
+                                                booleanClass = 'className';
+                                            };
+                                            let booleanHTML = &lt;div class="${booleanClass}">&gt;&lt;/div&gt;
+                                        });
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>UUID</span>
+                                <ul>
+                                    <li>Universally Unique Identifiers</li>
+                                    <li>A string of 36 characters.</li>
+                                    <li>Often used to identify pieces of data.</li>
+                                    <li>Highly likely to be globally unique.</li>
+                                    <li>Also known as GUID, or Globally Unique Identifier.</li>
+                                    <li class="sub-list"><span>Can have a UUID created with a CDN</span>
+                                        <ul>
+                                            <li>Current most common is Version 4 UUID, as it uses randomly generated characters.</li>
+                                            <li>One of the most popular tools for generating UUIDS is <a href="https://github.com/uuidjs/uuid#cdn-builds"
+                                            target="_blank" alt="UUID CDN builds Github documentation">UUID JS</a>. To copy this, go to the readme, select 
+                                            the CDN Builds link, copy the import, paste it in your project (test it). Make sure your html has <blockcode>
+                                            type="module"</blockcode> in the script tag. Return the uuidv4 function (you can rename that) as a function 
+                                            <blockcode>uuidv4()</blockcode></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><blockcode>arrayName.unshift(element)</blockcode> adds the element to the beginning of the array.</li>
                         </ul>
                     </div>
                     <div class="accordion">
@@ -1168,6 +1243,7 @@
                                 </ul>
                             </li>
                             <li>You can usually get rid of an <blockcode>else</blockcode> if you are returning in the <blockcode>if</blockcode>.</li>
+                            
                         </ul>
                     </div>
                     <div class="accordion">
@@ -1234,6 +1310,7 @@
                                     console.log(e.target.id)
                                 </blockcode>
                             </li>
+                            <li>How do you write a data attribute with multiple words in html and js?</li>
                         </ul>
                     </div>
 
@@ -1293,6 +1370,10 @@
                                 <dd>Used for sharing your code with others.</dd>
                                 <dd>Assumes the usage of the Git Version Control System</dd>
                                 <dd>Has many Git-based capabilities built into it. (commiting, merging, branches, ect)</dd>
+                            <dt>CDN</dt>
+                                <dd>Content Delivery Network</dd>
+                                <dd>A remote service that provides assets to web applications.</dd>
+                                <dd><a href="https://cdnjs.com/libraries" target="_blank" alt="CDN Libraries">CDN JS Libraries</a></dd>
                         </dl>
                     </div>
                 </section>
