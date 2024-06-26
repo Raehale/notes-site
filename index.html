@@ -875,6 +875,8 @@
                                     <li><blockcode>
                                         arrayName.foreach(function(arrayItemName, index) {})
                                     </blockcode></li>
+                                    <li>Does not returna new array.</li>
+                                    <li>Use <blockcode>.forEach()</blockcode> if you don't need to create a new array.</li>
                                 </ul>
                             </li>
                             <li class="sub-list"><span>Data Attributes</span>
@@ -953,6 +955,7 @@
                                         })
                                     </blockcode></li>
                                     <li>could be stored in a function instead of a const.</li>
+                                    <li>Use <blockcode>.map()</blockcode> if you need to make use of the new array it returns</li>
                                 </ul>
                             </li>
                             <li class="sub-list"><span>The .join() Method</span>
@@ -961,10 +964,15 @@
                                     <li>Concatenates elements of an array into a string.</li>
                                     <li>You choose how elements are separated.</li>
                                     <li>It returns the new string.</li>
+                                    <li><blockcode>
+                                        console.log(arrayName.join('what you want between each value'))
+                                    </blockcode></li>
+                                    <li>To have no seperator just keep an empty string.</li>
                                 </ul>
                             </li>
                             <li>All methods must end with parenthesis.</li>
                             <li>To find out what type an element is put typeof before it. It will return if it's a string, boolean, ect.</li>
+                            <li><blockcode>break</blockcode> and <blockcode>continue</blockcode> can be use within for loops.</li>
                         </ul>
                     </div>
                     <div class="accordion">
@@ -1181,6 +1189,7 @@
                                     <li>Is a constructor function.</li>
                                     <li><blockcode>const formElementData = new FormData(formElement)</blockcode></li>
                                     <li>To see what the object holds use <blockcode>formElementData.get(nameData)</blockcode></li>
+                                    <li>If you place an input within innerHTML someone can put malicious code. If this is the case, use textContent instead</li>
                                 </ul>
                             </li>
                             <li class="sub-list"><span>Disabling Elements</span>
@@ -1276,7 +1285,62 @@
                                 </ul>
                             </li>
                             <li>You can usually get rid of an <blockcode>else</blockcode> if you are returning in the <blockcode>if</blockcode>.</li>
-                            
+                            <li class="sub-list"><span>Function Expressions</span>
+                                <ul>
+                                    <li>Different Syntax and Behavior.</li>
+                                    <li>Are not hoisted (cleaner).</li>
+                                    <li><blockcode>
+                                        const name = function(parameter){}
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Arrow Functions</span>
+                                <ul>
+                                    <li>Ultra Consise functions.</li>
+                                    <li>One parameter: <blockcode>
+                                        const name = parameter => { return stuff }
+                                    </blockcode> or <blockcode>
+                                        const name = (parameter) => { return stuff }
+                                    </blockcode></li>
+                                    <li>No parameter: <blockcode>
+                                        const name = () => {}
+                                    </blockcode></li>
+                                    <li>Multiple parameters: <blockcode>
+                                        const name = (parameter1, parameter2) => { return stuff}
+                                    </blockcode></li>
+                                    <li>You have to add the curly braces and return keyword when there's more complex logic, but when it's one simple line of code you don't need the curly braces and return keyword.</li>
+                                    <li>If you don't return anything it is undefined.</li>
+                                    <li class="sub-list"><span>Import and Export</span>
+                                        <ul>
+                                            <li>To rename what you're importing ad an as <blockcode>
+                                                import { oldName as newName } from 'fileLocation'
+                                            </blockcode></li>
+                                            <li>To import multiple things from one file, use a comma <blockcode>
+                                                import { oneThing, secondThing } from 'fileLocation'
+                                            </blockcode> You must export them both.</li>
+                                            <li>To export multiuple things add the export at the end of the file with the names of what you want to export. <blockcode>
+                                                export { thingOne, thingTwo }
+                                            </blockcode></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-list"><span>The <blockcode>.reduce()</blockcode> Method</span>
+                                        <ul>
+                                            <li>Returns only one thing from an array.</li>
+                                            <li>Takes in a function.</li>
+                                            <li>Iterates through the array given the parameters till it has combined all values. <blockcode>
+                                                arrayName.reduce(function(firstElinArray, secentEl){})
+                                            </blockcode></li>
+                                            <li>Must use return keyword.</li>
+                                            <li>To get a value of an array</li>
+                                            <li>Written as arrow function <blockcode>
+                                                const totalOfArray = arrayName.reduce(
+                                                    (param1, param2) => param1 + param2,
+                                                );
+                                            </blockcode></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <div class="accordion">
@@ -1324,6 +1388,8 @@
                                 <dd><blockcode>`html stuff and also text and also ${variables}`</blockcode></dd>
                             <dt>Logical Not</dt>
                                 <dd>Puting ! to mean not the following code.</dd>
+                            <dt>Hoisting</dt>
+                                <dd>Function declarations are moved to the top of their scope before code execution.</dd>
                         </dl>
                     </div>
                     <div class="accordion">
