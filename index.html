@@ -932,6 +932,39 @@
                                 </ul>
                             </li>
                             <li><blockcode>arrayName.unshift(element)</blockcode> adds the element to the beginning of the array.</li>
+                            <li class="sub-list"><span>Object Destructuring</span>
+                                <ul>
+                                    <li>Extract properties from objects.</li>
+                                    <li>It enables us to extract properties from objects into distinct variables.</li>
+                                    <li>Helps keep your code DRY.</li>
+                                    <li><blockcode>
+                                        const {propertyVariableName, propertyVariableName, propertyVariableName} = objectName
+                                        console.log(`display this ${propertyVariableName}'s value`)
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>The <blockcode>.map()</blockcode> Method</span>
+                                <ul>
+                                    <li>Iterating over arrays.</li>
+                                    <li><blockcode>
+                                        const newArray = oldArray.map(function(nameValues, index) {
+                                            //iterates through each array value
+                                            //index will return the index of each value
+                                        })
+                                    </blockcode></li>
+                                    <li>could be stored in a function instead of a const.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>The .join() Method</span>
+                                <ul>
+                                    <li>Strings from arrays.</li>
+                                    <li>Concatenates elements of an array into a string.</li>
+                                    <li>You choose how elements are separated.</li>
+                                    <li>It returns the new string.</li>
+                                </ul>
+                            </li>
+                            <li>All methods must end with parenthesis.</li>
+                            <li>To find out what type an element is put typeof before it. It will return if it's a string, boolean, ect.</li>
                         </ul>
                     </div>
                     <div class="accordion">
