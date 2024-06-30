@@ -1310,37 +1310,167 @@
                                     </blockcode></li>
                                     <li>You have to add the curly braces and return keyword when there's more complex logic, but when it's one simple line of code you don't need the curly braces and return keyword.</li>
                                     <li>If you don't return anything it is undefined.</li>
-                                    <li class="sub-list"><span>Import and Export</span>
-                                        <ul>
-                                            <li>To rename what you're importing ad an as <blockcode>
-                                                import { oldName as newName } from 'fileLocation'
-                                            </blockcode></li>
-                                            <li>To import multiple things from one file, use a comma <blockcode>
-                                                import { oneThing, secondThing } from 'fileLocation'
-                                            </blockcode> You must export them both.</li>
-                                            <li>To export multiuple things add the export at the end of the file with the names of what you want to export. <blockcode>
-                                                export { thingOne, thingTwo }
-                                            </blockcode></li>
-                                        </ul>
-                                    </li>
-                                    <li class="sub-list"><span>The <blockcode>.reduce()</blockcode> Method</span>
-                                        <ul>
-                                            <li>Returns only one thing from an array.</li>
-                                            <li>Takes in a function.</li>
-                                            <li>Iterates through the array given the parameters till it has combined all values. <blockcode>
-                                                arrayName.reduce(function(firstElinArray, secentEl){})
-                                            </blockcode></li>
-                                            <li>Must use return keyword.</li>
-                                            <li>To get a value of an array</li>
-                                            <li>Written as arrow function <blockcode>
-                                                const totalOfArray = arrayName.reduce(
-                                                    (param1, param2) => param1 + param2,
-                                                );
-                                            </blockcode></li>
-                                        </ul>
-                                    </li>
                                 </ul>
                             </li>
+                            <li class="sub-list"><span>Import and Export</span>
+                                <ul>
+                                    <li>To rename what you're importing ad an as <blockcode>
+                                        import { oldName as newName } from 'fileLocation'
+                                    </blockcode></li>
+                                    <li>To import multiple things from one file, use a comma <blockcode>
+                                        import { oneThing, secondThing } from 'fileLocation'
+                                    </blockcode> You must export them both.</li>
+                                    <li>To export multiuple things add the export at the end of the file with the names of what you want to export. <blockcode>
+                                        export { thingOne, thingTwo }
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>The <blockcode>.reduce()</blockcode> Method</span>
+                                <ul>
+                                    <li>Returns only one thing from an array.</li>
+                                    <li>Takes in a function.</li>
+                                    <li>Iterates through the array given the parameters till it has combined all values. <blockcode>
+                                        arrayName.reduce(function(firstElinArray, secentEl){})
+                                    </blockcode></li>
+                                    <li>Must use return keyword.</li>
+                                    <li>To get a value of an array</li>
+                                    <li>Written as arrow function <blockcode>
+                                        const totalOfArray = arrayName.reduce(
+                                            (param1, param2) => param1 + param2,
+                                        );
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Default Parameters</span>
+                                <ul>
+                                    <li>Protection against bugs.</li>
+                                    <li><blockcode>
+                                        function functionName(arrayName, secondParam = defaultValue){}
+                                    </blockcode></li>
+                                    <li>The defulat will only be used when you don't pass in an argument when calling the function.</li>
+                                    
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>The Ternary Operator</span>
+                                <ul>
+                                    <li>An alternative to if/else (sometimes).</li>
+                                    <li><blockcode>condition(true or false value) ? expression(executes if true) : expression(executes if false)</blockcode></li>
+                                    <li><blockcode>condition ? ifTrue : condition ? ifTrue : else</blockcode></li>
+                                    <li>Complex login is not easy to read with a ternary operator.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>The Rest Parameter</span>
+                                <ul>
+                                    <li>Catching the rest of the arguments.</li>
+                                    <li><blockcode>
+                                        function functionName(parameter, ...restParameterName){
+                                            //iterates through restParameterName as many times as there are parameters for it.
+                                        }
+                                        functionName('param1', 'param2', 'param3', 'param4', 'param5',)
+                                        //Would go through function for all entered params 1-5
+                                    </blockcode></li>
+                                    <li>Taking in the REST of the arguments (get it).</li>
+                                    <li>The rest parameter must go last.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>The Spread Operator</span>
+                                <ul>
+                                    <li>Expanding and joining arrays.</li>
+                                    <li><blockcode>
+                                        const arrayOne = ['arrayStuff1', 'arrayStuff2', 'arrayStuff3']
+
+                                        console.log(...arrayOne)
+                                        //logs arrayStuff1 arrayStuff2 arrayStuff3
+                                    </blockcode></li>
+                                    <li>Really good way of making a copy of an array <blockcode>
+                                        const arrayOne = ['arrayStuff1', 'arrayStuff2', 'arrayStuff3']
+                                        const arrayOneCopy = [...arrayOne]
+
+                                        console.log(arrayOneCopy)
+                                        //logs ['arrayStuff1', 'arrayStuff2', 'arrayStuff3']
+                                    </blockcode></li>
+                                    <li>Useful for combining arrays in a new array <blockcode>
+                                        const arrayOne = ['arrayStuff1', 'arrayStuff2', 'arrayStuff3']
+                                        const arrayTwo = ['array2Stuff1', 'array2Stuff2', 'array2Stuff3']
+                                        const arrayThree = ['array3Stuff1', 'array3Stuff2', 'array3Stuff3']
+
+                                        const combinedArrays = [...arrayOne, ...arrayTwo, ...arrayThree]
+
+                                        console.log(combinedArrays)
+                                        //logs ['arrayStuff1', 'arrayStuff2', 'arrayStuff3', 'array2Stuff1', 'array2Stuff2', 'array2Stuff3', 'array3Stuff1', 'array3Stuff2', 'array3Stuff3']
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li>To find the highest number of a list of numbers use <blockcode>Math.max(numberlist)</blockcode>.</li>
+                            <li>To find the loweset number of a list of numbers use <blockcode>Math.min(numberlist)</blockcode>.</li>
+                            <li class="sub-list"><span>Short-Circuit</span>
+                                <ul>
+                                    <li>More concise code for conditional logic.</li>
+                                    <li>The logical OR operator <blockcode>||</blockcode>. Evaluates from left to right and stops evaulating once it finds something truthy. <blockcode>
+                                        const arrayName = {
+                                            key1: 'value1'
+                                            //key2: 'value2'
+                                        }
+                                        const variable = array.key2 || 'That key does not exist'
+                                        console.log(variable)
+                                        //logs 'That key does not exist'
+                                    </blockcode></li>
+                                    <li>The logical AND operator <blockcode>&&</blockcode>. Evaluates from left to right and if the stuff on the left is true, executes the stuff on the right <blockcode>
+                                        const exampleArray = {
+                                            key1: 'value1'
+                                        }
+                                        exampleArray.key1 === 'value1' && console.log('This is ran')
+                                        //logs 'This is ran'
+                                        exampleArray.key1 === 'value2' && console.log('This is not ran')
+                                        //nothing is logged
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Switch Statements</span>
+                                <ul>
+                                    <li>Select one of many code blocks to execute.</li>
+                                    <li><blockcode>
+                                        function functionName(parameter){
+                                            switch(parameter){
+                                                case 'parameter possiblity';
+                                                    //the following code will only run if the case is correct
+                                                    break //won't run the code below
+                                                case 'another possibility':
+                                                    //the following code will only run if the case is correct
+                                                    break
+                                                default:
+                                                    //runs if none of the cases are true
+                                            }
+                                        }
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Constructors - The Date Constructor</span>
+                                <ul>
+                                    <li>An inbuilt constructor.</li>
+                                    <li>To use the Date() constructor <blockcode>
+                                        const nameofThing = new Date()
+                                        //returns an object
+                                        //return example: 2024-06-27T22:42:07.898Z
+                                        //To make it more readable put 
+                                        nameofThing.toString()
+                                        //return example: Thu Jun 27 2024 16:43:55 GMT-0600 (Mountain Daylight Time)
+                                        //gives exact date and time of where you are
+                                    </blockcode></li>
+                                    <li>To return the current year use <blockcode>
+                                        new Date().getFullYear()
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>The Error() Constructor</span>
+                                <ul>
+                                    <li><blockcode>
+                                        throw new Error('error text')
+                                    </blockcode></li>
+                                    <li>throw will stop all following code from executing.</li>
+                                </ul>
+                            </li>
+                            <li>Other Constructors are <blockcode>String() Number() Array() Object() Boolean()</blockcode></li>
                         </ul>
                     </div>
                     <div class="accordion">
@@ -1390,6 +1520,8 @@
                                 <dd>Puting ! to mean not the following code.</dd>
                             <dt>Hoisting</dt>
                                 <dd>Function declarations are moved to the top of their scope before code execution.</dd>
+                            <dt>NaN</dt>
+                                <dd>Not a Number</dd>
                         </dl>
                     </div>
                     <div class="accordion">
