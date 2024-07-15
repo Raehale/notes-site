@@ -174,6 +174,10 @@
                                     <li>the closing tag has to be on the same line as the end of the start tag.</li>
                                 </ul>
                             </li>
+                            <li>Viewport Meta Tag: <blockcode>
+                                &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;
+                            </blockcode></li>
+                            <li>When using the meta tag, never set user-scalable to no, it will make the site un-zoomable which will make the site inaccessable.</li>
                         </ul>
                     </div>
                     <div class="accordion">
@@ -311,6 +315,9 @@
                                         element inside a flexbox.
                                     </li>
                                     <li><blockcode>display: flex;</blockcode> as parent element and <blockcode>margin: auto;</blockcode> as child element centers element.</li>
+                                    <li><blockcode>flex-basis: numberpx;</blockcode> used on the child element, will set the initial main size of a flex item.</li>
+                                    <li><blockcode>flex: flexGrowValue flexBasisValue flexShrinkValue(optional);</blockcode></li>
+                                    <li><blockcode>flex-shrink: 1;</blockcode> will help items shrink to fit any available space.</li>
                                 </ul>
                             </li>
                             <li>Divs are <blockcode>display: block;</blockcode> by default.</li>
@@ -481,6 +488,111 @@
                             <li>To change the color of a radio button checkbox thing, use <blockcode>accent-color: hexCode;</blockcode>.</li>
                             <li>To change the color of a scrollbar, use <blockcode>scrollbar-color: hexcodeForUpArrowsAndinnerBar hexcodeforBackgroundColorOfBar;</blockcode></li>
                             <li>To remove a users ability to resize a textarea, add <blockcode>resize: none;</blockcode> to the textarea selector.</li>
+                            <li>When using a percentage for width, the percentage is based on the width of its parent element.</li>
+                            <li class="sub-list"><span>The em unit</span>
+                                <ul>
+                                    <li>The em unit can be used to dynamically set font sizes that are relative to their parents font size.</li>
+                                    <li>1 em is equial to the parent's font size value. If no parent has a declaired font size, it will default to the browsers default font size,
+                                        which is usually 16px.
+                                    </li>
+                                    <li>To convert a px value to em, divide the desired pixel value by the parent elements font size in piels. You can also use the
+                                        <a href="https://www.w3schools.com/tags/ref_pxtoemconversion.asp" target="_blank" alt="Pixel to em converter">W3 Schools converter</a>.
+                                    </li>
+                                    <li>Margin and padding values in em are realative to the elements current font size value.</li>
+                                    <li>Works on gap too (same logic as padding/margin)</li>
+                                    <li>An em value can compound from one level to the other.</li>
+                                    <li>Best used for margin, padding, and gap, not font size.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>The rem unit</span>
+                                <ul>
+                                    <li>Best used for font sizes.</li>
+                                    <li>Stands for root em.</li>
+                                    <li>A rem unit is always relative to the root html element.</li>
+                                    <li>By default, a rem value will be a multiple of 16px.</li>
+                                    <li>The calculation is the same as em, divide the desired pixel value by the root html value.</li>
+                                    <li>Solves combounding issues.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Text Line Height</span>
+                                <ul>
+                                    <li>When setting line hight it is recommended to use a unit-less number.</li>
+                                    <li>Line Height is relative to the closes font size.</li>
+                                    <li>Set your line-height at approximately 1.5 times the font size (150%).</li>
+                                </ul>
+                            </li>
+                            <li>When setting the width you should use percentage for flexible things like containers and images.</li>
+                            <li>For max-width use px as it is easier to manage and ensures consistency.</li>
+                            <li class="sub-list"><span>Media Queries</span>
+                                <ul>
+                                    <li>Modifies your layout depending on the browser width.</li>
+                                    <li>media max width <blockcode>
+                                        @media (max-width: numberpx){
+                                            //only runs if width is numberpx or smaller.
+                                        }
+                                    </blockcode></li>
+                                    <li>media min width <blockcode>
+                                        @media (min-width: numberpx){
+                                            //only runs if width is numberpx or larger.
+                                        }
+                                    </blockcode></li>
+                                    <li>media max and midn width <blockcode>
+                                        @media (min-width: minNumberpx) and (max-width: maxNumberpx){
+                                            //displays between minNumberpx and maxNumberpx
+                                        }
+                                    </blockcode></li>
+                                    <li>Learn more about media queries from <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries" 
+                                        target="_blank" alt="Using Media Queries MDN Web Docs">MDN Web Docs</a>.
+                                    </li>
+                                    <li>To stay organized, keep all media queries at the bottom of your page. Some devs will put media queries 
+                                        directly next to what it is for, that's fine too. I think it's ugly though.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Mobile First</span>
+                                <ul>
+                                    <li>Think mobile first.</li>
+                                    <li>Optimizing the experience for mobile users and putting their needs first.</li>
+                                    <li class="sub-sub-list"><span>Mobile First CSS</span>
+                                        <ul>
+                                            <li>Write your base CSS with mobile devices in mind first.</li>
+                                            <li>Use media queries to adjust the layout and design for wider screens.</li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-sub-list"><span>Why Mobile First?</span>
+                                        <ul>
+                                            <li>There are more mobile users than desktop users.</li>
+                                            <li>Going desktop to mobile, you often override a lot of base CSS and end up repeating many CSS properties just to accomidate smaller screens.</li>
+                                            <li>Ends with DRYer code.</li>
+                                        </ul>
+                                    </li>
+                                    <li>Mobile first means content first. Display the content users need on mobile devides and nothing extra.</li>
+                                    <li>Avoid access white space.</li>
+                                    <li>It's common to display important nav links on mobile as block level elements so they take up the full width of their container.
+                                        This way, since the primary interactive method is through touch, it is a more accessible user experience.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Common Breakpoints</span>
+                                <ul>
+                                    <li>Mobile Devices (phones): 480px</li>
+                                    <li>Tablets: 768px</li>
+                                    <li>Smaller Computer Screens/Laptops: 1024px</li>
+                                    <li>Desktops and Larger Screens: 1280px</li>
+                                    <li>You do not have to use these.</li>
+                                </ul>
+                            </li>
+                            <li><a href="https://developer.chrome.com/docs/devtools/device-mode/" target="_blank" 
+                                alt="Simulate Mobile Devices with Devide Mode for Chrome">Documentation on how to use devtools to test different device modes in chrome.</a>
+                            </li>
+                            <li><a href="https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/" target="_blank"
+                                alt="Responsive Design Mode for Firefox">Documentation on how to use devtools to test for responsive design in Firefox.</a>
+                            </li>
+                            <li class="sub-list"><span>Responsive Navigation</span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <div class="accordion">
@@ -573,8 +685,8 @@
                                 <dd>Element is not rendered directly by the browser but an external process</dd>
                                 <dd>The content of the replaced element is external to the HTML document</dd>
                             <dt>pseudo-class</dt>
-                            <dd>a selector that selects elements that are in a specific state</dd>
-                            <dd>:hover, :link, :visited, :active</dd>
+                                <dd>a selector that selects elements that are in a specific state</dd>
+                                <dd>:hover, :link, :visited, :active, :not</dd>
                             <dt>specificity</dt>
                             <dd>The more specific a css selector is, the higher it will be prioritized</dd>
                             <dd>id selectors are more specific than classes</dd>
@@ -589,8 +701,19 @@
                             <dd>important for assistive technologies</dd>
                             <dd>inline element</dd>
                             <dt>Replaced Element</dt>
-                            <dd>An element whos contents are not affected by CSS</dd>
-                            <dd>iframe, audio, embed, video, img</dd>
+                                <dd>An element whos contents are not affected by CSS</dd>
+                                <dd>iframe, audio, embed, video, img</dd>
+                            <dt>Absolute Unites</dt>
+                                <dd>Pixels</dd>
+                                <dd>will always appear the same size no matter where you view them.</dd>
+                            <dt>Relative Units</dt>
+                                <dd>Percentages, em</dd>
+                                <dd>Relative to another value.</dd>
+                                <dd>Dynamic flexibility.</dd>
+                                <dd>Resize and scale.</dd>
+                            <dt>Breakpoints</dt>
+                                <dd>The point media queries get introduced (like the min and max width in px)</dd>
+                                <dd>Change layout, update text size, page adjustments.</dd>
                         </dl>
                     </div>
                     <div class="accordion">
