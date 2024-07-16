@@ -318,6 +318,14 @@
                                     <li><blockcode>flex-basis: numberpx;</blockcode> used on the child element, will set the initial main size of a flex item.</li>
                                     <li><blockcode>flex: flexGrowValue flexBasisValue flexShrinkValue(optional);</blockcode></li>
                                     <li><blockcode>flex-shrink: 1;</blockcode> will help items shrink to fit any available space.</li>
+                                    <li class="sub-sub-list"><span>Order Property</span>
+                                        <ul>
+                                            <li>Reordering flex items.</li>
+                                            <li>Default order value is 0. If you set it as less then 0, it will go before anything that hasn't had their value set.</li>
+                                            <li><blockcode>order: 1;</blockcode></li>
+                                            <li>Typically you will only use -1, to display an item first, or 1, to display an item last.</li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
                             <li>Divs are <blockcode>display: block;</blockcode> by default.</li>
@@ -355,7 +363,12 @@
                             <li>Abbreviations aren't always helpful.</li>
                             <li><blockcode>id</blockcode>s shouldn't be used for styling.</li>
                             <li><blockcode>user-selec: none;</blockcode> stops users from highlighting the text. Only use in very specific senarios.</li>
-                            <li><blockcode>box-sizing: border-box;</blockcode> gets item to fill width with margin, padding, and border included.</li>
+                            <li class="sub-list"><span>Box Sizing</span>
+                                <ul>
+                                    <li><blockcode>box-sizing: border-box;</blockcode></li>
+                                    <li>Border-box gets the item to fill width with margin, padding, and border included.</li>
+                                </ul>
+                            </li>
                             <li class="sub-list"><span>The <blockcode>dialog</blockcode> tag</span>
                                 <ul>
                                     <li><blockcode>dialog {}</blockcode></li>
@@ -588,9 +601,159 @@
                             <li><a href="https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/" target="_blank"
                                 alt="Responsive Design Mode for Firefox">Documentation on how to use devtools to test for responsive design in Firefox.</a>
                             </li>
-                            <li class="sub-list"><span>Responsive Navigation</span>
+                            <li><blockcode>
+                                text-transform: capitalize, lowercase, uppercase;
+                            </blockcode></li>
+                            <li class="sub-list"><span>Viewport Units</span>
                                 <ul>
-                                    <li></li>
+                                    <li>Always relative to the size of the users viewport.</li>
+                                    <li>vh - viewport height</li>
+                                    <li>vw - viewport width</li>
+                                    <li>1vh is equal to 1% of the viewport height.</li>
+                                    <li>Display content occross the whole height of the users screen.
+                                        <blockcode>min-height: 100vh</blockcode>
+                                    </li>
+                                    <li>1vw is equal to 1% of the viewport width.</li>
+                                    <li>To have the font-size adjust with the size of a users screen use vw
+                                        <blockcode>font-size: 5vw;</blockcode>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Setting a background image</span>
+                                <ul>
+                                    <li><blockcode>background: colorHex url('location');</blockcode></li>
+                                    <li>When setting a background image, you should always include a color as a fallback.</li>
+                                </ul>
+                            </li>
+                            <li>To allow only certain file types use accept. 
+                                <blockcode>input type="file" accept="image/png, image/jpg"></blockcode>
+                            </li>
+                            <li>The ideal line length is 50 to 75 characters.</li>
+                            <li class="sub-list"><span>Universal (*) Selector</span>
+                                <ul>
+                                    <li>Selects all elements.</li>
+                                    <li>Should add before and after psudo elements.</li>
+                                    <li><blockcode> *, *::before, *::after {}</blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>CSS Grid</span>
+                                <ul>
+                                    <li>It's 2 dimensional (Flexbox is one dimensional), which offers precise positioning control.</li>
+                                    <li>Less HTML to write, less "wrapper" divs.</li>
+                                    <li>Source order independence, great for responsiveness, but can have accessibility issues.</li>
+                                    <li class="sub-sub-list"><span>Grid Columns and Gap</span>
+                                        <ul>
+                                            <li><blockcode>display: grid;</blockcode></li>
+                                            <li>Margins no longer collapse.</li>
+                                            <li>Elements in a grid container become grid items.</li>
+                                            <li>Grid items fall into place on the grid.</li>
+                                            <li><blockcode>grid-template-columns: none(default value);</blockcode></li>
+                                            <li><blockcode>grid-template-columns: 5em 10em;</blockcode> will display two columns, the left smaller than the right.</li>
+                                            <li><blockcode>column-gap: units;</blockcode> creates a gap between the column items.</li>
+                                            <li><blockcode>row-gap: units;</blockcode> creates a gap between the row items.</li>
+                                            <li><blockcode>gap: rows columns;</blockcode> creates a gap between the row and column items. This can be used as shorthand for column-gap and row-gap.
+                                            You can use one units if you want them to be the same units.</li>
+                                            <li>You should use the fr unit for gap in a grid.</li>
+                                            <li>If you set one to auto ingrid-template-columns, it will only take up the space it needs.</li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-sub-list"><span>the fr unit</span>
+                                        <ul>
+                                            <li>"fr" is short for fraction.</li>
+                                            <li>The fr unit represents a fraction of available space in the grid.</li>
+                                            <li><blockcode>grid-template-columns: 1fr 1fr 1fr 1fr;</blockcode> will create four columns with equal widths. It will take gaps into consideration.</li>
+                                            <li></li>
+                                        </ul>
+                                    </li>
+                                    <li clas="sub-sub-list"><span>Grid rows and implicit grid</span>
+                                        <ul>
+                                            <li><blockcode>grid-template-rows: em;</blockcode></li>
+                                            <li>If you give a specific height, the content may overflow.</li>
+                                            <li>You can align and justify this content using justify-items, align-items, justify-content, align-content, justify-self, and align-self.</li>
+                                        </ul>
+                                    </li>
+                                    <li>You can use grid-template as shorthand for both grid-template-rows and grid-template-columns. <blockcode>grid-template: rows / columns;</blockcode></li>
+                                    <li class="sub-sub-list"><span>Placing items on the Grid</span>
+                                        <ul>
+                                            <li>grid-row/grid-column and the span keyword. <blockcode>grid-column: span 2</blockcode> will have the column take up two columns. When using span you cannot reorder.</li>
+                                            <li>grid-row/grid-column and line numbers. they start with 1, you will always have one more line number than cells.</li>
+                                            <li><blockcode>grid-column/row-start: 1; grid-column/row-end: 13;</blockcode></li>
+                                            <li>Can be shortened by using <blockcode>grid-column/row: 1 / 13</blockcode></li>
+                                            <li>If you want the grid-column to end at the end you can use -1. <blockcode>grid-column: 1 / -1;</blockcode></li>
+                                            <li>You can combine grid span with start/end.</li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-sub-list"><span>Repeat Function</span>
+                                        <ul>
+                                            <li>repeat(how manu times, what to repeat)</li>
+                                            <li><blockcode>grid-template-columns: repeat(8, 1fr);</blockcode></li>
+                                            <li><blockcode>grid-tempalte-columns: repeat(7, 1fr) auto;</blockcode></li>
+                                            <li><blockcode>grid-tempalte-columns: repeat(4, 30px) repeat(4, 1fr);</blockcode></li>
+                                            <li><blockcode>grid-tempalte-columns: repeat(3, 30px) 20px 40px repeat(3, 1fr);</blockcode></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-sub-list"><span>grid template areas</span>
+                                        <ul>
+                                            <li>grid-tempalte-areas, grid-areas</li>
+                                            <li>To write a grid with four columns across and four rows down.
+                                                <blockcode>
+                                                    .grid-container {
+                                                        grid-template-areas:
+                                                            "nameOne nameOne nameOne nameOne"
+                                                            "nameTwo nameThree nameThree nameFour"
+                                                            "nameTwo nameThree name Three nameFour"
+                                                            "nameFive nameFive nameFive ." //the dot will be an empty cell
+                                                    }
+                                                    .name-one {
+                                                        grid-area: nameOne; //will display completely across first row
+                                                    }
+                                                    .name-two {
+                                                        grid-area: nameTwo; //will display as left hand sidebar
+                                                    }
+                                                    .name-three {
+                                                        grid-area: nameThree; //will display in the two center columns and rows
+                                                    }
+                                                    .name-four {
+                                                        grid-area: nameFour; //will display as right hand sidebar
+                                                    }
+                                                    .name-five {
+                                                        grid-area: nameFive; //will display accross the last row minus the last column
+                                                    }
+                                                </blockcode>
+                                            </li>
+                                            <li><blockcode>grid-area: chosenName;</blockcode></li>
+                                            <li>You cannot go around corners.</li>
+                                            <li>You can replace a name with a dot to have an empty cell. You can use multiple dots to help make the layout more legible.</li>
+                                            <li>When naming the grid area you can name them one letter, if you do multiple letters it is best to keep them all the same length.</li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-sub-list"><span>Grid Auto Rows</span>
+                                        <ul>
+                                            <li>Specify a given height value to all implicitly generated row tracks.</li>
+                                            <li><blockcode>grid-auto-rows: 75px;</blockcode> makes all implicitly generated rows 75px in height.</li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-sub-list"><span>Auto Fit</span>
+                                        <ul>
+                                            <li>Fit as many columns to the grid as possible.</li>
+                                            <li><blockcode>grid-template-columns: repeat(autofit, 1fr);</blockcode> will have each item take a row.</li>
+                                            <li><blockcode>grid-template-columns: repeat(auto-fit, 100px);</blockcode> will fit as many columns in each row as it can while keeping each cell 100px wide.</li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-sub-list"><span>auto-auto-flow: dense;</span>
+                                        <ul>
+                                            <li>Pack the grid items as densely as possible.</li>
+                                            <li><blockcode>grid-auto-flow: dense;</blockcode></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-sub-list"><span>minmax(min, max)</span>
+                                        <ul>
+                                            <li>Defines a size range greater than or equal to min and less than or equal to max.</li>
+                                            <li>Will use the largest size possible, without breaking the rules.</li>
+                                            <li>The min value cannot be 1fr.</li>
+                                            <li><blockcode>grid-template-columns: repeat(auto-fit, minmax( 100px, 1fr));</blockcode></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
@@ -1096,6 +1259,7 @@
                             <li>All methods must end with parenthesis.</li>
                             <li>To find out what type an element is put typeof before it. It will return if it's a string, boolean, ect.</li>
                             <li><blockcode>break</blockcode> and <blockcode>continue</blockcode> can be use within for loops.</li>
+
                         </ul>
                     </div>
                     <div class="accordion">
