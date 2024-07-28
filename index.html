@@ -1108,6 +1108,22 @@
                                         would return <blockcode>&lt;div class="parent-element"&gt;</blockcode>.
                                     </li>
                                     <li><blockcode>event.target</blockcode> will return the entire tag.</li>
+                                    <li>You can add a numeric seperator, <blockcode>_</blockcode>, between numbers in the code to make it more readable and it will display without it. <blockcode>
+                                        const longNumber = 9_007_199_254_740_991
+                                        console.log(longNumber)//returns 9007199254740991
+                                        console.log(typeof longNumber)//returns number
+                                    </blockcode></li>
+                                    <li>9007199254740991 is the highest number js can calculate without losing precition.</li>
+                                    <li>For numbers bigger than 9007199254740991 you can use <blockcode>BigInt()</blockcode>.<blockcode>
+                                        const longerNumber = 9007199254740991345n
+                                        console.log(typeof longerNumber) // returns bigint
+                                    </blockcode>. <blockcode>BigInt()</blockcode> is a constructor.
+                                    <blockcode>
+                                        const longerNumber = BigInt(9_007_199_254_740_991_345)
+                                        console.log(typeof longerNumber) // returns bigint
+                                        console.log(longerNumber) // returns 9007199254740990976
+                                    </blockcode>. They cannot math, you cannot convert a BigInt value to a number. It is useful in contexts requiring precise handling of large integers, such as cryptography, 
+                                    or when interacting with databases that use large integer identifiers.</li>
                                 </ul>
                             </li>
                             <li class="sub-list"><span>Event Listeners</span>
@@ -1161,7 +1177,7 @@
                                     <li><blockcode>
                                         arrayName.foreach(function(arrayItemName, index) {})
                                     </blockcode></li>
-                                    <li>Does not returna new array.</li>
+                                    <li>Does not return a new array.</li>
                                     <li>Use <blockcode>.forEach()</blockcode> if you don't need to create a new array.</li>
                                 </ul>
                             </li>
@@ -1259,7 +1275,6 @@
                             <li>All methods must end with parenthesis.</li>
                             <li>To find out what type an element is put typeof before it. It will return if it's a string, boolean, ect.</li>
                             <li><blockcode>break</blockcode> and <blockcode>continue</blockcode> can be use within for loops.</li>
-
                         </ul>
                     </div>
                     <div class="accordion">
@@ -1450,6 +1465,15 @@
                                             what you don't want to fire
                                         }, number of miliseconds you want to delay by)
                                     </blockcode</li>
+                                    <li><blockcode>
+                                        setTImeout(functionName, 3000, 'functionParameter', 'second parameter')
+                                    </blockcode></li>
+                                    <li>To stop a timeout before it runs it's code you can use <blockcode>
+                                        const timer = setTimeout(functionName, 3000, 'param')
+                                        document.getElementById('stopBtn').addEventListener('click', function(){
+                                            clearTimeout(timer)
+                                        })
+                                    </blockcode></li>
                                 </ul>
                             </li>
                             <li class="sub-list"><span><blockcode>element.style</blockcode></span>
@@ -1601,15 +1625,32 @@
                             </li>
                             <li class="sub-list"><span>Import and Export</span>
                                 <ul>
-                                    <li>To rename what you're importing ad an as <blockcode>
-                                        import { oldName as newName } from 'fileLocation'
-                                    </blockcode></li>
-                                    <li>To import multiple things from one file, use a comma <blockcode>
-                                        import { oneThing, secondThing } from 'fileLocation'
-                                    </blockcode> You must export them both.</li>
-                                    <li>To export multiuple things add the export at the end of the file with the names of what you want to export. <blockcode>
-                                        export { thingOne, thingTwo }
-                                    </blockcode></li>
+                                    <li class="sub-sub-list"><span>Name Export</span>
+                                        <ul>
+                                            <li>To rename what you're importing ad an as <blockcode>
+                                                import { oldName as newName } from 'fileLocation'
+                                            </blockcode></li>
+                                            <li>To import multiple things from one file, use a comma <blockcode>
+                                                import { oneThing, secondThing } from 'fileLocation'
+                                            </blockcode> You must export them both.</li>
+                                            </blockcode>, but if you do you have to name every name export that is passed in that import.</li>
+                                            <li>To export multiple exports <blockcode>export { exportNameOne, exportName2}</blockcode></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-sub-list"><span>Default Export</span>
+                                        <ul>
+                                            <li><blockcode>
+                                                export default function(param1, param2){
+                                                    //code stuff
+                                                }
+                                            </blockcode></li>
+                                            <li>Gives you the advantage of calling this function whatever you want. Renaming the function can cause
+                                                confustion and make code less readable. <blockcode>
+                                                import nameYouWant from './fileLocation.js'
+                                            </blockcode></li>
+                                            <li>You can only have one default export from a file.</li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="sub-list"><span>The <blockcode>.reduce()</blockcode> Method</span>
@@ -1730,23 +1771,49 @@
                                             }
                                         }
                                     </blockcode></li>
+                                    <li>The last item (default or case) does not need a break.</li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span>Constructors - The Date Constructor</span>
+                            <li class="sub-list"><span>Constructors</span>
                                 <ul>
-                                    <li>An inbuilt constructor.</li>
-                                    <li>To use the Date() constructor <blockcode>
-                                        const nameofThing = new Date()
-                                        //returns an object
-                                        //return example: 2024-06-27T22:42:07.898Z
-                                        //To make it more readable put 
-                                        nameofThing.toString()
-                                        //return example: Thu Jun 27 2024 16:43:55 GMT-0600 (Mountain Daylight Time)
-                                        //gives exact date and time of where you are
-                                    </blockcode></li>
-                                    <li>To return the current year use <blockcode>
-                                        new Date().getFullYear()
-                                    </blockcode></li>
+                                    <li>Constructors have two main categories, Inbuilt and Custom.</li>
+                                    <li>Inbuilt Constructors provide objects in various predetermined formats, like Date Objects and Error Objects,
+                                        and Objects for each data type.
+                                    </li>
+                                    <li>Custom Constructors are constructors we design ourselves to provide objects for our own specific purposes.</li>
+                                    <li class="sub-sub-list"><span>The Date Constructor</span>
+                                        <ul>
+                                            <li>An inbuilt constructor.</li>
+                                            <li>To use the Date() constructor <blockcode>
+                                                const nameofThing = new Date()
+                                                //returns an object
+                                                //return example: 2024-06-27T22:42:07.898Z
+                                                //To make it more readable put 
+                                                nameofThing.toString()
+                                                //return example: Thu Jun 27 2024 16:43:55 GMT-0600 (Mountain Daylight Time)
+                                                //gives exact date and time of where you are
+                                            </blockcode></li>
+                                            <li>To return the current year use <blockcode>
+                                                new Date().getFullYear()
+                                            </blockcode></li>
+                                            <li>luxon makes working with dates and times easier.</li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-sub-list"><span>The Error Constructor</span>
+                                        <ul>
+                                            <li><blockcode>
+                                                throw new Error('Your error here')
+                                            </blockcode> The throw keyword will stop all the code after your throw from running.</li>
+                                            <li>Code will continue running after your error<blockcode>
+                                                console.log(new Error('Your error here'))
+                                            </blockcode></li>
+                                        </ul>
+                                    </li>
+                                    <li>The Object Constructor <blockcode>new Object()</blockcode> will create a new object. Much better to use the litteral <blockcode>{}</blockcode></li>
+                                    <li><blockcode>String()</blockcode></li>
+                                    <li><blockcode>Number()</blockcode></li>
+                                    <li><blockcode>Array()</blockcode></li>
+                                    <li><blockcode>Boolean()</blockcode></li>
                                 </ul>
                             </li>
                             <li class="sub-list"><span>The Error() Constructor</span>
@@ -1838,6 +1905,31 @@
                                     <li><a href="https://firefox-source-docs.mozilla.org/devtools-user/debugger/" target="_blank" alt="Firefox source docs on Javascript debugging">Go to this doc to learn more advanced debugging skills.</a></li>
                                 </ul>
                             </li>
+                            <li class="sub-list"><span><blockcode>setInterval()</blockcode></span>
+                                <ul>
+                                    <li>Makes code repeatedly execute and regular intervals.</li>
+                                    <li><blockcode>
+                                        const intervalTimer = setInterval(function(){
+                                            //do code
+                                            clearInterval(intervalTimer)
+                                        }, 1000)
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>JS Runtime Environment (the V8 Engine)</span>
+                                <ul>
+                                    <li>The Heap - handles memory allocations so we don't have to.</li>
+                                    <li>The Call Stack - where code executes - As js is single threaded, the call stack can only excecute one piece of code at a time in its single thread.</li>
+                                    <li>Js is helped by WebAPIs, task queue, and event loop, all are not a part of the js language.</li>
+                                    <li>JS can multi-task (<blockcode>.setTimeout()</blockcode>, <blockcode>.setInterval()</blockcode>, fetching data across the network, promises).</li>
+                                    <li>The webAPI is what counts for timeouts and intervals. After the time is done it passes the code to the Task Queue, which will send the code at the top of the queue to the call stack once it is empty.</li>
+                                    <li>If code is complex, the execution of setTimout and setInterval will take longer. It will never take the exact ms you put in, just slliiiiightly above it. Unoticable.</li>
+                                </ul>
+                            </li>
+                            <li><blockcode>performance.now()</blockcode> is a really super accurate timestamp.</li>
+                            <li>++Pre-increment, just move the increment opperator to the front of your expression.<blockcode>return ++count</blockcode>. The pre-increment operator increments the variable's value before the result of the increment is used in an expression.</li>
+                            <li>--Pre-decrement, just move the decrement opperator to the front of your expression.<blockcode>return --loss</blockcode>. The pre-decrement operator decreases the variable's value before the result of the decrement is used in an expression.</li>
+                            <li>Number Separators will separate out the digits into chunks</li>
                         </ul>
                     </div>
                     <div class="accordion">
@@ -1889,6 +1981,10 @@
                                 <dd>Function declarations are moved to the top of their scope before code execution.</dd>
                             <dt>NaN</dt>
                                 <dd>Not a Number</dd>
+                            <dt>Web APIs</dt>
+                                <dd>Provided by the browser.</dd>
+                                <dd>Not part of the JS language.</dd>
+                                <dd>Have functionality for DOM manipulation, data requests, timers (settimeout, setInterval), etc.</dd>
                         </dl>
                     </div>
                     <div class="accordion">
@@ -1915,7 +2011,8 @@
                     <div class="accordion">
                         <h3 class="accordion-name">Opinions<span class="accordion-arrow"></span></h3>
                         <ul class="inner-accordion-content">        
-                            <li>You should separate functions from event listeners (call the function withing the event listener istead of writing it there.</li>
+                            <li>You should separate functions from event listeners (call the function withing the event listener istead of writing it there).</li>
+                            <li>JavaScript is a signle-threaded, non-blocking language.</li>
                         </ul>
                     </div>
                 </section>
@@ -2080,6 +2177,86 @@
                         </ul>
                     </div>
                 </section>
+                <section id="react-section" hidden>
+                <h2>ACCESSIBILITY</h2>
+                <ul>
+                    <li>State</li>
+                    <li>Props</li>
+                    <li>APIs</li>
+                    <li>Hooks</li>
+                    <li>JSX</li>
+                </ul>
+                <div class="accordion first-accordion">
+                    <h3 class="accordion-name">Notes<span class="accordion-arrow first-arrow"></span></h3>
+                    <ul class="inner-accordion-content" style="display: block;">
+                        <li class="sub-list"><span>Web Accessibility</span>
+                            <ul>
+                                <li>Web accessiblity means that websites, tools, and technologies are designed and developed so that people with disabiliies can use them. More specifically, people can perceive, 
+                                    understand, navigate, and interact with the web and contribute to the web.</li>
+                            </ul>
+                        </li>
+                        <li class="sub-list"><span>Guiding Prinicples of web accessiblity POUR</span>
+                            <ul>
+                                <li>P - Perceivalbe - either by seeing or hearing, text alternatives.</li>
+                                <li>O - Operable - Keyboard accessiblity, navigatble, enough time to read and use content.</li>
+                                <li>U - Understandable - readable, predictable, opportun ity for user to correct mistakes.</li>
+                                <li>R - Robust -  be used with different browsers and assistive technologies.</li>
+                            </ul>
+                        </li>
+                        <li class="sub-list"><span>Accessiblility goes beyond disability</span>
+                            <ul>
+                                <li>People using mobile phones, smart watches,rt TVs, and other devices with small screens, different input modules, etc.</li>
+                                <li>Older people with changing abilities due to aging.</li>
+                                <li>people with temporary disabilities such as a broken arm or lost glasses.</li>
+                                <li>People with situational limits such as in bright sunlight or in an environment where they cannot listen to audio.</li>
+                                <li>People using a slow internet connection,or who have limited or expensive bandwidth.</li>
+                            </ul>
+                        </li>
+                        <li class="sub-list"><span>How to make accessible websites</span>
+                            <ul>
+                                <li>Semantic HTML, <blockcode>&lt;header&gt;</blockcode>, <blockcode>&lt;nav&gt;</blockcode>, <blockcode>&lt;main&gt;</blockcode>, <blockcode>&lt;footer&gt;</blockcode>
+                                    <blockcode>&lt;section&gt;</blockcode>, <blockcode>&lt;article&gt;</blockcode>, <blockcode>&lt;form&gt;</blockcode>, <blockcode>&lt;input&gt;</blockcode>s, with 
+                                    <blockcode>&lt;label&gt;</blockcode>s, heading levels, aria, alt attributes.
+                                </li>
+                                <li>You can also use CSS to create accessible styles. Font sizes (responsive units), font families, color contrast, sizing touch targets, line spacing and letter spacing, hover/focus/active.visited states, 
+                                    hiding elements in an accessible way, using animations thoughtfully, ect.</li>
+                                <li>Some semantic HTML will have default styles that affect the appearance of your page, others have no style at all but serve as landmarks for content that are recognizable to all users.</li>
+                                <li>Use a <blockcode>&lt;button&gt;</blockcode> for an internal link or action, and <blockcode>&lt;a&gt;</blockcode> to go to an external location, a new page, or a new landmark on the page.</li>
+                                <li class="sub-list"><span>Acessiblity Starter Checklist</span>
+                                    <ul>
+                                        <li>POUR - Perceivable? Operable? Understandable? Robust?</li>
+                                        <li>Semantic HTML</li>
+                                        <li>Landmark elements</li>
+                                        <li>Heading tags build skeleton of the page.</li>
+                                        <li>Do images have alt text?</li>
+                                        <li>Are buttons and other custom elements interactive?</li>
+                                        <li>Color and contrast</li>
+                                        <li>Focusable styles</li>
+                                        <li>Can you tab trhough the page? (tab index) (tab to go to the next, shft + tab to go back)</li>
+                                        <li>Do you have access to all the same information on the page with a screen reader?</li>
+                                    </ul>
+                                </li>
+                                <li class="sub-list"><span>Accessibility lvl2 Checklist</span>
+                                    <ul>
+                                        <li><a href="https://www.w3schools.com/accessibility/accessibility_skip_links.php" target="_blank" alt="Accessibility Skip Links">Skip Link</a>, if there are lots of navigation menus (sr-only class - code snippet)</li>
+                                        <li>Can you focus on off-screan content? This will trip the keyboard users and scren-readers.</li>
+                                        <li>Test with one type of screen reader.</li>
+                                    </ul>
+                                </li>
+                                <li class="sub-list"><span>Aria Properties</span>
+                                    <ul>
+                                        <li>WAI-ARIA can come in handy when your working in someone elses codebase.</li>
+                                        <li>aria-label</li>
+                                        <li>aria-live, boolean</li>
+                                        <li>aria-labelledby</li>
+                                        <li>aria-required</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </section>
                 <section id="misc-section" hidden>
                     <h2>MISC</h2>
                     <div class="accordion first-accordion">
