@@ -1072,6 +1072,17 @@
                                 <ul>
                                     <li>A nicer way of iterating.</li>
                                     <il><blockcode>for (let item of items) {}</blockcode></il>
+                                    <li>Iterates over object data structures.</li>
+                                    <li>Iterates over the values of an iterable object. (examples of iterable objects include arrays, strings).</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>for in</span>
+                                <ul>
+                                    <li><blockcode>for (let item in items){
+                                        console.log(items[item])
+                                    }</blockcode></li>
+                                    <li>Iterates over object data structures.</li>
+                                    <li>iterates over all enumerable property keys of an object.</li>
                                 </ul>
                             </li>
                             <li>Each function should do one thing.</li>
@@ -1164,7 +1175,7 @@
                                 .value</blockcode></li>
                             <li class="sub-list"><span>The Filter Method</span>
                                 <ul>
-                                    <li><blockcode>oldArray.filter(function(arrayItemName){return arrayItemName})</blockcode></li>
+                                    <li><blockcode>oldArray.filter(function(arrayItemName){return true})</blockcode></li>
                                     <li>Getting only the elements we want from an array.</li>
                                     <li>Creates a new array.</li>
                                     <li>To filter an array of objects, </li>
@@ -1275,6 +1286,99 @@
                             <li>All methods must end with parenthesis.</li>
                             <li>To find out what type an element is put typeof before it. It will return if it's a string, boolean, ect.</li>
                             <li><blockcode>break</blockcode> and <blockcode>continue</blockcode> can be use within for loops.</li>
+                            <li>You can only chain onto a method if it returns an array.</li>
+                            <li class="sub-list"><span>The For Loop</span>
+                                <ul>
+                                    <li><blockcode>for (let i = 0; i &lt arr.length; i++){}</blockcode></li>
+                                    <li><blockcode>for (let i = 0; i &lt arr.length; i++){
+                                        if (arr.key &lt 5){break}
+                                        if (arr.key &gt 5 {continue}
+                                        console.log('this will not run if the arr.key is greater than or less than five'))
+                                    } </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Various Array Methods</span>
+                                <ul>
+                                    <li><blockcode>arr.every(function(arrItem){
+                                        return arrItem >= 30
+                                    })</blockcode> Every array item will be subject to the code within the function, and you will get a boolean true or false response. It will only return true if every item is true.</li>
+                                    <li><blockcode>.some(function(arrItem){
+                                        return arrItem >= 30
+                                    })</blockcode> Every array item will be subject to the code within the funciton, and you will get a boolean true or false response. It will return true if one or more items are true.</li>
+                                    <li><blockcode>arr.find(function(arrItem){
+                                        return arrItem > 30
+                                    })</blockcode> Every array item will be subject to the code within the function until one is true, you will get the items content as a response. If none are true, then it will 
+                                        return undefined.
+                                    </li>
+                                    <li><blockcode>.findIndex(function(arrItem){
+                                        return arrItem > 30
+                                    })</blockcode> Every array item will be subject to the code within the function until one is true, you will get the items index number as a response. If no item is true, it will return -1.</li>
+                                    <li><blockcode>arr.indexOf(arrItemContent)</blockcode> Every array item will be tested for the content until one is found with it, then it will return that items index number.</li>
+                                    <li><blockcode>arr.at(-1)</blockcode> Takes a positive or negative integer and returns the item at that index. Negative integers will count back from the end of the array.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Replace Method</span>
+                                <ul>
+                                    <li><blockcode>text.replace(pattern, replacement)</blockcode></li>
+                                    <li><blockcode>const text = "hello how are you?"
+                                        text.replace('h', 'H')
+                                    </blockcode> will return 'Hello how are you', changing the first h but not the second.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>ReplaceAll Method</span>
+                                <ul>
+                                    <li><blockcode>text.replaceAll(pattern, replacement)</blockcode></li>
+                                    <li><blockcode>const text = "hello! how are you this morning?"
+                                        text.replaceAll('h', 'H')
+                                    </blockcode> will return 'Hello! How are you tHis morning', changing the all h to H.</li>
+                                    <li>To avoid the above problem of capitalizing letters within words you can use regex (regular expression). This is a sequence of characters that specifies a match pattern in text.
+                                        <blockcode>/[a-zA-Z1-9]/</blockcode> will find any number 1-9 and any letter, lower or uppercasea-z.
+                                        <blockcode>/^\d{5} (-\d{4})?$/</blockcode> will validate US zip codes.
+                                        In this case you would do text.replaceAll(/\b(h)\b/g, 'H')
+                                    </li>
+                                    <li>You can also use functions in the replaceAll.
+                                        <blockcode>
+                                            const text = "I love you with all my heart!"
+                                            console.log(text.replaceAll(/\b(love|heart)\b/g, function(match){
+                                                return `${match} &lt3`
+                                            }))
+                                        </blockcode> will log "I love &lt3 you with all my heart &lt3".
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>RegExp</span>
+                                <ul>
+                                    <li>\d = any number between 1 and 9</li>
+                                    <li>. = any single character</li>
+                                    <li>[abc] = will match a, b or c</li>
+                                    <li>[^abc] = all but a, b or c</li>
+                                    <li>[0-6] = will match any single 0, 1, 2, 3, 4, 5 or 6</li>
+                                    <li>[^a-p] = will match q through z</li>
+                                    <li>\w = includes any single alphanumeric character plus the underscore</li>
+                                    <li>[a-z] is different then [A-Z]</li>
+                                    <li>a{3} = aaa</li>
+                                    <li>[wxy]{5} = any sequence with exactly 5 characters that are either w, x or y</li>
+                                    <li>.{2,6} = matches any sequence that is between 2 and 6 characters long</li>
+                                    <li>\d = any single digit between 0 and 9</li>
+                                    <li>a* = 0 or more of a</li>
+                                    <li>ab?c = abc or ac (b is optional)</li>
+                                    <li>_ = a space</li>
+                                    <li>\t = tab</li>
+                                    <li>\n = new line</li>
+                                    <li>\r = return</li>
+                                    <li>\s = any white space</li>
+                                    <li>\S = no white space</li>
+                                    <li>g = g flag = global = looking for all instances, not just one. Needed if you are using replace all after the ending /</li>
+                                    <li>i = i falg = case insensitive = </li>
+                                    <li>regexp has a test method that returns a boolean. <blockcode>
+                                        regex.test(text)
+                                    </blockcode></li>
+                                    <li>There is a RegExp Constructor. <blockcode>
+                                        const textText = "hello world"
+                                        const regex = new RegExp(testText, 'gi')
+                                    </blockcode></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <div class="accordion">
@@ -1658,7 +1762,7 @@
                                     <li>Returns only one thing from an array.</li>
                                     <li>Takes in a function.</li>
                                     <li>Iterates through the array given the parameters till it has combined all values. <blockcode>
-                                        arrayName.reduce(function(firstElinArray, secentEl){})
+                                        arrayName.reduce(function(total, currentElementb ){})
                                     </blockcode></li>
                                     <li>Must use return keyword.</li>
                                     <li>To get a value of an array</li>
@@ -1667,6 +1771,11 @@
                                             (param1, param2) => param1 + param2,
                                         );
                                     </blockcode></li>
+                                    <li>When using objects and returning numbers with a reduce method <blockcode>
+                                        const total = array.reduce(function(total, currentElementb){
+                                            return total + currentElementb.numbersKey
+                                        }, 0)
+                                    </blockcode> The 0 will set the default start of the total to be 0, instead of an object.</li>
                                 </ul>
                             </li>
                             <li class="sub-list"><span>Default Parameters</span>
