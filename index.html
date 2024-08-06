@@ -1379,6 +1379,14 @@
                                     </blockcode></li>
                                 </ul>
                             </li>
+                            <li class="sub-list"><span>hasOwn/hasOwnProperty</span>
+                                <ul>
+                                    <li>hasOwn is more modern.</li>
+                                    <li><blockcode>Object.hasOwn(objectName, 'propertyName')</blockcode>, static method,</li>
+                                    <li><blockcode>objectName.hasOwnProperty('propertyName')</blockcode></li>
+                                    <li>Tells you weather the property is on the object.</li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <div class="accordion">
@@ -1861,6 +1869,17 @@
                                         exampleArray.key1 === 'value2' && console.log('This is not ran')
                                         //nothing is logged
                                     </blockcode></li>
+                                    <li>Nullish Coalescing Operator, <blockcode>??</blockcode>, returns the right hand operator truthy value if the left hand operator is null or undefined.</li>
+                                    <li>Optional Chaining, <blockcode>?.</blockcode>, adds optional additions to your chain. <blockcode>
+                                        const library = {
+                                            sections: {
+                                                fantasy: [
+                                                    {title: 'The Long Way to a Small, Angry Planet'}
+                                                ]
+                                            }
+                                        }
+                                        console.log(library?.sections?.fantasy[0]?.title)
+                                    </blockcode> Would log 'The Long Way to a Small, Angry Planet'. If anything is wrong, it will log undefined, instead of throwing an error.</li>
                                 </ul>
                             </li>
                             <li class="sub-list"><span>Switch Statements</span>
