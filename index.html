@@ -1387,6 +1387,17 @@
                                     <li>Tells you weather the property is on the object.</li>
                                 </ul>
                             </li>
+                            <li class="sub-list"><span>Value/Reference</span>
+                                <ul>
+                                    <li>Primitives, strings, numbers and booleans are passed by value.</li>
+                                    <li>Objects and arrays are passed by reference.</li>
+                                    <li>There are two ways to copy arrays, Deep Copy and Shallow Copy.</li>
+                                    <li>Shallow Copy creates a new object or array but only at the first level. For nested objects or arrays, a shallow copy Will
+                                        still hold references to the original nested objects or arrays.
+                                    </li>
+                                    <li>Deep copy copies the entire array or object.</li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <div class="accordion">
@@ -1844,6 +1855,7 @@
                                         console.log(combinedArrays)
                                         //logs ['arrayStuff1', 'arrayStuff2', 'arrayStuff3', 'array2Stuff1', 'array2Stuff2', 'array2Stuff3', 'array3Stuff1', 'array3Stuff2', 'array3Stuff3']
                                     </blockcode></li>
+                                    <li>Shallow Copy</li>
                                 </ul>
                             </li>
                             <li>To find the highest number of a list of numbers use <blockcode>Math.max(numberlist)</blockcode>.</li>
@@ -2058,6 +2070,60 @@
                             <li>++Pre-increment, just move the increment opperator to the front of your expression.<blockcode>return ++count</blockcode>. The pre-increment operator increments the variable's value before the result of the increment is used in an expression.</li>
                             <li>--Pre-decrement, just move the decrement opperator to the front of your expression.<blockcode>return --loss</blockcode>. The pre-decrement operator decreases the variable's value before the result of the decrement is used in an expression.</li>
                             <li>Number Separators will separate out the digits into chunks</li>
+                            <li class="sub-list"><span><blockcode>Object.assign()</blockcode></span>
+                                <ul>
+                                    <li>Makes a shadow copy of an object.</li>
+                                    <li>Copies properties from a source object to a target object</li>
+                                    <li>Returns the new version of the target object.</li>
+                                    <li><blockcode>
+                                        const source = {key: 'value', keyObj: {'value2', 'value2', 'value3'}}
+                                        const target = {}
+                                        Object.assign(target, source)
+                                        source.keyObj[0] = 'value1'
+                                        console.log(target)
+                                    </blockcode> will log {key: 'value', keyObj: {'value1', 'value2', 'value3'}}.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span><blockcode>structuredClone()</blockcode></span>
+                                <ul>
+                                    <li>Makes a deep copy.</li>
+                                    <li><blockcode>
+                                    <li><blockcode>
+                                        const source = {key: 'value', keyObj: {'value2', 'value2', 'value3'}}
+                                        const target = structuredClone(source)
+                                        source.keyObj[0] = 'value1'
+                                        console.log(target)
+                                    </blockcode> will log {key: 'value', keyObj: {'value2', 'value2', 'value3'}}.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span><blockcode>this</blockcode></span>
+                                <ul>
+                                    <li><blockcode>
+                                        const obj = {
+                                            key1: 'value1',
+                                            key2: 'value2',
+                                            key3: function(){
+                                                console.log(this)
+                                            }
+                                            obj.key3()
+                                        }
+                                    </blockcode> will log {key1: 'value1', key2: 'value2', key3: ƒ()}. If you use an arrow function it will log out "window" instead.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>The <blockcode>.bind()</blockcode> method</span>
+                                <ul>
+                                    <li><blockcode>
+                                        const obj = {
+                                            key1: 'value1',
+                                            key2: 'value2',
+                                            key3: function(){
+                                                console.log(this)
+                                            }
+                                        }
+                                        const objDetails = obj.key3.bind(obj)
+                                    </blockcode> logs out {key1: 'value1', key2: 'value2', key3: ƒ()}</li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <div class="accordion">
@@ -2133,6 +2199,7 @@
                                 </blockcode>
                             </li>
                             <li>How do you write a data attribute with multiple words in html and js?</li>
+                            <li>If you store a function within a data obj and export the obj do you have to export the function too?</li>
                         </ul>
                     </div>
 
