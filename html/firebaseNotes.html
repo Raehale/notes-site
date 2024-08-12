@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Study Notes</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/notes.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:wght@100..900&family=Just+Another+Hand&family=Kalam:wght@300;400;700&family=Karla:ital,wght@0,200..800;1,200..800&family=Orbitron:wght@400..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="hero">
+            <h1><a href="../index.html">Coding Notes</a></h1>
+            <h2>Firebase</h2>
+            <h3>By Rae</h3>
+            <nav class="main-nav-bar">
+                <ul id="navMenu" class="nav-menu">
+                    <li><a href="/html/htmlNotes.html" id="htmlLink">HTML</a></li>
+                    <li><a href="/html/cssNotes.html" id="cssLink">CSS</a></li>
+                    <li><a href="/html/javascriptNotes.html" id="javascriptLink">Javascript</a></li>
+                    <li><a href="/html/firebaseNotes.html" id="firebaseLink">Firebase</a></li>
+                    <li><a href="/html/reactNotes.html" id="reactLink">React</a></li>
+                    <li><a href="/html/accessibilityNotes.html" id="acessibilityLink">Accessibility</a></li>
+                    <li><a href="/html/codeReviewsNotes.html" id="reviewsLink">Code Reviews</a></li>
+                    <li><a href="/html/miscNotes.html" id="miscLink">MISC</a></li>
+                </ul>
+                <div id="mobileMenu" class="mobile-menu"><li class="fa-solid fa-bars"></i></div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="head-sticky-note">
+            <div class="sticky-note-content">
+                <h2>Firebase</h2>
+                <p>Cloud-based platform</p>
+                <p>For mobile apps</p>
+            </div>
+        </div>
+        <div class="page">
+            <nav class="nav">
+                <ul id="sectionLinks">
+                    <li data-link="notes">Notes</li>
+                    <li data-link="resources">Resources</li>
+                    <li data-link="definitions">Definitions</li>
+                    <li data-link="questions">Questions</li>
+                    <li data-link="opinions">Opinions</li>
+                </ul>
+            </nav>
+            <div class="content">
+                <section id="firebase-section">
+                    <div class="note-section notes" id="notes">
+                        <h3 class="accordion-name">Notes<span class="accordion-arrow first-arrow"></span></h3>
+                        <ul class="inner-accordion-content" style="display: block;">
+                            <li>Script tags in HTML are where you can write JS. add src="filename" to link js file to HTML file.</li>
+                            <li>const: appSettings = {databaseURL: "referenceURL"}</li>
+                            <li>import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"</li>
+                            <li>const app = initializeApp(appSettings)</li>
+                            <li>import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"</li>
+                            <li>const database = getDatabase(app)</li>
+                            <li>const name = ref(database, "what the reference should be called")</li>
+                            <li>push(where you want to push it (name), what you want to push)</li>
+                            <li class="sub-list"><span>Security Rules</span>
+                                <ul>
+                                    <li>using test mode allows anyone with the database reference to view edit and delete the data in your database.</li>
+                                    <li>the default for testmode is set to a max of 30 days. (how long test mode lasts)</li>
+                                    <li>to change the max testmode write and read time go to Realtime Database then Rules. If you change them both to true
+                                        anyone will always be able to read or write in the database.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>To create a section press the plus next to the url and add a key, then press the plus next to your section name.</li>
+                            <li>import { onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"</li>
+                            <li>onValue(where you want to fetch the data from (name), function(snapshot){})</li>
+                            <li>onValue runs every time there's a change to the database.</li>
+                            <li>to change a key or value in the database just click it and edit it.</li>
+                            <li>inmport { remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"</li>
+                        </ul>
+                    </div>
+                    <div class="note-section resources" id="resources">
+                        <h3 class="accordion-name">Resources<span class="accordion-arrow"></span></h3>
+                        <dl class="inner-accordion-content">
+                            <dt><a href="https://console.firebase.google.com/" target="_blank" alt="firebase console">Firebase</a></a></dt>
+                            <dd>Database</dd>
+                            <dt><a href="https://www.epochconverter.com/" target="_blank" alt="epoch converter converts to real time">Epoch Converter</a></dt>
+                            <dd>converts unix epoch time to real time</dd>
+                        </dl>
+                    </div>
+                    <div class="note-section definitions" id="definitions">
+                        <h3 class="accordion-name">Definitions<span class="accordion-arrow"></span></h3>
+                        <dl class="inner-accordion-content">
+                            <dt>Reference</dt>
+                            <dd>Any location inside the database</dd>
+                        </dl>
+                    </div>
+                    <div class="note-section questions" id="questions">
+                        <h3 class="accordion-name">Questions<span class="accordion-arrow"></span></h3>
+                        <ul class="inner-accordion-content">
+                            <li>Is innerHTML bad to use?</li>
+                            <li>How come you don't have to import snapshot? or define it?</li>
+                            <li>let arrayName = Object.values(snapshot.val())</li>
+                        </ul>
+                    </div>
+                </section>
+                <div class="note-section opinions" id="opinions">
+                    <h3 class="accordion-name">Opinions<span class="accordion-arrow"></span></h3>
+                    <ul class="inner-accordion-content">
+                        <li></li>
+                    </ul>
+                </div>
+            </section>            
+            </div>
+        </div>
+    </main>
+    <script type="module" src="/notes.js"></script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Study Notes</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/notes.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:wght@100..900&family=Just+Another+Hand&family=Kalam:wght@300;400;700&family=Karla:ital,wght@0,200..800;1,200..800&family=Orbitron:wght@400..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="hero">
+            <h1><a href="../index.html">Coding Notes</a></h1>
+            <h2>React</h2>
+            <h3>By Rae</h3>
+            <nav class="main-nav-bar">
+                <ul id="navMenu" class="nav-menu">
+                    <li><a href="/html/htmlNotes.html" id="htmlLink">HTML</a></li>
+                    <li><a href="/html/cssNotes.html" id="cssLink">CSS</a></li>
+                    <li><a href="/html/javascriptNotes.html" id="javascriptLink">Javascript</a></li>
+                    <li><a href="/html/firebaseNotes.html" id="firebaseLink">Firebase</a></li>
+                    <li><a href="/html/reactNotes.html" id="reactLink">React</a></li>
+                    <li><a href="/html/accessibilityNotes.html" id="acessibilityLink">Accessibility</a></li>
+                    <li><a href="/html/codeReviewsNotes.html" id="reviewsLink">Code Reviews</a></li>
+                    <li><a href="/html/miscNotes.html" id="miscLink">MISC</a></li>
+                </ul>
+                <div id="mobileMenu" class="mobile-menu"><li class="fa-solid fa-bars"></i></div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="head-sticky-note">
+            <div class="sticky-note-content">
+                <h2>React</h2>
+                <ul>
+                    <li>State</li>
+                    <li>Props</li>
+                    <li>APIs</li>
+                    <li>Hooks</li>
+                    <li>JSX</li>
+                </ul>
+            </div>
+        </div>
+        <div class="page">
+            <nav class="nav">
+                <ul id="sectionLinks">
+                    <li data-link="notes">Notes</li>
+                    <li data-link="resources">Resources</li>
+                    <li data-link="definitions">Definitions</li>
+                    <li data-link="questions">Questions</li>
+                    <li data-link="opinions">Opinions</li>
+                </ul>
+            </nav>
+            <div class="content">
+                <section id="react-section">
+                    <div class="note-section notes" id="notes">
+                        <h3 class="accordion-name">Notes<span class="accordion-arrow first-arrow"></span></h3>
+                        <ul class="inner-accordion-content" style="display: block;">
+                            <li>You can use react by bringing react, react-dm, and babel, via CDN but that's not idea.</li>
+                            <li>React renders things.</li>
+                            <li>React automatically manipulates the DOM when there is a change.</li>
+                            <li class="sub-list"><span>Library VS Framework</span>
+                                <ul>
+                                    <li>A library is a collection of reusable code. It has no/few boundaries.</li>
+                                    <li>React is more of a framework.</li>
+                                    <li>A framework provides structure, a predetermined architecture, a specific pattern for development. It has boundaries you habe to work within.</li>
+                                    <li>History of Frontend Libraries/Frameworks: 2006: JQuery, 2010: Angualar JS, Ember, Backbone.js, 2013: React, Angualr, vue.js, 2016: Svelte</li>
+                                </ul>
+                                <li class="sub-list"><span>Why React?</span>
+                                    <ul>
+                                        <li>highest Demand</li>
+                                        <li>Largest Ecosystem</li>
+                                        <li>Less magic (easy to understand, as it is js)</li>
+                                        <li>Composable/Declarative</li>
+                                        <li>Active development</li>
+                                    </ul>
+                                </li>
+                                <li>For backend, nodejs is teh best.</li>
+                                <li>You need to know JS before you learn React.</li>
+                                <li class="sub-list"><span>When NOT to use a framework</span>
+                                    <ul>
+                                        <li>Small project</li>
+                                        <li>Network load concerns</li>
+                                        <li>Learning curve</li>
+                                        <li>Maintenanceconcerns</li>
+                                        <li>Incompatability</li>
+                                    </ul>
+                                </li>
+                                <li class="sub-list"><span>Why use a web framework like React?</span>
+                                    <ul>
+                                        <li>It's composable</li>
+                                        <li>It's declarative</li>
+                                    </ul>
+                                </li>
+                                <li>JSX = JavaScript + HTML</li>
+                                <li class="sub-list"><span>React 17</span>
+                                    <ul>
+                                        <li><blockcode>
+                                            const variable = 'string'
+                                            const element = (
+                                                &lt;header&gt;
+                                                    &lt;h1&gt;{variable}'s a string&lt;/h1&gt;
+                                                &lt;/header&gt;.
+                                            )
+                                            const root = document.getElementById('root')
+                                            ReactDOM.render(element, root)
+                                        </blockcode></li>
+                                    </ul>
+                                </li>
+                                <li class="sub-list"><span>React 18</span>
+                                    <ul>
+                                        <li>const root = ReactDOM.createRoot(document.getElementById('root'))
+                                            root.render(element)
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>To deploy to netlify just drag and drop the project to app.netlify.com/drop</li>
+                                <li class="sub-list"><span>A11y</span>
+                                    <ul>
+                                        <li>alt</li>
+                                        <li>Use rem for font-size</li>
+                                        <li>Use headings for semantic meaning</li>
+                                    </ul>
+                                </li>
+                                    <li class="sub-list"><span>Custom Components</span>
+                                    <ul>
+                                        <li><blockcode>
+                                            function Component() {
+                                                return 
+                                                &lt;ol&gt;
+                                                    &lt;li&gt;test&lt;/li&gt;
+                                                </ol>
+                                            }
+                                            ReactDOM.render(&lt;Component /&gt;, 
+                                            document.getElementById('root'))
+                                        </blockcode></li>
+                                        <li>Composing a component of other components:
+                                            <blockcode>
+                                                //////
+                                            </blockcode>
+                                        </li>
+                                        <li>> npm create vite@latest to build a react app</li>
+                                        <li class="sub-sub-list"><span>To add style to an element</span>
+                                            <ul>
+                                                <li><blockcode>className="nav-items"</blockcode></li>
+                                            </ul>
+                                        </li>
+                                        <li>&lt;script src="index.pack.js"&gt;&lt;/script&gt;</li>
+                                        <li><blockcode>import React from "react"
+                                            import Navbar from "./components/Navbar"
+                                            import Main from "./components/Main"
+                                        </blockcode> React doesn't have to be imported to main or navbar.</li>
+                                        <li>Send props to a component to make it more reusable</li>
+                                        <li><blockcode>
+                                            &lt;Header title="Great News"&gt;
+                                            export default function Header(props {return (
+                                                &lt;h1&gt;{props.title}&lt;/h1&gt;)})
+                                        </blockcode></li>
+                                        <li>Mapping components</li>
+                                        <li>Conditional Rendering</li>
+                                        <li>Spread Objects as props</li>
+                                        <li>When returning JSX there needs to be a parent element wrapping everyting.</li>
+                                        <li>Event Handlers <blockcode>&lt;button onClick={handleCLick}&gt;</blockcode></li>
+                                        <li>A component uses the props sent to it from it's parent without changing it.</li>
+                                        <li>A component mahy have it's own data, AKA state. State is ata taht can be changed and the componeent gets re-rendered as a result of state change.</li>
+                                        <li>Maintain a state with a hook: <blockcode>const [count, set count] = React.useState(0)
+                                            function addd(){
+                                                setCount(prevCount => prevCount +1)
+                                            }
+                                        </blockcode></li>
+                                        <li class="sub-sub-list"><span>Complex State Arrays</span>
+                                            <ul>
+                                                <li>Arrays</li>
+                                                <li>Obj</li>
+                                            </ul>
+                                        </li>
+                                        <li>A parent can send a copy of the state to the child as a rpop</li>
+                                        <li>The child cannot change the props</li>
+                                        <li>In order for the child to change the state in the parent the parent sends a function to the child as props. That function wehnm called from the child, can change the stae in the parent.</li>
+                                        <li class="sub-sub-list"><span>Styling in React</span>
+                                            <ul>
+                                                <li><blockcode>
+                                                    Const styles = {
+                                                        backgroundColor: 'black'
+                                                    }
+                                                </blockcode></li>
+                                            </ul>
+                                        </li>
+                                        <li>You don't need derived state. Keep state in the parent component.</li>
+                                        <li>Conditionaal rendering with the ternary opperator</li>
+                                        <li>add label htmlFor="" for input</li>
+                                        <li class="sub-sub-list"><span>Main React Tasks</span>
+                                            <ul>
+                                                <li>Render the UI</li>
+                                                <li>Kepp track of state</li>
+                                                <li>Re-render the UI when state changes</li>
+                                            </ul>
+                                        </li>
+                                        <li class="sub-sub-list"><span>React wont handle on its own side effects</span>
+                                            <ul>
+                                                <li>localStorage</li>
+                                                <li>API/DB interactionsw</li>
+                                                <li>Subscritions (websockets)</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="note-section resources" id="resources">
+                        <h3 class="accordion-name">Resources<span class="accordion-arrow"></span></h3>
+                        <dl class="inner-accordion-content">
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                    </div>
+                    <div class="note-section definitions" id="definitions">
+                        <h3 class="accordion-name">Definitions<span class="accordion-arrow"></span></h3>
+                        <dl class="inner-accordion-content">
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                    </div>
+                    <div class="note-section questions" id="questions">
+                        <h3 class="accordion-name">Questions<span class="accordion-arrow"></span></h3>
+                        <ul class="inner-accordion-content">
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="note-section opinions" id="opinions">
+                        <h3 class="accordion-name">Opinions<span class="accordion-arrow"></span></h3>
+                        <ul class="inner-accordion-content">
+                            <li></li>
+                        </ul>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="/notes.js"></script>
+</body>
+</html>
