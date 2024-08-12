@@ -18,14 +18,12 @@ export function menuDisplay() {
     }
 }
 
-    /***TODOs
-     * 1. take mentos advice and refactor notes
-     * 2. set up notes to use separate pages
-     * 3. set up firebase for inputs
-     * 4. move header menu
-     * 5. refactor background to be in separate div
-     * 6. make mobile friendly
-     * 7. make mobile "app"
-     */
-// }
-
+/***TODOs
+ * 1. take mentors advice and refactor notes
+ * 2. set up notes to use separate pages
+ * 3. set up firebase for inputs
+ * 4. move header menu
+ * 5. refactor background to be in separate div
+ * 6. make mobile friendly
+ * 7. make mobile "app"
+ */
