@@ -1,4 +1,5 @@
 const mobileMenuEl = document.getElementById('mobileMenu');
+const navMenuEl = document.getElementById('navMenu');
 
 /*MENU*/
 /**Opens mobile menu when clicked*/
@@ -7,6 +8,18 @@ mobileMenuEl.addEventListener('click', function(){
         menuDisplay();
     }
 });
+
+/**Renders menu items */
+navMenuEl.innerHTML = /*HTML*/
+    `<li><a href="/html/htmlNotes.html" id="htmlLink">HTML</a></li>
+    <li><a href="/html/cssNotes.html" id="cssLink">CSS</a></li>
+    <li><a href="/html/javascriptNotes.html" id="javascriptLink">Javascript</a></li>
+    <li><a href="/html/firebaseNotes.html" id="firebaseLink">Firebase</a></li>
+    <li><a href="/html/reactNotes.html" id="reactLink">React</a></li>
+    <li><a href="/html/accessibilityNotes.html" id="acessibilityLink">Accessibility</a></li>
+    <li><a href="/html/codeReviewsNotes.html" id="reviewsLink">Code Reviews</a></li>
+    <li><a href="/html/apiNotes.html" id="apisLink">APIs</a></li>
+    <li><a href="/html/miscNotes.html" id="miscLink">MISC</a></li>`
 
 /**sets menu display to flex */
 export function menuDisplay() {
