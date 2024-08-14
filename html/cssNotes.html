@@ -2,9 +2,11 @@
 <html lang="en">
 
 <head>
-    <title>Study Notes</title>
+    <title>CSS Notes</title>
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/notes.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:wght@100..900&family=Just+Another+Hand&family=Kalam:wght@300;400;700&family=Karla:ital,wght@0,200..800;1,200..800&family=Orbitron:wght@400..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
@@ -64,18 +66,19 @@
                     <div class="note-section notes" id="notes">
                         <h3 class="accordion-name">Notes<span class="accordion-arrow first-arrow"></span></h3>
                         <ul class="inner-accordion-content" style="display: block;">
-                            <li><blockcode>font-weight: lighter, normal, or bold</blockcode></li>
+                            <li><blockcode>font-weight: lighter;</blockcode>, <blockcode>font-weight: normal;</blockcode>, <blockcode>font-weight: bold;</blockcode></li>
                             <li><blockcode>display: inline;</blockcode> stacks items beside eachother horizontally.</li>
                             <li><blockcode>display: block;</blockcode> stacks items on top of eachother vertically, each item takes up full width.</li>
                             <li>Browser assumes body tag wants margin around.</li>
                             <li>Margin will collapse into eachother, largest margin will take presidence.</li>
-                            <li>To center an element <blockcode>display: block; width: whatever; margin-left: auto; margin-right: auto;</blockcode>.</li>
+                            <li>To center an element <blockcode>display: block; width: unit; margin-left: auto; margin-right: auto;</blockcode>.</li>
                             <li>Use <blockcode>line-height</blockcode> instead of <blockcode>height</blockcode> for input fields because more browsers will honor it.</li>
                             <li class="sub-list"><span><a href="https://getbootstrap.com/docs/4.0/utilities/flex/" target="_blank"
                                     alt="brings user to bootstraps documentation on how to use flexbox">Flexbox</a> is god.</span>
                                 <ul>
-                                    <li><blockcode>justify-content: start, center, end, space-around, space-evenly, space-between;</blockcode> controls right to left (main axis)</li>
-                                    <li><blockcode>gap: top right bottom left px;</blockcode></li>
+                                    <li><blockcode>justify-content: start;</blockcode>, <blockcode>justify-content: center;</blockcode>, <blockcode>justify-content: end;</blockcode>, <blockcode>justify-content: space-around;</blockcode>, 
+                                        <blockcode>justify-content: space-evenly</blockcode> and <blockcode>justify-content: space-between;</blockcode> controls right to left (main axis).</li>
+                                    <li><blockcode>gap: top bottom left px;</blockcode></li>
                                     <li>Only affects direct children (if you don't want something effected, change it to be within divs).</li>
                                     <li><blockcode>flex-direction: column, row;</blockcode> has default value row, changing to column will switch the align items and display-content 
                                         axis.
