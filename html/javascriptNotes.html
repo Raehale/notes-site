@@ -56,30 +56,22 @@
                         <h3 class="accordion-name">Notes<span class="accordion-arrow first-arrow"></span></h3>
                         <ul class="inner-accordion-content" style="display: block;">
                             <li>Script tags in HTML are where you can write JS. add <blockcode>src="filename"</blockcode> to link js file to HTML file.</li>
-                            <li><blockcode>console.log()</blockcode> to log to console</li>
+                            <li><blockcode>console.log()</blockcode> to log to console.</li>
                             <li>JS reads top to bottom. Can't access things before they're initialized.</li>
-                            <li><blockcode>function functionName() {}</blockcode></li>
+                            <li>To create a function <blockcode>function functionName() {}</blockcode></li>
                             <li>Function is command.</li>
                             <li>Run is call or invoke.</li>
-                            <li><blockcode>++</blockcode> is self plus one</li>
+                            <li><blockcode>++</blockcode> is self plus one.</li>
                             <li><blockcode>innerText</blockcode> gets/sets the text inside the element called. Can't read spaces.</li>
+                            <li><blockcode>textContent</blockcode> gets/sets the text inside the element called. It can read spaces.</li>
                             <li>When it's a string VS a number the string always wins.</li>
                             <li>You can use an escape character (/) to display a " in a string surounded by "".</li>
                             <li><blockcode>+=</blockcode> is self plus the oposite of the equal sign.</li>
                             <li>Name elements you grab <blockcode>elementPurposeEl</blockcode>.</li>
                             <li><blockcode>let</blockcode> creates the element, it can and will be changed later.</li>
                             <li><blockcode>const</blockcode> creates the element, it can't be changed later.</li>
-                            <li><blockcode>var</blockcode> is dead.</li>
-                            <li><blockcode>textContent</blockcode> gets/sets the text inside the element called. It can read spaces.</li>
                             <li>use `` when you need to add variables to text.</li>
                             <li>You can't use the same name for functions as in an element.</li>
-                            <li>To immediately run a function wrap the function in () and end it in ();
-                                <blockcode>
-                                    (function functionName() {
-                                        function actions
-                                    })()
-                                </blockcode>
-                            </li>
                             <li>Using onclick in HTML is less ideal then using <blockcode>addEventListener("click", function() {})</blockcode>. 
                                 You need to use ; at the end of all code for this to work.</li>
                             <li>Operator precedence is PEMDAS in JS.</li>
@@ -92,50 +84,7 @@
                             <li>Declare means to create.</li>
                             <li><blockcode>querySelector</blockcode> is more dynamic. You have to be more specific and identify the element how you would in CSS 
                                 (with . or # before the name).
-                            </li><dt>DOM</dt>
-                                            <dd>Document Object Model</dd>
-                                            <dd>How you use JS to control websites.</dd>
-                                        <dt>Escape Character</dt>
-                                            <dd>A character that invokes an alternative interpretation on the following characters in a character sequence.</dd>
-                                        <dt>Local Dev Environment</dt>
-                                            <dd>A text editor is a tool to edit code on your computer.</dd>
-                                            <dd>Version control is a tool to keep changes updated on Github.</dd>
-                                            <dd class="sub-list"><span>Escape Characters List:</span>
-                                                <ul>
-                                                    <li>\t = insert a tab in the text</li>
-                                                    <li>\b = insert a backspace in the text</li>
-                                                    <li>\n = insert a newline in the text</li>
-                                                    <li>\r = insert a carriage in the text</li>
-                                                    <li>\f = insert a form feed in the text</li>
-                                                    <li>\' = insert a single quote character in the text</li>
-                                                    <li>\" = insert a double quote character in the text</li>
-                                                    <li>\\ = insert a backslash character in the text</li>
-                                                </ul>
-                                            </dd>
-                                        <dt>Data Type</dt>
-                                            <dd>defines the data type that a variable can store</dd>
-                                            <dd>Numbers, Strings, Boolean, Bigint, Undefined, Null, Symbol, Object</dd>
-                                        <dt>Method</dt>
-                                            <dd>Access and manipulate the data stored in an object.</dd>
-                                            <dd>written as <blockcode>method()</blockcode>.</dd>
-                                        <dt>createElement</dt>
-                                            <dd>A function that allows you to create an element.</dd>
-                                            <dd>A method that needs to be applied to the document object.</dd>
-                                            <dd><blockcode>document.createElement(elementType)</blockcode></dd>
-                                            <dd>Example: <blockcode>document.createElement("li")</blockcode></dd>
-                                        <dt>Template Strings</dt>
-                                            <dd><blockcode>`html stuff and also text and also ${variables}`</blockcode></dd>
-                                        <dt>Logical Not</dt>
-                                            <dd>Puting ! to mean not the following code.</dd>
-                                        <dt>Hoisting</dt>
-                                            <dd>Function declarations are moved to the top of their scope before code execution.</dd>
-                                        <dt>NaN</dt>
-                                            <dd>Not a Number</dd>
-                                        <dt>Web APIs</dt>
-                                            <dd>Provided by the browser.</dd>
-                                            <dd>Not part of the JS language.</dd>
-                                            <dd>Have functionality for DOM manipulation, data requests, timers (settimeout, setInterval), etc.</dd>
-                                    </dl>
+                            </li>
                             <li class="sub-list"><span>Arrays</span>
                                 <ul>
                                     <li>Arrays are stored in [].</li>
@@ -588,31 +537,7 @@
                                     <li>Deep copy copies the entire array or object.</li>
                                 </ul>
                             </li>
-                            <li>Script tags in HTML are where you can write JS. add <blockcode>src="filename"</blockcode> to link js file to HTML file.</li>
-                            <li><blockcode>console.log()</blockcode> to log to console</li>
-                            <li>JS reads top to bottom. Can't access things before they're initialized.</li>
-                            <li><blockcode>function functionName() {}</blockcode></li>
-                            <li>Function is command.</li>
-                            <li>Run is call or invoke.</li>
-                            <li><blockcode>++</blockcode> is self plus one</li>
-                            <li><blockcode>innerText</blockcode> gets/sets the text inside the element called. Can't read spaces.</li>
-                            <li>When it's a string VS a number the string always wins.</li>
-                            <li>You can use an escape character (/) to display a " in a string surounded by "".</li>
-                            <li><blockcode>+=</blockcode> is self plus the oposite of the equal sign.</li>
-                            <li>Name elements you grab <blockcode>elementPurposeEl</blockcode>.</li>
-                            <li><blockcode>let</blockcode> creates the element, it can and will be changed later.</li>
-                            <li><blockcode>const</blockcode> creates the element, it can't be changed later.</li>
-                            <li><blockcode>var</blockcode> is dead.</li>
-                            <li><blockcode>textContent</blockcode> gets/sets the text inside the element called. It can read spaces.</li>
-                            <li>use `` when you need to add variables to text.</li>
                             <li>You can't use the same name for functions as in an element.</li>
-                            <li>To immediately run a function wrap the function in () and end it in ();
-                                <blockcode>
-                                    (function functionName() {
-                                        function actions
-                                    })()
-                                </blockcode>
-                            </li>
                             <li>Using onclick in HTML is less ideal then using <blockcode>addEventListener("click", function() {})</blockcode>. 
                                 You need to use ; at the end of all code for this to work.</li>
                             <li>Operator precedence is PEMDAS in JS.</li>
@@ -1501,6 +1426,163 @@
                                     </li>
                                 </ul>
                             </li>
+                            <li class="sub-list"><span>Symbols</span>
+                                <ul>
+                                    <li>A primitive data type</li>
+                                    <li>An immutable identifier used as a property key in objects.</li>
+                                    <li>Each symbol is unique</li>
+                                    <li>A bit like UUIDs/GUIDs, but built in to js.</li>
+                                    <li><blockcode>const symbolVar = Symbol('description')</blockcode>, you don't use a new keyword, and the description does not effect it's uniqueness.</li>
+                                    <li>To store a symbol in an Object <blockcode>
+                                        const objName = {
+                                            key1: 'value1',
+                                            [Symbol('description')]: 'value2'
+                                        }
+                                    </blockcode> or <blockcode>
+                                        const symbolVar = Symbol('description')
+                                        const objName = {
+                                            key1: 'value1',
+                                            [symbolVar]: 'key2'
+                                        }
+                                    </blockcode> or (most common)<blockcode>
+                                        const symbolVar = Symbol('description')
+                                        const objName = {
+                                            key1: 'value1',
+                                        }
+                                        objName[symbolVar] = 'key2'
+                                    </blockcode></li>
+                                    <li>You won't be able to see the symbol unless you specifically ask for the symbol like <blockcode>
+                                        console.log(objName[symbolVar])
+                                    </blockcode></li>
+                                    <li>Used to add properties to objects without the risk of property name conflicts.</li>
+                                    <li>Symbols are not 100% private.</li>
+                                    <li>Misuse or overuse of symbols can lead to the confusion or coplexity in code maintenance.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Map Object</span>
+                                <ul>
+                                    <li>Has nothing to do with the array map method.</li>
+                                    <li>The map object holes key/value pairs just like a regular object.</li>
+                                    <li class="sub-sub-list"><span>Map Object Benefits</span>
+                                        <ul>
+                                            <li>Use other data types as keys <blockcode>
+                                                const objOne = { key1: "value1", key2: "value2" }
+
+                                                const mapObj = new Map()
+
+                                                mapObj.set(objOne, 10000)
+                                            </blockcode> logs the map object, key as objOnes content and the value as 10000</li>
+                                            <li>Iterate with a forEach <blockcode>
+                                                const objOne = { key1: "value1", key2: "value2" }
+                                                const objTwo = { key1: "value3", key2: "value4" }
+                                                const objThree = { key1: "value5", key2: "value6" }
+
+                                                const mapObj = new Map()
+
+                                                mapObj.set(objOne, 10000)
+                                                mapObj.set(objTwo, 10200)
+                                                mapObj.set(objThree, 9800)
+
+                                                mapObj.forEach((value, key)=>console.log(key.key1, value))
+                                            </blockcode> would log value1 10000 value3 10200 value5 9800 </li>
+                                            <li>Has a size property (similar to length property) <blockcode>
+                                                console.log(mapObj.size)
+                                            </blockcode> would log 3</li>
+                                            <li>You can access an individual property using the get method <blockcode>
+                                                console.log(mapObj.get(objOne))
+                                            </blockcode> would log 10000</li>
+                                            <li>To delete a property <blockcode>
+                                                console.log(mapObj.delete(objOne))
+                                            </blockcode> would log true and delete objOne</li>
+                                            <li>The has method will check if a property exists <blockcode>
+                                                console.log(mapObj.has(objThree))
+                                            </blockcode> would log true.</li>
+                                            <li>Insertion Order is fixed and guaranteed.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Set Object</span>
+                                <ul>
+                                    <li>A set object stores unique values as individual items, not key/value pairs. It's a bit like an array but with each it4em unique - no duplicates.</li>
+                                    <li><blockcode>
+                                        const duplicatesArr = ['value1', 'value2', 'value3', 'value1', 'value2']
+
+                                        const noDuplicatesArr = new Set(duplicatesArr)
+
+                                        console.log(noDuplicatesArr) 
+                                    </blockcode> logs Set(3) {'value1', 'value2', 'value3'}</li>
+                                    <li>You can use a forEach on a set. Not all array methods though. To use all array methods, you have to convert it back to an array.</li>
+                                    <li>Insurtion order is maintained.</li>
+                                    <li>You can use <blockcode>
+                                        noDuplicatesArr.add('value4')
+                                    </blockcode> to add to the Object.</li>
+                                    <li>You can use <blockcode>
+                                        noDuplicatesArr.delte('value4')
+                                    </blockcode> to delet from the Object.</li>
+                                    <li>You can use <blockcode>
+                                        noDuplicatesArr.has('value4')
+                                    </blockcode> to see if it exists in the Object.</li>
+                                    <li>You can use <blockcode>
+                                        noDuplicatesArr.clear()
+                                    </blockcode> to remove everything from the Object.</li>
+                                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set" target="_blank" alt="MDN Docs on the Set Object">Learn more about the set Object and it's other methods!</a></li>
+                                    <li>Many of the methods do not have wide browser support.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Closures</span>
+                                <ul>
+                                    <li>Helps you access variables defined within a funciton, outside of said funciton.</li>
+                                    <li><blockcode>
+                                        function outerFunction(param) {
+                                            const outerVariable = 'I am from the outer function'
+                                            function innerFunction() {
+                                                console.log(outerVariable)
+                                                console.log(param)
+                                            }
+                                            return innerFunction
+                                        }
+                                        
+                                        const closure = outerFunction('I am an argument')
+                                        
+                                        closure()
+                                    </blockcode> logs I am from the outer function I am an argument.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>IIFEs</span>
+                                <ul>
+                                    <li>Effectively self calling.</li>
+                                    <li>To immediately run a function wrap the function in () and end it in ().</li>
+                                    <li><blockcode>
+                                        (function() {
+                                            function stuff
+                                        })()
+                                    </blockcode></li>
+                                    <li><blockcode>
+                                        (async function(param) {
+                                            function stuff
+                                        })('param')
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Recursion</span>
+                                <ul>
+                                    <li>Function calling itself</li>
+                                    <li>Recursive Function</li>
+                                    <li><blockcode>
+                                        function countdown(count) {
+                                            console.log(count)
+                                            if (count = 0) {
+                                                return count
+                                            }
+                                            countdown(count - 1)
+                                        }
+                                        countdown(5)
+                                    </blockcode> logs 5 4 3 2 1 0</li>
+                                    <li>Unwind to return the final value.</li>
+                                </ul>
+                            </li>
+
                         </ul>
                     </div>
                     <div class="note-section resources" id="resources">
@@ -1558,6 +1640,51 @@
                                 <dd>Have functionality for DOM manipulation, data requests, timers (settimeout, setInterval), etc.</dd>
                             <dt>Inheritance</dt>
                                 <dd>Inheritance is the mechanism by which objects inherit properties and methods from other objects.</dd>
+                                <dt>DOM</dt>
+                                <dd>Document Object Model</dd>
+                                <dd>How you use JS to control websites.</dd>
+                            <dt>Escape Character</dt>
+                                <dd>A character that invokes an alternative interpretation on the following characters in a character sequence.</dd>
+                            <dt>Local Dev Environment</dt>
+                                <dd>A text editor is a tool to edit code on your computer.</dd>
+                                <dd>Version control is a tool to keep changes updated on Github.</dd>
+                                <dd class="sub-list"><span>Escape Characters List:</span>
+                                    <ul>
+                                        <li>\t = insert a tab in the text</li>
+                                        <li>\b = insert a backspace in the text</li>
+                                        <li>\n = insert a newline in the text</li>
+                                        <li>\r = insert a carriage in the text</li>
+                                        <li>\f = insert a form feed in the text</li>
+                                        <li>\' = insert a single quote character in the text</li>
+                                        <li>\" = insert a double quote character in the text</li>
+                                        <li>\\ = insert a backslash character in the text</li>
+                                    </ul>
+                                </dd>
+                            <dt>Data Type</dt>
+                                <dd>defines the data type that a variable can store</dd>
+                                <dd>Numbers, Strings, Boolean, Bigint, Undefined, Null, Symbol, Object</dd>
+                            <dt>Method</dt>
+                                <dd>Access and manipulate the data stored in an object.</dd>
+                                <dd>written as <blockcode>method()</blockcode>.</dd>
+                            <dt>createElement</dt>
+                                <dd>A function that allows you to create an element.</dd>
+                                <dd>A method that needs to be applied to the document object.</dd>
+                                <dd><blockcode>document.createElement(elementType)</blockcode></dd>
+                                <dd>Example: <blockcode>document.createElement("li")</blockcode></dd>
+                            <dt>Template Strings</dt>
+                                <dd><blockcode>`html stuff and also text and also ${variables}`</blockcode></dd>
+                            <dt>Logical Not</dt>
+                                <dd>Puting ! to mean not the following code.</dd>
+                            <dt>Hoisting</dt>
+                                <dd>Function declarations are moved to the top of their scope before code execution.</dd>
+                            <dt>NaN</dt>
+                                <dd>Not a Number</dd>
+                            <dt>Web APIs</dt>
+                                <dd>Provided by the browser.</dd>
+                                <dd>Not part of the JS language.</dd>
+                                <dd>Have functionality for DOM manipulation, data requests, timers (settimeout, setInterval), etc.</dd>
+                            <dt>IIFE</dt>
+                                <dd>Immediately Invoked Function Expressions</dd>
                         </dl>
                     </div>
                     <div class="note-section questions" id="questions">
@@ -1579,6 +1706,7 @@
                             </li>
                             <li>How do you write a data attribute with multiple words in html and js?</li>
                             <li>If you store a function within a data obj and export the obj do you have to export the function too?</li>
+                            <li>How does it know when it's a closure? Is there anything it needs? Is it just because it returns something?</li>
                         </ul>
                     </div>
                     <div class="note-section opinions" id="opinions">
