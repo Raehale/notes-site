@@ -1569,7 +1569,7 @@
                                 <ul>
                                     <li>Function calling itself</li>
                                     <li>Recursive Function</li>
-                                    <li><blockcode>
+                                    <li>To reverse a number <blockcode>
                                         function countdown(count) {
                                             console.log(count)
                                             if (count = 0) {
@@ -1580,9 +1580,207 @@
                                         countdown(5)
                                     </blockcode> logs 5 4 3 2 1 0</li>
                                     <li>Unwind to return the final value.</li>
+                                    <li>To reverse a string <blockcode>
+                                        function reverseStr(str){
+                                            if (str.length &lt;= 0){
+                                                return str;
+                                            } else {
+                                                return reverseStr(str.slice(1)) + str.slice(0, 1);
+                                            }
+                                        }
+                                    </blockcode></li>
                                 </ul>
                             </li>
+                            <li class="sub-list"><span>Currying</span>
+                                <ul>
+                                    <li><blockcode>
+                                        function functionName(param1){
+                                            return function(param2){
+                                                return function(param3){
+                                                    return `${param1} ${param2} ${param3}`
+                                                }
+                                            }
+                                        }
 
+                                        const with1 = functionName(param1)
+                                        const with2And1 = with1(param2)
+                                        const with3And2And1 = with2And1(param3)
+
+                                        console.log(with3And2And1)
+                                    </blockcode> logs param1 param2 param3</li>
+                                    <li><blockcode>
+                                        function functionName(param1){
+                                            return function(param2){
+                                                return function(param3){
+                                                    return `${param1} ${param2} ${param3}`
+                                                }
+                                            }
+                                        }
+
+                                        const with3And2And1 = with2And1(param1)(param2)(param3)
+
+                                        console.log(with3And2And1)
+                                    </blockcode> logs param1 param2 param3</li>
+                                    <li>Written as an arrow function <blockcode>
+                                        const functionName = param1 => param2 => param3 => `${param1} ${param2} ${param3}`
+                                    </blockcode></li>
+                                    <li class="sub-sub-list"><span>Why Curry a Function?</span>
+                                        <ul>
+                                            <li>Allows for partial application, which allows you to fix some arguments and defer the rest. This is useful when you repeatedly call a function with some of the same arguments.</li>
+                                            <li><blockcode>
+                                                const functionName = param1 => param2 => param3 => `${param1} ${param2} ${param3}`
+
+                                                const onlyTwoParams = functionName(param1)(param2)
+
+                                                const thirdParam1 = onlyTwoParams(param3)
+                                                const thirdParam2 = onlyTwoParams(param4)
+                                                const thirdParam3 = onlyTwoParams(param5)
+
+                                                console.log(thirdParam1)
+                                                console.log(thirdParam2)
+                                                console.log(thirdParam3)
+                                            </blockcode> logs param1 param2 param3 and param1 param2 param4 and param1 param2 param5</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Throttling</span>
+                                <ul>
+                                    <li>Reduces Unecessary code execution.</li>
+                                    <li>Ensures a functino is called at most once in a specific period of time.</li>
+                                    <li>When an event continuously triggers, throttling will call the function only at regular intervals, ignoring any additional triggers.</li>
+                                    <li>Put a throttle on a resize event handler <blockcode>
+                                        function handleResize(e){
+                                            console.log('resize happened on event' + e)
+                                        }
+
+                                        function throttle(func, delay){
+                                            let throttleTimeout = null
+                                            return function() {
+                                                if(!throttleTimeout){
+                                                    func()
+                                                    throttleTimeout = setTImeout(() => {
+                                                        throttleTimeout = null
+                                                    }, delay)
+                                                }
+                                            }
+                                        }
+                                        const throttleHandleResize = throttle(handleResize, 1000)
+                                        window.addEventListener('resize', throttleHandleResize)
+                                    </blockcode></li>
+                                    <li>Add an event to the throttle <blockcode>
+                                        function handleResize(e){
+                                            console.log('resize happened on event: ' + e)
+                                        }
+                                        
+                                        function throttle(func, delay) {
+                                            let throttleTimeout = null
+                                            return (...args)=> {
+                                                if(!throttleTimeout) {
+                                                    func(...args)
+                                                    throttleTimeout = setTimeout(()=> {
+                                                        throttleTimeout = null
+                                                    }, delay)
+                                                } 
+                                            }
+                                        }
+                                        const throttledHandleResize = throttle(handleResize, 1000)
+                                        window.addEventListener('resize', throttledHandleResize)
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Debouncing</span>
+                                <ul>
+                                    <li>Reduces Unecessary code execution.</li>
+                                    <li>Ensures a function is called only after a certain period has passsed since the last triggering event.</li>
+                                    <li>When an event continuously fires, debouncing will delay the function call until after the event has stopped for a specified duration.</li>
+                                    <li>Use debouncing with an input change event listener <blockcode>
+                                        function debounce(func, delay) {
+                                            let debounceTimer
+                                            return (...args) => {
+                                                clearTimeout(debounceTimer)
+                                                debounceTimer = setTimeout(()=> {
+                                                    func.apply(...args)
+                                                }, delay)
+                                            }
+                                        }
+
+                                        function handleInput(e) {
+                                            console.log('Input detected from element with id ' + e.target.id)
+                                        }
+                                        
+                                        document.getElementById('name-input').addEventListener('input', debounce(handleInput, 500))
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Generators</span>
+                                <ul>
+                                    <li class="sub-sub-list"><span>Common use cases</span>
+                                        <ul>
+                                            <li>Async operations</li>
+                                            <li>Handling state</li>
+                                            <li>Lazy evaluation</li>
+                                        </ul>
+                                    </li>
+                                    <li>Using lazy evaluation <blockcode>
+                                        const slidesArr = [
+                                            "1", 
+                                            "2", 
+                                            "3", 
+                                            "4", 
+                                            "5"
+                                        ]
+
+                                        function* generator(arr) {
+                                            for (const item of arr) {
+                                                yield item
+                                            }
+                                        }
+
+                                        const slideGenerator = generator(slidesArr)
+
+                                        document.getElementById('nextSlideBtn').addEventListener('click', () => {
+                                            const result = slideGenerator.next()
+                                            if (!result.done) {
+                                                console.log(result.value)   
+                                            } else {
+                                                console.log('That is the end!')
+                                            }
+                                        }) 
+                                    </blockcode> logs 1 2 3 4 5 That is the end!</li>
+                                    <li>The return keyword can stop a generator yeilding. <blockcode>
+                                        const slidesArr = [
+                                            "1",
+                                            "2",
+                                            "3",
+                                            "MALFUNCTION",
+                                            "4",
+                                            "5"
+                                        ]
+
+                                        function* generator(arr) {
+                                            for (const item of arr) {
+                                                if (item === 'MALFUNCTION') {
+                                                    return
+                                                } else {
+                                                    yield item
+                                                }
+                                            }
+                                        }
+
+                                        const slideGenerator = generator(slidesArr)
+
+                                        document.getElementById('nextSlideBtn').addEventListener('click', () => {
+                                            const result = slideGenerator.next()
+                                            if (!result.done) {
+                                                console.log(result.value)
+                                            } else {
+                                                console.log('That is the end!')
+                                            }
+                                        }) 
+                                    </blockcode> logs 1 2 3 That is the end!</li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <div class="note-section resources" id="resources">
@@ -1685,6 +1883,10 @@
                                 <dd>Have functionality for DOM manipulation, data requests, timers (settimeout, setInterval), etc.</dd>
                             <dt>IIFE</dt>
                                 <dd>Immediately Invoked Function Expressions</dd>
+                            <dt>Currying</dt>
+                                <dd>Transforming a function from one that takes multiple params into a sequence of nested functions, each taking a single param.</dd>
+                            <dt>Generators</dt>
+                                <dd>Special functions that can be paused and resumed allowing them to produce a sequence of values over time.</dd>
                         </dl>
                     </div>
                     <div class="note-section questions" id="questions">
