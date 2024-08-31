@@ -105,7 +105,107 @@
                                     <li>Other protocols are ftp:// or SMTP</li>
                                 </ul>
                             </li>
-                            <li></li>
+                            <li class="sub-list"><span>JSON</span>
+                                <ul>
+                                    <li>Similar to JS</li>
+                                    <li>JSON objects have strings for keys <blockcode>
+                                        {
+                                            'key': 'string value',
+                                            'boolean': true,
+                                            'number': 10,
+                                        }
+                                    </blockcode></li>
+                                    <li>In Dev Tools: network tab, XHR</li>
+                                    <li>The language of data on the web.</li>
+                                </ul>
+                            </li>
+                            <li>To fetch with JSON <blockcode>
+                                fetch('API URL')
+                                    .then(response => response.json())
+                                    .then(data => console.log(data))
+                            </blockcode></li>
+                            <li>Async JS will let all other JS run first</li>
+                            <li class="sub-list"><span>Compontents of a request.</span>
+                                <ul>
+                                    <li>URLs</li>
+                                    <li>REST</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>HTTP</span>
+                                <ul>
+                                    <li>Hypertext Transfer Protocol</li>
+                                    <li>Components: Path (URL), Method (get, post, put, delete, patch, options), body,</li>
+                                    <li class="sub-sub-list"><span>Path (URL)</span>
+                                        <ul>
+                                            <li>Adress where your desired resource lives</li>
+                                            <li>Two main portions are BaseURL vs. Endpoint</li>
+                                            <li>A base URL is the part of the URL that won't change, no matter which resource we want to get from the API</li>
+                                            <li>An endpoint specifies exactly which resource we want to get form the API.</li>
+                                            <li>https://google.com/blog/post, https://google.com/blog is the BaseURL and /post is the Endpoint</li>
+                                            <li>JSON in browser.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Request Methods</span>
+                                <ul>
+                                    <li>GET - Getting data</li>
+                                    <li>POST - Adding new data (like a block post or facebook post)</li>
+                                    <li>PUT - Updating existing data</li>
+                                    <li>DELETE - Removing data</li>
+                                    <li>PATCH</li>
+                                    <li>OPTIONS</li>
+                                    <li>To request a specific request method in fetch add a second parameter. <blockcode>
+                                        fetch("API URL", {method: "request type"})
+                                    </blockcode> GET is the default.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>The Request Body</span>
+                                <ul>
+                                    <li>The data we want to send to the server.</li>
+                                    <li>Methods a body uses: POST and PUT requests.</li>
+                                    <li>Needs to be turned into JSON first.</li>
+                                    <li><blockcode>
+                                        fetch('API URL', {
+                                            method: "POST or PUT",
+                                            body: JSON.stringify({
+                                                string: "",
+                                                boolean: true
+                                            })
+                                        })
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list">
+                                <ul>
+                                    <li>Extra/meta information about the outgoing request.</li>
+                                    <li>Auth, body info, client info, etc.</li>
+                                    <li>To change the header to sending JSON and not plain text <blockcode>
+                                        fetch('API URL', {
+                                            method: 'POST or PUT',
+                                            body: JSON.stringify({
+                                                string: "",
+                                                boolean: false
+                                            }),
+                                            headers: {
+                                                'Content-Type': 'application/json'
+                                            }
+                                        })
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li>Fetch: <blockcode>
+                                const options = {
+                                    method: 'method type',
+                                    body: JSON.stringify(data),
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    }
+                                }
+                                fetch('API URL', options)
+                                    .then(response => response.json())
+                                    .then(data => console.log(data))
+                            </blockcode> will log the data.</li>
                         </ul>
                     </div>
                     <div class="note-section resources" id="resources">
@@ -113,6 +213,10 @@
                         <dl class="inner-accordion-content">
                             <dt><a href="https://jsonlint.com/" target="_blank" alt="a site that validates json">JSON Lint</a></dt>
                                 <dd>Formats and validates your JSON code.</dd>
+                            <dt><a href="https://chromewebstore.google.com/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en" target="_blank" alt="Page to add a JSON formatter chrome extention">JSON Formatter</a></dt>
+                                <dd>A chrome extention that formats JSON.</dd>
+                            <dt><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank" alt="MDN Documentation on fetch">Using Fetch</a></dt>
+                                <dd>The MDN Documentation on how to use fetch.</dd>
                         </dl>
                     </div>
                     <div class="note-section definitions" id="definitions">
