@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
 </head>
 
 <body data-id="javascript">
@@ -41,19 +41,28 @@
             </div>
         </div>
         <div class="page">
-            <nav class="nav">
-                <ul id="sectionLinks">
-                    <li data-link="notes">Notes</li>
-                    <li data-link="resources">Resources</li>
-                    <li data-link="definitions">Definitions</li>
-                    <li data-link="questions">Questions</li>
-                    <li data-link="opinions">Opinions</li>
-                </ul>
-            </nav>
-            <div class="content">
+            <div class="full-head">
+                <div class="page-head">
+                    <div class="search-bar">
+                        <div class="pencil-point"></div>
+                        <input id="notesSearchInput" aria-label="Search Notes" placeholder="Search All JavaScript Notes" autoComplete="on" class="search-input" />
+                        <button class="btn search-btn" id="notesSearchButton">Search</button>
+                    </div>
+                    <nav class="nav">
+                        <ul id="sectionLinks">
+                            <li data-link="notes">Notes</li>
+                            <li data-link="resources">Resources</li>
+                            <li data-link="definitions">Definitions</li>
+                            <li data-link="questions">Questions</li>
+                            <li data-link="opinions">Opinions</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="content" id="allNotes">
                 <section id="javascript-section">
                     <div class="note-section notes" id="notes">
-                        <h3 class="accordion-name">Notes<span class="accordion-arrow first-arrow"></span></h3>
+                        <h3 class="accordion-name" data-label="accordionName">Notes<span class="accordion-arrow first-arrow"></span></h3>
                         <ul class="inner-accordion-content" style="display: block;">
                             <li>Script tags in HTML are where you can write JS. add <blockcode>src="filename"</blockcode> to link js file to HTML file.</li>
                             <li><blockcode>console.log()</blockcode> to log to console.</li>
@@ -1591,10 +1600,11 @@
                                     </blockcode> logs 1 2 3 That is the end!</li>
                                 </ul>
                             </li>
+                            <li>To clear a form, use form reset <blockcode>form.reset()</blockcode></li>
                         </ul>
                     </div>
                     <div class="note-section resources" id="resources">
-                        <h3 class="accordion-name">Resources<span class="accordion-arrow"></span></h3>
+                        <h3 class="accordion-name" data-label="accordionName">Resources<span class="accordion-arrow"></span></h3>
                         <dl class="inner-accordion-content">
                             <dt>Create a UUID with a CDN</dt>
                                 <dd>Current most common is Version 4 UUID, as it uses randomly generated characters.</dd>
@@ -1605,7 +1615,7 @@
                         </dl>
                     </div>
                     <div class="note-section definitions" id="definitions">
-                        <h3 class="accordion-name">Definitions<span class="accordion-arrow"></span></h3>
+                        <h3 class="accordion-name" data-label="accordionName">Definitions<span class="accordion-arrow"></span></h3>
                         <dl class="inner-accordion-content">
                             <dt>DOM</dt>
                                 <dd>Document Object Model</dd>
@@ -1708,7 +1718,7 @@
                         </dl>
                     </div>
                     <div class="note-section questions" id="questions">
-                        <h3 class="accordion-name">Questions<span class="accordion-arrow"></span></h3>
+                        <h3 class="accordion-name" data-label="accordionName">Questions<span class="accordion-arrow"></span></h3>
                         <ul class="inner-accordion-content">
                             <li>Why does getElementByClassName return an array?</li>
                             <li>Is it better to use "" or '' in js?</li>
@@ -1730,7 +1740,7 @@
                         </ul>
                     </div>
                     <div class="note-section opinions" id="opinions">
-                        <h3 class="accordion-name">Opinions<span class="accordion-arrow"></span></h3>
+                        <h3 class="accordion-name" data-label="accordionName">Opinions<span class="accordion-arrow"></span></h3>
                         <ul class="inner-accordion-content">
                             <li>You should separate functions from event listeners (call the function withing the event listener istead of writing it there).</li>
                             <li>JavaScript is a single-threaded, non-blocking language.</li>

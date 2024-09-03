@@ -37,15 +37,24 @@
             </div>
         </div>
         <div class="page">
-            <nav class="nav">
-                <ul id="sectionLinks">
-                    <li data-link="notes">Notes</li>
-                    <li data-link="resources">Resources</li>
-                    <li data-link="definitions">Definitions</li>
-                    <li data-link="questions">Questions</li>
-                    <li data-link="opinions">Opinions</li>
-                </ul>
-            </nav>
+            <div class="full-head">
+                <div class="page-head">
+                    <div class="search-bar">
+                        <div class="pencil-point"></div>
+                        <input id="notesSearchInput" aria-label="Search Notes" placeholder="Search All JavaScript Notes" autoComplete="on" class="search-input" />
+                        <button class="btn search-btn" id="notesSearchButton">Search</button>
+                    </div>
+                    <nav class="nav">
+                        <ul id="sectionLinks">
+                            <li data-link="notes">Notes</li>
+                            <li data-link="resources">Resources</li>
+                            <li data-link="definitions">Definitions</li>
+                            <li data-link="questions">Questions</li>
+                            <li data-link="opinions">Opinions</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
             <div class="content">
                 <section id="firebase-section">
                     <div class="note-section notes" id="notes">
