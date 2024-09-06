@@ -8,6 +8,7 @@ const sectionLinksEl = document.getElementById('sectionLinks');
 //change header background based on page
 const bodyEl = document.getElementsByTagName('body')[0].getAttribute('data-id');
 const heroEl = document.getElementById('hero');
+
 if (bodyEl){
     heroEl.style.backgroundImage = `url('/images/${bodyEl}.jpg')`;
 }
@@ -57,22 +58,7 @@ notesSearchBtn.addEventListener('click', function(){
 
 function notesInSearch(notesContent, pattern){
     const regex = new RegExp(pattern, 'i');
-    
-    // const notesArrs = document.getElementById('test').getElementsByTagName('li');
     const contentArr = Array.prototype.slice.call(document.getElementsByClassName('inner-accordion-content'));
-    // const notesArr = 
-    // console.log(contentArr)
-    // const notesArr = contentArr.map(function(section){
-    //     console.log(section.getElementsByTagName('li'))
-    //     section.getElementsByTagName('li').forEach(function(item){
-    //         return item;
-    //     })
-        // for ()
-        // if (section.getElementsByTagName('li')){
-        //     console.log('hi')
-        // }
-
-    // })
     let notesArr = [];
 
     contentArr.forEach(function(section){
