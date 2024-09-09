@@ -78,6 +78,11 @@ h1 a:hover {
 	right: .5rem;
 }
 
+/**SUB MENU**/
+.nav-menu ul.hide-menu {
+	display: none;
+}
+
 /*MENU HAMBURGER*/
 .mobile-menu {
 	display: flex;
@@ -114,7 +119,8 @@ h1 a:hover {
 	.main-nav-bar ul {
 		display: flex;
 		flex-direction: row;
-		justify-content: space-between;
+		justify-content: center;
+		gap: 2rem;
 
 		padding: 0 1rem;
 	}
