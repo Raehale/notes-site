@@ -222,9 +222,20 @@
                                     <li class="sub-sub-list"><span>Principles of REST</span>
                                         <ul>
                                             <li>Client and Server separation</li>
-                                            <li>Statelessness</li>
+                                            <li>Statelessness - server requests are not maintained</li>
+                                            <li>Accessing "Resources"</li>
+                                            <li>Nested Resources</li>
                                         </ul>
                                     </li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Query Strings</span>
+                                <ul>
+                                    <li>Documentation sometimes refers to these as parameters.</li>
+                                    <li>A way to filter the results.</li>
+                                    <li>Adding ? in a URL allows you to add a query string. /whatever?type=thing.</li>
+                                    <li>Adding & at the end of a query string will allow you to add another query string. /whatever?type=thing&brand=thing.</li>
+                                    <li>Booleans will be parsed as a string in the API.</li>
                                 </ul>
                             </li>
                         </ul>
@@ -238,6 +249,10 @@
                                 <dd>A chrome extention that formats JSON.</dd>
                             <dt><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank" alt="MDN Documentation on fetch">Using Fetch</a></dt>
                                 <dd>The MDN Documentation on how to use fetch.</dd>
+                            <dt><a href="https://zapier.com/resources/guides/apis" target="_blank" alt="Zapier's introduction to APIs">Zapier's Introduction to APIs</a></dt>
+                                <dd>An introduction to APIs course.</dd>
+                            <dt><a href="https://restfulapi.net/" target="_blank" alt="A REST API tutorial">REST API Tutorial</a></dt>
+                                <dd>An in-depth REST API Tutorial</dd>
                         </dl>
                     </div>
                     <div class="note-section definitions" id="definitions">
@@ -268,6 +283,9 @@
                                 <dd>Hypertext Transfer Protocol</dd>
                                 <dd>HTTP is a protocol for determining how Hypertext (text) should be transferred over the internet.</dd>
                                 <dd>HTTPS is just the more secure version of HTTP.</dd>
+                            <dt>URL Parameter</dt>
+                                <dd>A variable inside the URL that acts as a placeholder for the real value (oftentimes they replace the ID of the resource).</dd>
+                                <dd>URL/whatever/:id, :id is a URL parameter.</dd>
                         </dl>
                     </div>
                     <div class="note-section questions" id="questions">
