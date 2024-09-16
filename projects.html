@@ -16,7 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
-<body data-id="api">
+<body data-id="projects" id="body">
     <header>
         <div class="hero" id="hero" id="hero">
             <h1><a href="../index.html">Coding Notes</a></h1>
@@ -31,8 +31,30 @@
         </div>
     </header>
     <main>
-        
+        <div class="projects-section" id="projectsSection">
+            <!-- All projects displayed from JS from data -->
+        </div>
     </main>
+
+    <modal class="project-modal" id="projectModal">
+        <div class="modal-inner">
+            <i class="fa-solid fa-x x-out-btn" id="xOutBtn"></i>
+            <div class="clip">
+                <div class="circle"></div>
+                <div class="rectangle"></div>
+            </div>
+            <div class="modal-content">
+                <h2 id="projectModalTitle" class="project-modal-title">TEST</h2>
+                <div class="paper-inner">
+                    <div class="paper-lines">
+                        <img src="./images/projects/hometown.png" id="projectModalImg" class="project-modal-img" />
+                        <h3 id="projectModalDesc" class="project-modal-desc"></h3>
+                        <p id="projectModalInstructions" class="project-modal-instructions"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </modal>
     <script type="module" src="/projects.js"></script>
 </body>
 </html>

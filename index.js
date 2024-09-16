@@ -23,7 +23,8 @@ navMenuEl.innerHTML = /*HTML*/
     <li><a href="/html/accessibilityNotes.html" id="acessibilityLink">Accessibility</a></li>
     <li><a href="/html/codeReviewsNotes.html" id="reviewsLink">Code Reviews</a></li>
     <li><a href="/html/apiNotes.html" id="apisLink">APIs</a></li>
-    <li><a href="/html/miscNotes.html" id="miscLink">MISC</a></li>`
+    <li><a href="/html/miscNotes.html" id="miscLink">MISC</a></li>
+    <li><a href="/projects.html" id="projectsLink">Projects</a></li>`
 
 /**sets menu display to flex */
 export function menuDisplay() {

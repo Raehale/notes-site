@@ -330,7 +330,7 @@
                             </li>
                             <li class="sub-list"><span>The Filter Method</span>
                                 <ul>
-                                    <li><blockcode>oldArray.filter(function(arrayItemName){return true})</blockcode></li>
+                                    <li><blockcode>oldArray.filter(function(arrayItemName, index, array){return true})</blockcode></li>
                                     <li>Getting only the elements we want from an array.</li>
                                     <li>Creates a new array.</li>
                                 </ul>
@@ -1600,7 +1600,31 @@
                                     </blockcode> logs 1 2 3 That is the end!</li>
                                 </ul>
                             </li>
+                            <li>Functions are a first class object in js.</li>
                             <li>To clear a form, use form reset <blockcode>form.reset()</blockcode></li>
+                            <li class="sub-list"><span>Async JavaScript</span>
+                                <ul>
+                                    <li>Code that can be run out of order. Allows a lengthy operation to start, but finish at a later time without blocking other code from running in the meantime.</li>
+                                    <li>JavaScript isn't truly asynchronous, but rather has 'callback' mechanisms in place to run commands in a different order to make things more efficient.</li>
+                                    <li>'Single-threaded' meands only one command can run at a time.</li>
+                                    <li><blockcode>
+                                        function callback() {
+                                            console.log('ran')
+                                        }
+                                        document.getElementById('button').addEventListener('click', callback)
+                                    </blockcode></li>
+                                    <li><blockcode>function callback(){
+                                            console.log('ran')
+                                        }
+                                        setTimeout(callback, 2000)</blockcode></li>
+                                    <li><blockcode>
+                                        function returnStuff(param) {
+                                            return param.thing
+                                        }
+                                        const newArray = oldArray.filter(returnStuff)
+                                    </blockcode></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <div class="note-section resources" id="resources">
@@ -1612,6 +1636,8 @@
                                     Github documentation">UUID JS</a>. To copy this, go to the readme, select the CDN Builds link, copy the import, paste it in your project (test it). 
                                     Make sure your html has <blockcode>&lt;script type="module" src="jsFile"&gt;&lt;/script&gt;</blockcode> as the script tag. Return the uuidv4 function 
                                     (you can rename that) as a function <blockcode>uuidv4()</blockcode>.</dd>
+                            <dt><a href="https://www.javascripttutorial.net/javascript-array-filter" target="_blank" alt="JavaScript Array Filter Tutorial">JavaScript Array Filter Tutorial</a></dt>
+                                <dd>Learn more about how to use the filter method on arrays with this tutorial.</dd>
                         </dl>
                     </div>
                     <div class="note-section definitions" id="definitions">
@@ -1715,6 +1741,10 @@
                                 <dd>To create</dd>
                             <dt>To call an element</dt>
                                 <dd>To take control of an element is to call the element.</dd>
+                            <dt>Synchronous JavaScript</dt>
+                                <dd>Each command must complete before the next command can execute.</dd>
+                                <dd>No two commands can be running at the same time as each other.</dd>
+                                <dd>E.g. for loops, console.log(), variable declaration, just about everythning else in JavaScript.</dd>
                         </dl>
                     </div>
                     <div class="note-section questions" id="questions">
