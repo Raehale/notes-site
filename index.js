@@ -11,7 +11,7 @@ mobileMenuEl.addEventListener('click', function() {
 
 /**Renders menu items */
 navMenuEl.innerHTML = /*HTML*/
-    `<li><a href="#" id="languages" class="parentMenuItem">Languages</a>
+    `<li><a href="#" id="languages" class="parentMenuItem">Languages <i class="fa-solid fa-angle-down" data-arrow="languages"></i></a>
         <ul class="sub-menu hide-menu" data-parent="languages">
             <li><a href="/html/htmlNotes.html" id="htmlLink">HTML</a></li>
             <li><a href="/html/cssNotes.html" id="cssLink">CSS</a></li>
@@ -40,11 +40,18 @@ export function menuDisplay() {
 const languagesParentTab = document.getElementById('languages');
 
 languagesParentTab.addEventListener('click', function(event) {
-    const selectedMenuItem = event.target.id
+    const selectedMenuItemId = event.target.id;
+
+    document.querySelectorAll('[data-arrow]').forEach(function(arrow) {
+        if (arrow.dataset.arrow === selectedMenuItemId) {
+            arrow.classList.toggle('fa-angle-down');
+            arrow.classList.toggle('fa-angle-up');
+        }
+    })
+
     Array.from(document.getElementsByClassName('sub-menu')).forEach( function(menuList){
-        console.log(menuList.dataset.parent)
-        if (menuList.dataset.parent === selectedMenuItem) {
-            menuList.classList.add('hide-menu')
+        if (menuList.dataset.parent === selectedMenuItemId) {
+            menuList.classList.toggle('hide-menu');
         }
     });
 });

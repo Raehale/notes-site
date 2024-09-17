@@ -78,6 +78,14 @@ h1 a:hover {
 	right: .5rem;
 }
 
+.main-nav-bar ul.sub-menu {
+	display: grid;
+	gap: 0;
+
+	padding: 1rem;
+}
+
+
 /**SUB MENU**/
 .nav-menu ul.hide-menu {
 	display: none;
