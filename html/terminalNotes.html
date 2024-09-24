@@ -74,10 +74,10 @@
                                     <li>pwd - prints out the path that you are currently in / print working directory (cd - windows)</li>
                                     <li>ls - lists the contents of a folder / of a current directiry (dlr - windows)</li>
                                     <li>ls -a - lists all the files, including hidden files (dlr /A - windows)</li>
-                                    <li>ls &ltfolder> - lists the contents of a specific folder (dlr <folder> -  windows)</li>
-                                    <li>ls <folder1>/</folder2> - we ??? </li>
-                                    <li>cd <folder> - changes ???</li>
-                                    <li> cd .. - goes one level back / one folder</li>
+                                    <li>ls &lt;folder&gt; - lists the contents of a specific folder (dlr <folder> -  windows)</li>
+                                    <li>ls &lt;folder1&gt;/&lt;/folder2&gt; - we can chain folders together to see waht's inside the folder1 (dir &lt;folder&gt; - Windows)</li>
+                                    <li>cd &lt;folder&gt; - changes the directory (as if you double-clicked on a folder).</li>
+                                    <li>cd .. - goes one level back / one folder</li>
                                     <li>open . - opens the current folder or directory in Finder (start . - windows)</li>
                                     <li>open &lt;folder&gt; - opens folder in Finder (start &lt;folder&gt; - windows)</li>
                                     <li>clear - clears the Terminal</li>
@@ -86,11 +86,11 @@
                             </li>
                             <li class="sub-list"><span>Creating and deleting folders</span>
                                 <ul>
-                                    <li>touch index.js - creates a file witht he name index.js in the directory you are currently in</li>
-                                    <li>touch index.js styles.css - creates multiple files</li>
+                                    <li>touch index.js - creates a file witht he name index.js in the directory you are currently in (ni file.js - Windows)</li>
+                                    <li>touch index.js styles.css - creates multiple files (ni file.js file.css - Windows)</li>
                                     <li>touch Oldagram/index.html - creates a file in a specific directory without being in that directory</li>
-                                    <li>mkdir unit-converter - creates</li>
-                                    <li>mkdir Projects/Scrimba/solo-project</li>
+                                    <li>mkdir unit-converter - creates a folder</li>
+                                    <li>mkdir Projects/Scrimba/solo-project-1 - createa  folder in a specific directory</li>
                                     <li>rm index.js - deletes a file</li>
                                     <li>rm Oldagram.index.js - deletes a specific file inside a folder</li>
                                     <li>rm -rf &lt;folder&gt; - deletes a folder</li>
@@ -104,45 +104,40 @@
                                     <li>Inside the Rainbow folder create a Colors folder.</li>
                                     <li>Inside the Colors folder create 7 files with the rainbow colors in .txt format (red.txt, orange.txt, etc.) and 1 file that is called skyscrapers.txt.</li>
                                     <li>Oops, the skyscrapers block our view of the rainbow, let's delete the skyscrapers.txt</li>
-                                    <li>???????</li>
+                                    <li>Open the working directory in Finder (open ./start .) to make sure that it's gone and we only have the colors.</li>
+                                    <li>Go back to the Rainbow folder and try opening it in VS Code.</li>
+                                    <li>Now to the sad part: navigate to its parent folder and delete the Rainbow folder</li>
+                                    <li>Clear the Terminal</li>
+                                    <li>Remember to run ls and pwd commands frequently to make sure you are inside the correct folders.</li>
                                 </ul>
                             </li>
                             <li class="sub-list"><span>Git</span>
                                 <ul>
-                                    <li>Git is a version control system used for tracking changes in computer files. It is generally used for source code management in software d3velopment.</li>
+                                    <li>Git is a version control system used for tracking changes in computer files. It is generally used for source code management in software development.</li>
                                     <li>Git creates checkpoints as well, you can check the history and get back to the eirlier version of it. It also allows other people to join you in editing the project at the same time as you.</li>
                                     <li>git status - checks the status of the repo</li>
-                                    <li>git init - initialises a repo</li>
+                                    <li>git init - initialises a repo of a folder we are currently in; we do it only once per project. Make sure you are in the correct folder before initialising a repo. If you cloned a repo from GitHub, you probably won't need to initialize it.</li>
                                     <li>git add . - adds the changes to the staging area</li>
                                     <li>git add file1.js file2..html file3.css - adds the selected files to the staging area</li>
                                     <li>git restore --staged file3.css - unstages a file / puts it back to the working directory</li>
                                     <li>git commit -m "Your message" - makes a commit of the sataged files</li>
-                                    <li>git push or git push origin main - pushes the project ????</li>
+                                    <li>git push or git push origin main - pushes the project to the GitHub repo.</li>
                                     <li>git log or git log --oneline - shows the history of the commits</li>
-                                    <li>Goes from working directory (This is your working space, ou create, delete, modify files) to (git add) staging (here you have the files that you wuold like to commit.) area (index) to (git commit) repository (This is where the history of your project is stored).</li>
+                                    <li>Goes from working directory (This is your working space, uou create, delete, modify files) to (git add) staging (here you have the files that you wuold like to commit.) area (index) to (git commit) repository (This is where the history of your project is stored).</li>
                                     <li>Before running git init, run git status to verify that you are not currently inside of a repo.</li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
                                 </ul>
                             </li>
                             <li class="sub-list"><span>Exercise</span>
                                 <ul>
                                     <li>Create a folder on your local machine and call it my-top-3</li>
-                                    <li>Inside that folder initializze a repo (make sure you're in the correct folder and it's not a repo).</li>
+                                    <li>Inside that folder initialize a repo (make sure you're in the correct folder and it's not a repo).</li>
                                     <li>Using the terminal create files fruits.txt, songs.txt and activities.txt.</li>
                                     <li>Stage all the files and commit them together with the message "add empty files".</li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
+                                    <li>Open in VS Code.</li>
+                                    <li>Add your 3 favorite fruits, songs, and activities and save.</li>
+                                    <li>Stage and commit each file separately following this example essage pattern: "add 3 favorite fruits".</li>
+                                    <li>Run a git command to see the history of commits.</li>
+                                    <li>Remember to run git status and pwd commands frequently to make sure you are inside the correct folders and to check the status of our files.</li>
                                 </ul>
                             </li>
                             <li class="sub-list"><span></span>
@@ -165,55 +160,21 @@
                     <div class="note-section resources" id="resources">
                         <h3 class="accordion-name" data-label="accordionName">Resources<span class="accordion-arrow"></span></h3>
                         <dl class="inner-accordion-content">
-                            <dt><a href="https://jsonlint.com/" target="_blank" alt="a site that validates json">JSON Lint</a></dt>
-                                <dd>Formats and validates your JSON code.</dd>
-                            <dt><a href="https://chromewebstore.google.com/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en" target="_blank" alt="Page to add a JSON formatter chrome extention">JSON Formatter</a></dt>
-                                <dd>A chrome extention that formats JSON.</dd>
-                            <dt><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank" alt="MDN Documentation on fetch">Using Fetch</a></dt>
-                                <dd>The MDN Documentation on how to use fetch.</dd>
-                            <dt><a href="https://zapier.com/resources/guides/apis" target="_blank" alt="Zapier's introduction to APIs">Zapier's Introduction to APIs</a></dt>
-                                <dd>An introduction to APIs course.</dd>
-                            <dt><a href="https://restfulapi.net/" target="_blank" alt="A REST API tutorial">REST API Tutorial</a></dt>
-                                <dd>An in-depth REST API Tutorial</dd>
+                            <dt></dt>
+                                <dd></dd>
                         </dl>
                     </div>
                     <div class="note-section definitions" id="definitions">
                         <h3 class="accordion-name" data-label="accordionName">Definitions<span class="accordion-arrow"></span></h3>
                         <dl class="inner-accordion-content">
-                            <dt>API</dt>
-                                <dd>Application Programming Interface</dd>
-                                <dd>An API is any tool that helps connect your program with someone else's program.</dd>
-                            <dt>Clients</dt>
-                                <dd>Any device that connects to the internet to get data from somewhere else (makes a request).</dd>
-                                <dd>Laptop, phone tablet, any smart device (watch, doorbell, robot vacuum, even a server)</dd>
-                            <dt>Server</dt>
-                                <dd>A computer that accepts requests form clients asking for something, then responds to the client with that thing (HTML page, image or file, plain data).</dd>
-                                <dd>Most likely running lynux.</dd>
-                            <dt>Request</dt>
-                                <dd>When a device asks for a resource (data, img, HTML page, authentication token, etc.).</dd>
-                                <dd>Requires a connection to the internet somehow.</dd>
-                            <dt>Response</dt>
-                                <dd>The replay to the request.</dd>
-                                <dd>Could contain the resource (HTML, JSON, data, etc.) asked for by the client.</dd>
-                                <dd>Could contain a response saying the client isn't authorized to receive the resource.</dd>
-                            <dt>JSON</dt>
-                                <dd>Javascript Object Notation</dd>
-                                <dd>The language of data on the web (mostly)</dd>
-                            <dt>Resource</dt>
-                                <dd>HTML page, JSON, an image file, etc.</dd>
-                            <dt>HTTP</dt>
-                                <dd>Hypertext Transfer Protocol</dd>
-                                <dd>HTTP is a protocol for determining how Hypertext (text) should be transferred over the internet.</dd>
-                                <dd>HTTPS is just the more secure version of HTTP.</dd>
-                            <dt>URL Parameter</dt>
-                                <dd>A variable inside the URL that acts as a placeholder for the real value (oftentimes they replace the ID of the resource).</dd>
-                                <dd>URL/whatever/:id, :id is a URL parameter.</dd>
+                            <dt></dt>
+                                <dd></dd>
                         </dl>
                     </div>
                     <div class="note-section questions" id="questions">
                         <h3 class="accordion-name" data-label="accordionName">Questions<span class="accordion-arrow"></span></h3>
                         <ul class="inner-accordion-content">
-                            <li>Why is it HTTP not HTP?</li>
+                            <li>What does &lt;file&gt; mean in the terminal?</li>
                         </ul>
                     </div>
                     <div class="note-section opinions" id="opinions">
