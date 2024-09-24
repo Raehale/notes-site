@@ -20,6 +20,7 @@ navMenuEl.innerHTML = /*HTML*/
         </ul>
     </li>
     <li><a href="/html/firebaseNotes.html" id="firebaseLink">Firebase</a></li>
+    <li><a href="/html/terminalNotes.html" id="terminalLink">Terminal</a></li>
     <li><a href="/html/accessibilityNotes.html" id="acessibilityLink">Accessibility</a></li>
     <li><a href="/html/codeReviewsNotes.html" id="reviewsLink">Code Reviews</a></li>
     <li><a href="/html/apiNotes.html" id="apisLink">APIs</a></li>
