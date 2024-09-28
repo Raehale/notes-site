@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Terminal Notes</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/notes.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:wght@100..900&family=Just+Another+Hand&family=Kalam:wght@300;400;700&family=Karla:ital,wght@0,200..800;1,200..800&family=Orbitron:wght@400..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body data-id="Workbench">
+    <header>
+        <div class="hero" id="hero" id="hero">
+            <h1><a href="../index.html">Coding Notes</a></h1>
+            <h2>Workbench</h2>
+            <h3>By Rae</h3>
+            <nav class="main-nav-bar">
+                <ul id="navMenu" class="nav-menu">
+                    <!-- rendered in js -->
+                </ul>
+                <div id="mobileMenu" class="mobile-menu"><li class="fa-solid fa-bars"></i></div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="head-sticky-note">
+            <div class="sticky-note-content">
+                <h2>Workbench</h2>
+            </div>
+        </div>
+        <div class="page">
+            <div class="full-head">
+                <div class="page-head">
+                    <div class="search-bar">
+                        <div class="pencil-point"></div>
+                        <input id="notesSearchInput" aria-label="Search Notes" placeholder="Search All Workbench Notes" autoComplete="on" class="search-input" />
+                        <button class="btn search-btn" id="notesSearchButton">Search</button>
+                    </div>
+                    <nav class="nav">
+                        <ul id="sectionLinks">
+                            <li data-link="notes">Notes</li>
+                            <li data-link="resources">Resources</li>
+                            <li data-link="definitions">Definitions</li>
+                            <li data-link="questions">Questions</li>
+                            <li data-link="opinions">Opinions</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="content">
+                <section id="html-section">
+                    <div class="note-section first-accordion notes" id="notes">
+                        <h3 class="accordion-name" data-label="accordionName">Notes<span class="accordion-arrow first-arrow"></span></h3>
+                        <ul class="inner-accordion-content" style="display: block;">
+                            <li class="sub-list"><span>Schemas</span>
+                                <ul>
+                                    <li>Schemas, pantrysoft-name, tables, find table, right click table, Select Rows</li>
+                                    <li>Schemas, pantrysoft-name, tables, find table, select table with lightning bolt icon</li>
+                                    <li>When table is selected information about the table/field will be in the block at the bottom left</li>
+                                    <li>Also shows indexes for tables</li>
+                                    <li>-bd-a is archive table</li>
+                                    <li>Select statements come back in the grid below. You can filter using the "filter rows" input field.</li>
+                                    <li>double click on the schema to focus on it (make it the target schema). The schema name is in the information box if it is selected.</li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Workbench</span>
+                                <ul>
+                                    <li>change password: server, users an priveledges, select user account, add new password, select apply in the bottom right.</li>
+                                    <li>Nothing is deleted on the first click you have to select apply.</li>
+                                    <li>If workbench is not responding, close it down and open it.</li>
+                                    <li>import dump command: open sql script, make sure dump is NEW. Make sure you delete all dumps when you no longer need the data.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Output</span>
+                                <ul>
+                                    <li>To view a whole row select it, right click, copy the row, paste it in the editor.</li>
+                                    <li>when on a table, if a field is too long to read, right click, open value in editor, text</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Editor</span>
+                                <ul>
+                                    <li>limit is at top as dropdown when table loaded</li>
+                                    <li>Editor is where you run your queries.</li>
+                                    <li>You can save scripts (used for dumps usually).</li>
+                                    <li>Lightning bolt executes command</li>
+                                    <li>You can have multiple commands in an editor. Make sure they all end in a semicolon. It will run the first, than the second.</li>
+                                    <li>If you have multiple commands in an editory, you can highlight one and select the lightning bolt to run only that one.</li>
+                                    <li>Use ctrl + f for find/find and replace</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>SQL</span>
+                                <ul>
+                                    <li>select * FROM 'schema'.table; means select all from the table on schema</li>
+                                    <li>where name like 'rae' will show all the rows with the name as rae.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>PS Facts</span>
+                                <ul>
+                                    <li>Agencies are optional. Agencies are parents over orgs, used as data warehouses. Consolidates different data, agency can run reports for all orgs under it. Not many people use it.</li>
+                                    <li>Cron, short for chronometor (time). runs jobs on a specific timer (npm) <a href="npmjs.com/package/cron">NPM JS Crons.</a> PS has two cron, a nightly and hourly cron.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="note-section resources" id="resources">
+                        <h3 class="accordion-name" data-label="accordionName">Resources<span class="accordion-arrow"></span></h3>
+                        <dl class="inner-accordion-content">
+                            <dt><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html"></a></dt>
+                                <dd></dd>
+                            <dt><a href="w3schools.com/mysql/default.asp">MySQL</a></dt>
+                                <dd>W3 Schools MySQL</dd>
+                        </dl>
+                    </div>
+                    <div class="note-section definitions" id="definitions">
+                        <h3 class="accordion-name" data-label="accordionName">Definitions<span class="accordion-arrow"></span></h3>
+                        <dl class="inner-accordion-content">
+                            <dt>Inserting</dt>
+                                <dd>Adding a new row to a table</dd>
+                            <dt>Foreign keys</dt>
+                                <dd>A reference to another table in the same schema, a cis link (linux).</dd>
+                            <dt>Triggers</dt>
+                                <dd>A stored program</dd>
+                            <dt>Views</dt>
+                                <dd>Used for consolidating and flattening data for queries/quicksight reporting</dd>
+                        </dl>
+                    </div>
+                    <div class="note-section questions" id="questions">
+                        <h3 class="accordion-name" data-label="accordionName">Questions<span class="accordion-arrow"></span></h3>
+                        <ul class="inner-accordion-content">
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="note-section opinions" id="opinions">
+                        <h3 class="accordion-name" data-label="accordionName">Opinions<span class="accordion-arrow"></span></h3>
+                        <ul class="inner-accordion-content">        
+                            <li></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="/notes.js"></script>
+</body>
+</html>
