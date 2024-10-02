@@ -140,6 +140,72 @@
                                     <li>Remember to run git status and pwd commands frequently to make sure you are inside the correct folders and to check the status of our files.</li>
                                 </ul>
                             </li>
+                            <li class="sub-list"><span>Set Up Your Git</span>
+                                <ul>
+                                    <li>Name: type your name or any name that you want <blockcode>git config --global user.name "Your Name"</blockcode></li>
+                                    <li>To check your name: <blockcode>git config user.name</blockcode></li>
+                                    <li>Email: it's better to use the same email as your GitHub account <blockcode>git config --global user.email your@email.com</blockcode></li>
+                                    <li>To check your email: <blockcode>git config user.email</blockcode></li>
+                                    <li>These can be changed later as well, but don't do it all the time.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Cloning</span>
+                                <ul>
+                                    <li>git clone url - copy the url of the repo that you created on GitHub and run this command.</li>
+                                    <li>By running this command it will create a folder with this repo in your current working directory, so make sure to navigate into the disired folder before running it.</li>
+                                    <li>before cloning run git status to verify you are not currently in a repo.</li>
+                                    <li>After cloning, you will have a copy of the repo on your local machine, and you can start working on it.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Connect GitHub repo with VS Code on your local machine</span>
+                                <ul>
+                                    <li>Create a repo in your GitHub account. </li>
+                                    <li>Copy the URL of your repository.</li>
+                                    <li>Open VS Code - Explorer - Clone Repository. Use clone when you don't have a copy of the repository on your local machine.</li>
+                                    <li>Paste the copied URL</li>
+                                    <li>Choose whhere you will store it locally. Make sure not to use spaces in your folder and file names. Use - or _ instead.</li>
+                                    <li>Now when you have your repo on VS Codce, make any changes in your files, so we can see them when we push the code up to GitHub.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Push code to GitHub</span>
+                                <ul>
+                                    <li>The structure is working directory (where you create, delete, or modify files.), use git add, then your in the staging area (Where you have the files you would like to commit), use git commit, then your in your repository (Where the history of your project is stored).</li>
+                                    <li>Open terminal.</li>
+                                    <li>Save all changes to your code.</li>
+                                    <li>Make sure you are in the correct folder. To check that, run <blockcode>pwd</blockcode> in the Terminal and it will show where you are right now. Use <blockcode>cd foldername</blockcode> to enter a folder or <blockcode>cd ..</blockcode> to go one folder back.</li>
+                                    <li><blockcode>git init</blockcode> - You cannot make use of git in the project if you don't initialize/start it first with the git init command. when you run this command in your terminal, you will also see a U symbol, which means your files are untracked. You only run this command onoce per project. You won't be able to use any git commands without initialising git first.</li>
+                                    <li>when you clone an existing repository from GitHub to your local machine, you probably already have git initialised and will not need to run git init command. But to
+                                        check if you have it initialised or not, open the Terminal, make sure you are in the folder that contains the project that you are working on, run git status. You will see a
+                                        message and if it is “fatal: not a git repository”, it is not initialised yet and you need to run git init command.</li>
+                                    <li><blockcode>git add .</blockcode> (the dot means that there are unsaved changes) - Adding the project to the staging area helps Git track your project and see changes you have made to it. To add your project to the staging area, run the
+                                        git add . command. When you run this command, you will see that the U symbol automatically changes to A. This means that your files have been added to the staging area and are now being tracked by Git, waiting to be committed. </li>
+                                    <li><blockcode>git commit -m "Your message here"</blockcode> - By running the git commit command, you are saving this particular stage and the changes to your project permanently in the Git repository. And although you
+                                        might make few changes to the project in the future and commit them as well, this particular commit you made now will still be saved in the Git repository and can be accessed anytime. So after your project has been added to the staging
+                                        area, the next thing you'll want to do is commit it by using the git commit -m “commit message" command. When you run this command, you should notice that the A symbol in the project is no longer there, and the project looks as
+                                        you'd expect once again.</li>
+                                    <li><blockcode>git push</blockcode> -  Finally push to your GitHub repository</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <div class="note-section resources" id="resources">
@@ -152,8 +218,28 @@
                     <div class="note-section definitions" id="definitions">
                         <h3 class="accordion-name" data-label="accordionName">Definitions<span class="accordion-arrow"></span></h3>
                         <dl class="inner-accordion-content">
-                            <dt></dt>
-                                <dd></dd>
+                            <dt>VS Code</dt>
+                                <dd>Where you writ your code.</dd>
+                                <dd><a href="https://code.visualstudio.com/download" alt="link to download vs code">Download VS Code</a></dd>
+                            <dt>Github Account</dt>
+                                <dd>A platform that you can use for hosting your repositories and ahve access to them from anytwhere. Additionally, it helps to share and collaborate on projects.</dd>
+                                <dd>Where you store your code.</dd>
+                                <dd><a href="https://github.com/" alt="github">Register for GitHub</a></dd>
+                            <dt>Terminal</dt> 
+                                <dd>Where you run commands.</dd>
+                            <dt>Git</dt>    
+                                <dd>The tool that is used to track the changes in your project and push the code from VS Code to GitHub.</dd>
+                                <dd>Git comes installed by default on most Mac and Lunux machines. This is how you can check that you have it installed. Open the terminal on your compuster or inside the VS Code and run the following command: git version. If it is installed you will see what version you have.</dd>
+                                <dd>If you don't have Git installed, you can download it from the official website: <a href="https://git-scm.com/downloads" alt="git download">Download Git</a>. You can follow instructions from <a href="https://github.com/git-guides/install-git" alt="guide on how to install git">github</a>.</dd>
+                            <dt>Cloning</dt>
+                                <dd>Get a copy of a GitHub repo on your local machine.</dd>
+                            <dt>Repository</dt>
+                                <dd>Repo is a personal folder that contains all the files of your project that is stored online.</dd>
+                            <dt>Untracked</dt>
+                                <dd>Represented by U in terminal.</dd>
+                                <dd>Git doesn't know the files exist yet and thus can't track the changes.</dd>
+                            <dt>Atomic Commit</dt>
+                                <dd>A commit should encopasss a single feature, change, or fix. This makes it easier to undo or rollback changes later on. It also makes your code or project easier to review.</dd>
                         </dl>
                     </div>
                     <div class="note-section questions" id="questions">
