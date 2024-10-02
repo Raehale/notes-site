@@ -186,24 +186,86 @@
                                     <li><blockcode>git push</blockcode> -  Finally push to your GitHub repository</li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span></span>
+                            <li class="sub-list"><span>When to use branches</span>
                                 <ul>
-                                    <li></li>
+                                    <li>You want to test two different layouts of a page</li>
+                                    <li>While your teammates are writing some code, you can work on a bug without breaking their code.</li>
+                                    <li>You can add styling to the same element of the page while your teammate is adding functionality to it.</li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span></span>
+                            <li>Brances allow smooth collaboration.</li>
+                            <li class="sub-list"><span>To create and swithc between branches</span>
                                 <ul>
-                                    <li></li>
+                                    <li>git branch - shows the current existing branches and which branch you are on</li>
+                                    <li>* - the branch that we are currently on is marked with an astrisk</li>
+                                    <li>git branch branchname - creates a new branch, but does not switch to it</li>
+                                    <li>git switch branchname - switches to the current branch</li>
+                                    <li>git switch -c branchname - creates and switches</li>
+                                    <li>HEAD - it kind of shows where you are at right now</li>
+                                    <li>New branch will be based upon the current HEAD. The location is very important, it will cretea a branch from the current place you are at.</li>
+                                    <li>It is recommended to add and commit your changes beofre switching branches because if there are conflicts betwen your files when swtiching with uncommitted changes, git will tell you to commit or stash first. If there are noconflicts the changes will come with you to the other branch when switching.</li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span></span>
+
+                            <li class="sub-list"><span>Delete branches</span>
                                 <ul>
-                                    <li></li>
+                                    <li>git branch -d branchname - deletes a branch that has been fully merged</li>
+                                    <li>git branch -D branchname - deletes a branch regardless iits merged status</li>
+                                    <li>You need to be on a different branch to be able to delete that branch.</li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span></span>
+                            <li class="sub-list"><span>main branch / renaming</span>
                                 <ul>
-                                    <li></li>
+                                    <li>main branch used to be called master but in the past few years both Git and GitHub are using main by default</li>
+                                    <li>If you want to rename it, use git branch -m newname</li>
+                                    <li>remember to switch to the branch you want to rename before doing this.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Excersize</span>
+                                <ul>
+                                    <li>Create a repo on GitHub, call it my2024, clone it to your local machine and opne it in VS Code</li>
+                                    <li>Create 2 files and name then coding.txt and hobbies.txt. Save and commit.</li>
+                                    <li>While on the main branch add 2 coding goals and two activities that you would like to do as a hobby. Savea nd commit. </li>
+                                    <li>Create and switch to a new branch emojis</li>
+                                    <li>Add heading to both of the files and add emojis next to each line that reflects it's content. Save and commit.</li>
+                                    <li>Switch between the emojis and main branches. one Should contain emojis in the files and the other should not.</li>
+                                    <li>switch to the main branch and merge the emojis branch into it. You should not face any conflicts here. Delete the emojis branch.</li>
+                                    <li>Add a file recipe.txt. Save and commit.</li>
+                                    <li>While on the main branch, create another branch cooking. Switch to it.</li>
+                                    <li>Add a recipe of a food that you would like to cook this year. Save and commit.</li>
+                                    <li>Go back to the main branch and add a different one. Save and commit.</li>
+                                    <li>Merge cooking branch into main. Resolve all conflicts. Save and commit.</li>
+                                    <li>On the main branch add one more coding goal, save but don't commit.</li>
+                                    <li>stash the changes.</li>
+                                    <li>swtich to the cooking branch and add a heading or an emoji. Save and commit.</li>
+                                    <li>savea nd commit</li>
+                                    <li>go back to main and pop the stashed changes</li>
+                                    <li>save to commit</li>
+                                    <li>push to github</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Merging</span>
+                                <ul>
+                                    <li>We merge branches, not secific commits.</li>
+                                    <li>We always merge to the current HEAD brancyh.</li>
+                                    <li>Switch to the branch you want to merge to (main). git switch main</li>
+                                    <li>Merge - git merge branchname</li>
+                                    <li>Now the main branch will have the updates from the branchname branch.</li>
+                                    <li>Either the branch had no conflics and you can continue working on another thing. This is called a fast-forwarding merge. There are some conflicts that need to be resolved.</li>
+                                    <li>To resolve a conflict, open the files, edit the files to remove all the conflicts, you can decide which branches content to keep or keep them both or none. Remove all the conflict markers. Save and commit.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>stashing</span>
+                                <ul>
+                                    <li>Pause the changes here while I work on a different branch without doing unnecessary commits.</li>
+                                    <li>You can stash changes and then come back to them later.</li>
+                                    <li>git stash - stores the changes somehwere so you can swithc to another branch</li>
+                                    <li>git stash pop - removes the changes from the stash and applies them to the branch</li>
+                                    <li>git stash aplpy - applies the changes to the branch while still having a acopy of these changes in the stash. Useful when you need to aplpy the changes to multiple branches.</li>
+                                    <li>git stash list - to see what we have in stash</li>
+                                    <li>git stash apply stash@{2} - applies stash by it's number</li>
+                                    <li>git stash drop stash@{2} - deletes a particular stash</li>
+                                    <li>git stash clear - clears the stash</li>
                                 </ul>
                             </li>
                         </ul>
@@ -211,8 +273,8 @@
                     <div class="note-section resources" id="resources">
                         <h3 class="accordion-name" data-label="accordionName">Resources<span class="accordion-arrow"></span></h3>
                         <dl class="inner-accordion-content">
-                            <dt></dt>
-                                <dd></dd>
+                            <dt>Git docs</dt>
+                                <dd>Not super helpful docs, but <a href="https://git-scm.com/docs" alt="git command docs">check out the different git commands</a></dd>
                         </dl>
                     </div>
                     <div class="note-section definitions" id="definitions">
