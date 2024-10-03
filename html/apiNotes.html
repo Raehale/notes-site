@@ -249,6 +249,58 @@
                                     </blockcode></li>
                                 </ul>
                             </li>
+                            <li>A promise is a promise that an operation that normally takes a bit of time will finish running eventually.</li>
+                            <li>The fetch request returns a promise object.</li>
+                            <li>The three states a promise can be in are pending, resolved or fulfilled, and rejected.</li>
+                            <li>If a promised is resolved or fulfilled, it means the task we wanted to perform finished successfully.</li>
+                            <li>To tell the code to do something only after the promise is resolved, use the <blockcode>.then()</blockcode> method.</li>
+                            <li class="sub-list"><span>Rejected Promises</span>
+                                <ul>
+                                    <li>A promise becomes rejected if an error is thrown inside any of the <blockcode>.then()</blockcode> blocks or if a programmer manually calls <blockcode>Promise.reject()</blockcode> (less common).</li>
+                                    <li><blockcode>
+                                        fetch("INCORRECT API URL")
+                                            .then(res => res.json())
+                                            .then(data => console.log(data.something.somethingelse))
+                                    </blockcode> returns error, TypeError: Cannot read property 'somethingelse' of undefined. unhandledrejection, PromiseRejectionEvent</li>
+                                    <li><blockcode>
+                                        fetch("INCORRECT API URL")
+                                            .then(res => res.json())
+                                            .then(data => {
+                                                console.log(data)
+                                                throw Error("I'm an error!")
+                                            })
+                                    </blockcode> returns Error: I'm an error! unhandledrejection, PromiseRejectionEvent</li>
+                                    <li><blockcode>
+                                        fetch("INCORRECT API URL")
+                                            .then(res => res.json())
+                                            .then(data => {
+                                                console.log(data)
+                                                throw Error("I'm an error!")
+                                            })
+                                            .catch(err => console.log("Something went wrong!"))
+                                    </blockcode> returns Something went wrong!</li>
+                                </ul>
+                            </li>
+                            <li><blockcode>
+                                fetch("incorrect api url")
+                                .then(res => {
+                                    console.log(res.ok)
+                                    console.log(res.status)
+                                })
+                            </blockcode>returns false and 404.</li>
+                            <li><blockcode>
+                                fetch("incorrect api url")
+                                .then(res => {
+                                    if (!res.ok) {
+                                        throw Error("special error message")
+                                    }
+                                    return res.json()
+                                })
+                                .then(data => {
+                                    console.log(data)
+                                })
+                                .catch(err => console.log(err))
+                            </blockcode>returns Error: special error message</li>
                         </ul>
                     </div>
                     <div class="note-section resources" id="resources">
