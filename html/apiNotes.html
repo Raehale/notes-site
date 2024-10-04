@@ -249,6 +249,16 @@
                                     </blockcode></li>
                                 </ul>
                             </li>
+                            <li class="sub-list"><span>Geolocation</span>
+                                <ul>
+                                    <li>To get the users longitude and latitude: <blockcode>
+                                        navigator.geolocation.getCurrentPosition((position) => {
+                                            console.log(position.coords.latitude)
+                                            console.log(position.coords.longitude)
+                                        })
+                                    </blockcode></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <div class="note-section resources" id="resources">
@@ -264,6 +274,11 @@
                                 <dd>An introduction to APIs course.</dd>
                             <dt><a href="https://restfulapi.net/" target="_blank" alt="A REST API tutorial">REST API Tutorial</a></dt>
                                 <dd>An in-depth REST API Tutorial</dd>
+                            <dt>Using a weather API</dt>
+                                <dd><a href="https://openweathermap.org/current#geo" alt="A weather API">OpenWeather map</a> will get the users weather by location.</dd>
+                                <dd><a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API#getting_the_current_position" alt="MDN Docs on Geolocation API">MDN Docs</a> about using the geolocation api</dd>
+                                <dd><a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition" alt="MDN Docs on getCurrentPosition()">MDN Docs</a> about the getCurrentPosition() method.</dd>
+                                <dd>Be sure your computer is allowing location access to your browser.</dd>
                         </dl>
                     </div>
                     <div class="note-section definitions" id="definitions">
