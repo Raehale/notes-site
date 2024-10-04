@@ -258,6 +258,23 @@
                                         })
                                     </blockcode></li>
                                     <li>The position coords returns accuracy, altitude, altituceAccuracy, heading, latitude, longitude, speed, and __proto__. The timestamp returns a timestamp.</li>
+                                    <li>To insert the weather icon: <blockcode>
+                                        navigator.geolocation.getCurrentPosition(position => {
+                                            fetch(`https://URL/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=imperial`)
+                                                .then(res => {
+                                                    if (!res.ok) {
+                                                        throw Error("Weather data not available")
+                                                    }
+                                                    return res.json()
+                                                })
+                                                .then(data => {
+                                                    console.log(data)
+                                                    const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+                                                    document.getElementById('weather').innerHTML = `<img src="${iconUrl}" alt="weather icon">`
+                                                })
+                                                .catch(err => console.error(err))
+                                        });
+                                    </blockcode></li>
                                 </ul>
                             </li>
                         </ul>
