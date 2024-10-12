@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>UI Design Notes</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/notes.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:wght@100..900&family=Just+Another+Hand&family=Kalam:wght@300;400;700&family=Karla:ital,wght@0,200..800;1,200..800&family=Orbitron:wght@400..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body data-id="uidesign">
+    <header>
+        <div class="hero" id="hero" id="hero">
+            <h1><a href="../index.html">Coding Notes</a></h1>
+            <h2>UI Design</h2>
+            <h3>By Rae</h3>
+            <nav class="main-nav-bar">
+                <ul id="navMenu" class="nav-menu">
+                    <!-- rendered in js -->
+                </ul>
+                <div id="mobileMenu" class="mobile-menu"><li class="fa-solid fa-bars"></i></div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="head-sticky-note">
+            <div class="sticky-note-content">
+                <h2>UI Design</h2>
+                <p>Access Real Data</p>
+                <p>Build more interesting apps</p>
+                <p>Prepare to learn full-stack</p>
+            </div>
+        </div>
+        <div class="page">
+            <div class="full-head">
+                <div class="page-head">
+                    <div class="search-bar">
+                        <div class="pencil-point"></div>
+                        <input id="notesSearchInput" aria-label="Search Notes" placeholder="Search All UI Design Notes" autoComplete="on" class="search-input" />
+                        <button class="btn search-btn" id="notesSearchButton">Search</button>
+                    </div>
+                    <nav class="nav">
+                        <ul id="sectionLinks">
+                            <li data-link="notes">Notes</li>
+                            <li data-link="resources">Resources</li>
+                            <li data-link="definitions">Definitions</li>
+                            <li data-link="questions">Questions</li>
+                            <li data-link="opinions">Opinions</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="content">
+                <section id="html-section">
+                    <div class="note-section first-accordion notes" id="notes">
+                        <h3 class="accordion-name" data-label="accordionName">Notes<span class="accordion-arrow first-arrow"></span></h3>
+                        <ul class="inner-accordion-content" style="display: block;">
+                            <li class="sub-list"><span>design Patterns</span>
+                                <ul>
+                                    <li>Dark Mode</li>
+                                    <li>Card Layouts</li>
+                                    <li>Modal dialogs</li>
+                                    <li>Shopping carts</li>
+                                    <li>Breadcrumbs</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Design Roles</span>
+                                <ul>
+                                    <li class="sub-sub-list"><span>User Researcher</span>
+                                        <ul>
+                                            <li>Understand user behaviors and needs.</li>
+                                            <li>Gather and analyze user data.</li>
+                                            <li>Conduyct surveys, interviews, and usability testing</li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-sub-list"><span>UX Designer</span>
+                                        <ul>
+                                            <li>Responsible for the overall feel of the product.</li>
+                                            <li>Focus on how users will interact with the product.</li>
+                                            <li>Use wireframing tools like Balsamiq or prototyping tools like Figma or Adobe XD</li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-sub-list"><span>UI Designer</span>
+                                        <ul>
+                                            <li>Focus on designing the user interface of a site.</li>
+                                            <li>Create detailed mockups developers use to build the final product.</li>
+                                        </ul>
+                                    </li>
+                                    <li>Padding sweet spot is 1.3em-1.9em</li>
+                                    <li>Line height should be around 1.5</li>
+                                    <li>Think of every element as having a series of rows and columns.</li>
+                                    <li>Add equal whitespace in container.</li>
+                                    <li>WCAG 2.5 Contrast Guidlines (minimum AA) say the visual presentation of text and images of text has a contrast ration of at 
+                                        least 4.5:1, except for large text which should have a contrast ratio of at least 3:1.
+                                    </li>
+                                    <li>WCAG 2.5 Contrast Guidlines (enhanced AAA) say the visual presentation of text and images of text has a contrast ration of at 
+                                        least 7:1, except for large text which should have a contrast ratio of at least 4.5:1.
+                                    </li>
+                                    <li>The size of every UI element must be carefully considered.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="note-section resources" id="resources">
+                        <h3 class="accordion-name" data-label="accordionName">Resources<span class="accordion-arrow"></span></h3>
+                        <dl class="inner-accordion-content">
+                            <dt>Web Style Guides</dt>
+                                <dd><a href="https://webstyleguide.com/">Web Style Guide by Patrick J. Lynch and Sarah Horton</a></dd>
+                            <dt>Anthony Hobday Safe Rules</dt>
+                                <dd><a href="https://anthonyhobday.com/sideprojects/saferules/">Safe rules to follow on UI Design</a></dd>
+                            <dt>16 UI Design Tips</dt>
+                                <dd><a href="https://www.adhamdannaway.com/blog/ui-design/ui-design-tips">16 UI Design Tips That Make a Big Impact</a></dd>
+                            <dt>Designing for the web</dt>
+                                <dd><a href="https://designingfortheweb.co.uk/">A blog on the steps to designing.</a></dd>
+                            <dt>The Shape of Design</dt>
+                                <dd><a href="https://shapeofdesignbook.com/">A book on design.</a></dd>
+                        </dl>
+                    </div>
+                    <div class="note-section definitions" id="definitions">
+                        <h3 class="accordion-name" data-label="accordionName">Definitions<span class="accordion-arrow"></span></h3>
+                        <dl class="inner-accordion-content">
+                            <dt>UI Design</dt>
+                                <dd>User Interface Design</dd>
+                            <dt>UX Design</dt>
+                                <dd>User Experience Design</dd>
+                            <dt>Design Patterns</dt>
+                                <dd>Commonly used solutions to common problems in software design.</dd>
+                            <dt>Dark Mode</dt>
+                                <dd>Dark mode is a color scheme that uses light-colored text, icons, and graphical elements on a dark background.</dd>
+                            <dt>Card Layouts</dt>
+                                <dd>Card layouts are a design pattern that groups information into cards that can be easily rearranged and reorganized.</dd>
+                            <dt>Modal Dialogs</dt>
+                                <dd>Modal dialogs are a type of dialog that appears on top of the main content and requires the user to interact with it before they can continue.</dd>
+                            <dt>Shopping Carts</dt>
+                                <dd>Shopping carts are a design pattern that allows users to add items to a cart and then proceed to checkout.</dd>
+                            <dt>Breadcrumbs</dt>
+                                <dd>Breadcrumbs are a design pattern that shows the user's current location within a website or application.</dd>
+                            <dt>User Testing</dt>
+                                <dd>User testing includes A/B testing, heatmaps, and user behavior analytics.</dd>
+                            <dt>White Space</dt>
+                                <dd>The empty space between the elements in your user interface.</dd>
+                            <dt>Alignment</dt>
+                                <dd>Alignment is the process of ensuring that every element is positioned correctly in relation to other elements.</dd>
+                            <dt>Contrast</dt>
+                                <dd>Contrast is being in a strikingly different state from something else.</dd>
+                        </dl>
+                    </div>
+                    <div class="note-section questions" id="questions">
+                        <h3 class="accordion-name" data-label="accordionName">Questions<span class="accordion-arrow"></span></h3>
+                        <ul class="inner-accordion-content">
+                        </ul>
+                    </div>
+                    <div class="note-section opinions" id="opinions">
+                        <h3 class="accordion-name" data-label="accordionName">Opinions<span class="accordion-arrow"></span></h3>
+                        <ul class="inner-accordion-content">        
+                            <li>Use em for padding.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="/notes.js"></script>
+</body>
+</html>
