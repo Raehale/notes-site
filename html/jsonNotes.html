@@ -1,0 +1,16 @@
+<ul>
+    <li>A file chrome extentions require to exist to provide basic information.</li>
+    <li>To save an icon.png file to chrome as an extention: <blockcode>
+        {
+            "manifest_version": 3, //most current manifest version
+            "name": "name that's displayed"
+            "version": "1.0.0", //version that increments as we progress using semantic versioning
+            "action": {
+                "default_icon": "icon.png"
+            },
+            "chrome_url_overrides": {
+                "newtab": "file you want to show"
+            }
+        }
+    </blockcode></li>
+</ul>
