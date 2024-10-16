@@ -532,6 +532,40 @@
                                             <li><blockcode>grid-template-columns: repeat(auto-fit, minmax( 100px, 1fr));</blockcode></li>
                                         </ul>
                                     </li>
+                                    <li>You can import font in CSS files by using <blockcode>
+                                        @import url('fontURL');
+                                    </blockcode></li>
+                                    <li>To center something vertically using grid, use <blockcode>place-content: center</blockcode> and in the body use <blockcode>height: 100vh;</blockcode></li>
+                                    <li>When using the before phseudo element on an element change the parent to position relative and the before to position absolute.</li>
+                                    <li>A color stop based gradient <blockcode>background: linear-gradient(0deg, rgba(34,34,34,1) 32%, rgba(28,28,28,1) 32%, rgba(28,28,28,1) 100%);</blockcode>
+                                        creates two grey blocks
+                                    </li>
+                                    <li>To underline text <blockcode>
+                                        parentEl {
+                                            position: relative;
+                                        }
+                                        parentEl:before {
+                                            position: absolute;
+                                            content: '';
+                                            height: 0.2em;
+                                            width: 80%;
+                                            bottom: 0.5em;
+                                            z-index; -1;
+                                            background: background-color;
+                                        }
+                                    </blockcode></li>
+                                    <li>To make a watermark behind text <blockcode>
+                                        parentClass:before {
+                                            content: 'watermark content';
+                                            font-size: 15em;
+                                            position: absolute;
+                                            color: color with minimal contrast to background;
+                                            z-index; -1;
+                                            white-space: nowrap;
+                                            left: 30%;
+                                            top: 15%;
+                                        }
+                                    </blockcode></li>
                                 </ul>
                             </li>
                         </ul>
