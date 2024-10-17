@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>ES6+ Notes</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/notes.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:wght@100..900&family=Just+Another+Hand&family=Kalam:wght@300;400;700&family=Karla:ital,wght@0,200..800;1,200..800&family=Orbitron:wght@400..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body data-id="es6">
+    <header>
+        <div class="hero" id="hero">
+            <h1><a href="../index.html">Coding Notes</a></h1>
+            <h2>ES6+</h2>
+            <h3>By Rae</h3>
+            <nav class="main-nav-bar">
+                <ul id="navMenu" class="nav-menu">
+                    <!-- rendered in js -->
+                </ul>
+                <div id="mobileMenu" class="mobile-menu"><li class="fa-solid fa-bars"></i></div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="head-sticky-note">
+            <div class="sticky-note-content">
+                <h2>ES6+</h2>
+                <ul>
+                    <li>Runs JS</li>
+                    <li>Writing less code while still being readable and maintainable</li>
+                </ul>
+            </div>
+        </div>
+        <div class="page">
+            <div class="full-head">
+                <div class="page-head">
+                    <div class="search-bar">
+                        <div class="pencil-point"></div>
+                        <input id="notesSearchInput" aria-label="Search Notes" placeholder="Search All ES6+ Notes" autoComplete="on" class="search-input" />
+                        <button class="btn search-btn" id="notesSearchButton">Search</button>
+                    </div>
+                    <nav class="nav">
+                        <ul id="sectionLinks">
+                            <li data-link="notes">Notes</li>
+                            <li data-link="resources">Resources</li>
+                            <li data-link="definitions">Definitions</li>
+                            <li data-link="questions">Questions</li>
+                            <li data-link="opinions">Opinions</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="content">
+                <section id="react-section">
+                    <div class="note-section notes" id="notes">
+                        <h3 class="accordion-name" data-label="accordionName">Notes<span class="accordion-arrow first-arrow"></span></h3>
+                        <ul class="inner-accordion-content" style="display: block;">
+                            <li class="sub-sub-list"><span>Template Literals</span>
+                                <ul>
+                                    <li><blockcode>
+                                        `${word1} ${word2}`
+                                    </blockcode></li>
+                                    <li><blockcode>
+                                        `${num1 + num2}`
+                                    </blockcode></li>
+                                    <li><blockcode>
+                                        `${word1}
+                                        ${word2}`
+                                    </blockcode> Will show on multiple lines.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Destructuring Objects</span>
+                                <ul>
+                                    <li><blockcode>
+                                        const obj = {
+                                            key1: 'value1'
+                                            key2: 'value2'
+                                            key3: {
+                                                key31: 'value31'
+                                            }
+                                        }
+                                        const { key1, key2, key3: { key31 } } = obj
+                                        key1
+                                        key2
+                                        key31
+                                    </blockcode></li>
+                                    <li>Allows you to grab objects without referencing the object.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Destructuring Arrays</span>
+                                <ul>
+                                    <li>let [value1, value2, value3] = [
+                                            'value1',
+                                            'value2',
+                                            'value3'
+                                        ]
+                                        value1
+                                        value2
+                                        value3
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="note-section resources" id="resources">
+                        <h3 class="accordion-name" data-label="accordionName">Resources<span class="accordion-arrow"></span></h3>
+                        <dl class="inner-accordion-content">
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                    </div>
+                    <div class="note-section definitions" id="definitions">
+                        <h3 class="accordion-name" data-label="accordionName">Definitions<span class="accordion-arrow"></span></h3>
+                        <dl class="inner-accordion-content">
+                            <dt></dt>
+                            <dd></dd>
+                        </dl>
+                    </div>
+                    <div class="note-section questions" id="questions">
+                        <h3 class="accordion-name" data-label="accordionName">Questions<span class="accordion-arrow"></span></h3>
+                        <ul class="inner-accordion-content">
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="note-section opinions" id="opinions">
+                        <h3 class="accordion-name" data-label="accordionName">Opinions<span class="accordion-arrow"></span></h3>
+                        <ul class="inner-accordion-content">
+                            <li></li>
+                        </ul>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="/notes.js"></script>
+</body>
+</html>
