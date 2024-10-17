@@ -107,9 +107,302 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span></span>
+                            <li class="sub-list"><span>Object Literal</span>
                                 <ul>
-                                    <li></li>
+                                    <li><blockcode>
+                                        function functionName(param1, param2) {
+                                            const newObj = { param1, param2 }
+                                        }
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>For Of Loop</span>
+                                <ul>
+                                    <li><blockcode>
+                                        let arr = [1, 2, 3]
+                                        let total = 0
+                                        for (const num of arr) {
+                                            total += num
+                                        }
+                                    </blockcode></li>
+                                    <li><blockcode>
+                                        let str = 'hello'
+                                        for (const letter of str) {
+                                            console.log(letter)
+                                        }
+                                    </blockcode></li>
+                                    <li><blockcode>
+                                        const arr = [
+                                            { name: 'name1', age: 1 },
+                                            { name: 'name2', age: 2 },
+                                            { name: 'name3', age: 3 }
+                                        ]
+
+                                        for (const { name, age } of arr) {
+                                            console.log(name, age)
+                                        }
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Spread Operator</span>
+                                <ul>
+                                    <li><blockcode>
+                                        const arr1 = [1, 2, 3]
+                                        const arr2 = [4, 5, 6]
+                                        const arr3 = [...arr1, ...arr2]
+                                    </blockcode></li>
+                                    <li>Creates a new copy of the array.</li>
+                                    <li><blockcode>
+                                        const obj1 = { key1: 'value1' }
+                                        const obj2 = { key2: 'value2' }
+                                        const obj3 = { ...obj1, ...obj2 }
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>The Rest Operator</span>
+                                <ul>
+                                    <li><blockcode>
+                                        function sum(...nums) {
+                                            return nums.reduce((total, num) => total + num)
+                                        }
+                                        sum(1, 2, 3, 4, 5)
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Arrow Functions</span>
+                                <ul>
+                                    <li><blockcode>
+                                        const add = (num1, num2) => num1 + num2
+                                    </blockcode>If you only have one line you can return on the same line.</li>
+                                    <li><blockcode>
+                                        const add = (num1, num2) => {
+                                            return num1 + num2
+                                        }
+                                    </blockcode></li>
+                                    <li><blockcode>
+                                        const add = num => num + 1
+                                    </blockcode> If you only have one param you can remove the parenthasis</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Default Params</span>
+                                <ul>
+                                    <li><blockcode>
+                                        function add(num1, num2 = 1) {
+                                            return num1 + num2
+                                        }
+                                    </blockcode></li>
+                                    <li>Used for when you don't always have an argument for the parameter with the default.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>includes()</span>
+                                <ul>
+                                    <li><blockcode>
+                                        const arr = [1, 2, 3]
+                                        arr.includes(2)
+                                    </blockcode></li>
+                                    <li>Not supported by internet explorer.</li>
+                                    <li>expects an exact match.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Let and Const</span>
+                                <ul>
+                                    <li>variable hoisting issues ith var is solved by let and const, var hoists to the function scope level. <blockcode>
+                                        if (false) {
+                                            var name = 'Rae'
+                                        }
+                                    </blockcode> would return null</li>
+                                    <li>Let is a strictor version of var that uses block scope. <blockcode>
+                                        if (false) {
+                                            let name = 'Rae'
+                                        }
+                                    </blockcode> would return an undefined error, as the let doesn't exist unless it's true.</li>
+                                    <li>Const stands for constant. <blockcode>
+                                        const name = 'Rae'
+                                        name = 'Rae2'
+                                    </blockcode>Cannot be reassigned. Would return an error as name is read-only.</li>
+                                    <li>Const handles arrays differently. <blockcode>
+                                        const arr = [1, 2, 3]
+                                        arr.push(4)
+                                    </blockcode> Would work fine where as <blockcode>
+                                        const arr = [1, 2, 3]
+                                        arr = [4, 5, 6]
+                                    </blockcode> would result in a syntax error as arr is read-only.</li>
+                                    <li>Const handles objects differently. <blockcode>
+                                        const obj = { key1: 'value1' }
+                                        obj.key2 = 'value2'
+                                    </blockcode> Would work fine.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Import and Export</span>
+                                <ul>
+                                    <li>Allows us to follow solid principles, do dependancy injection, and more object oriented programming.</li>
+                                    <li>Allows code to be more modular in nature, and thus more organized.</li>
+                                    <li><blockcode>
+                                        // file1.js
+                                        export const name = 'Rae'
+                                        export const age = 30
+
+                                        // file2.js
+                                        import { name, age } from './file1.js'
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>padStart() and padEnd()</span>
+                                <ul>
+                                    <li>Allows you to add to the start/end of a string.</li>
+                                    <li><blockcode>
+                                        let example = 'example'
+                                        example.padEnd(10, 'a')
+                                    </blockcode>would result in exampleaaa</li>
+                                    <li>You can pass in just a number <blockcode>
+                                        let example = 'example'
+                                        example.padStart(10)
+                                    </blockcode> would return example with 3 empty characters at the beginning</li>
+                                    <li><blockcode>
+                                        let example = 'example'
+                                        example.padEnd(1)
+                                    </blockcode> would return example, as example is longer than one character.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Classes</span>
+                                <ul>
+                                    <li><blockcode>
+                                        class Person {
+                                            constructor(name, age = 50) {
+                                                this.name = name
+                                                this.age = age
+                                            }
+                                            greet() {
+                                                return `Hello, my name is ${this.name} and I am ${this.age} years old.`
+                                            }
+                                        }
+                                        const person1 = new Person('Rae', 25)
+                                        person1.greet()
+                                    </blockcode> would return Hello, my name is Rae and I am 25 years old.</li>
+                                    <li>You can easily change the values <blockcode>
+                                        person1.name = 'Fadumo'
+                                        person1.age = 30
+                                        person1.greet()
+                                    </blockcode>Would return Hello, my name is Fadumo and I am 30 years old.</li>
+                                    <li><blockcode>
+                                        class Person {
+                                            constructor(name, age = 50) {
+                                                this.name = name
+                                                this.age = age
+                                            }
+                                            get metaData() {
+                                                return `Name: ${this.name}, Age: ${this.age}`
+                                            }
+                                        }
+                                        const person1 = new Person('Rae', 25)
+                                        person1.metaData
+                                    </blockcode> would return Name: Rae, Age: 25.</li>
+                                    <li>You can also inherit constructors and extend them <blockcode>
+                                        class generation extends Person {
+                                            constructor(name, age, generation) {
+                                                super(name, age)
+                                                this.generation =  generation
+                                            }
+                                            metaData() {
+                                                return `${this.name} is ${this.age} years old and from the ${this.generation} generation.`
+                                            }
+                                        }
+                                        let person1 = new Person('Rae', 25, 'genz')
+                                        person1.metaData()
+                                    </blockcode> would return Rae is 25 years old and from the genz generation.</li>
+                                    <li>Be careful! It isn't always best to use this.</li>
+                                    <li>classes need constructors.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Trailing Commas</span>
+                                <ul>
+                                    <li>Debatable</li>
+                                    <li>functions can now have trailing commas.</li>
+                                    <li><blockcode>
+                                        function example(param1,) {
+                                            const example = {
+                                                key1: 'value1',
+                                                key2: 'value2',
+                                            }
+                                        }
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Promises</span>
+                                <ul>
+                                    <li>Usually used on network requests (fetching data from an API), or in an asynchronous function.</li>
+                                    <li>Promises are classes.</li>
+                                    <li><blockcode>
+                                        const promise = new Promise((resolve, reject) => {
+                                            setTimeout(() => {
+                                                if (!error) {
+                                                    resolve('success')
+                                                } else {
+                                                    reject('error')
+                                                }
+                                            }, 2000)
+                                        })
+                                        promise.then(successs => console.log(success)).catch((error) => console.log(error))
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Fetch</span>
+                                <ul>
+                                    <li>Allows you to not be dependant on jquery.</li>
+                                    <li><blockcode>
+                                        fetch("https://jsonplaceholder.typicode.com/posts")
+                                            .then(response => response.json())
+                                            .then(data => console.log(data))
+                                    </blockcode></li>
+                                    <li>response.json() maps out the body.</li>
+                                    <li>The default is a GET method.</li>
+                                    <li>To post <blockcode>
+                                        fetch("https://jsonplaceholder.typicode.com/posts", {
+                                            method: 'POST',
+                                            body: JSON.stringify({
+                                                title: 'foo',
+                                                body: 'bar',
+                                                userId: 1
+                                            })
+                                        })
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Async and Await</span>
+                                <ul>
+                                    <li><blockcode>
+                                        async function example() {
+                                            const promise = new Promise((resolve, reject) => {
+                                                setTimeout(() => {
+                                                    resolve('success')
+                                                }, 2000)
+                                            })
+                                            const result = await promise
+                                            console.log(result)
+                                        }
+                                        example()
+                                    </blockcode></li>
+                                    <li>This will ensure your function waits for the promise.</li>
+                                    <li><blockcode>
+                                        async function example() {
+                                            const response = await fetch("https://jsonplaceholder.typicode.com/posts")
+                                            const data = await response.json()
+                                            console.log(data)
+                                        }
+                                        example()
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Sets</span>
+                                <ul>
+                                    <li><blockcode>
+                                        const exampleSet = new Set([1,1,1,1,1,1,2])
+                                        exampleSet.add(5)
+                                        exampleSet.delete(1)
+                                        exampleSet.has(1)
+                                        exampleSet.clear()
+                                    </blockcode></li>
+                                    <li>A set is itterable</li>
                                 </ul>
                             </li>
                             <li class="sub-list"><span></span>
