@@ -47,11 +47,32 @@ projects.forEach(function(project) {
 function displayProjectModal(id) {
     projects.forEach(function(project) {
         if (project.id == id) {
-            document.getElementById('projectModalTitle').textContent = project.title;
-            document.getElementById('projectModalImg').src = project.img;
-            document.getElementById('projectModalImg').alt = project.title;
-            document.getElementById('projectModalDesc').textContent = project.desc;
-            document.getElementById('projectModalInstructions').innerHTML = project.instructions;
+            const contributors = project.contributors.map(contributor => {
+                return /*HTML*/`
+                        <a href="${contributor.github}" target="_blank" class="project-modal-contributor">
+                            ${contributor.name}
+                        </a>
+                    `;
+            })
+            document.getElementById("projectModalContent").innerHTML = /*HTML*/`
+                    <h2 id="projectModalTitle" class="project-modal-title">
+                        <a href="${project.url}" target="_blank" class="project-modal-link">
+                            ${project.title}
+                        </a>
+                    </h2>
+                    <div class="paper-inner">
+                        <div class="paper-lines">
+                            <a href="${project.url}" target="_blank">
+                                <img src="${project.img}" id="projectModalImg" class="project-modal-img" alt="${project.title}" />
+                            </a>
+                            <p>Contributors: ${contributors}</p>
+                            <p>Languages: ${project.languages.join(', ')}</p>
+                            <a href="${project.github}" target="_blank" class="project-modal-github">GitHub</a>
+                            <h3 id="projectModalDesc" class="project-modal-desc">${project.desc}</h3>
+                            <p id="projectModalInstructions" class="project-modal-instructions">${project.instructions}</p>
+                        </div>
+                    </div>
+                `;
         }
     })
 
