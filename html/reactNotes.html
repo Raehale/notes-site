@@ -387,10 +387,78 @@
                                     </li>
                                     <li class="sub-sub-list"><span>Set up a doc</span>
                                         <ul>
-                                            <li>Add ract scripts (react and react dom).</li>
-                                            <li>Add babel.</li>
-                                            <li>Add text/babel to modal.</li>
-                                            <li>Add ReactDom.render() to js file. render will allow you to render something that looks like html.</li>
+                                            <li>Add ract scripts (react and react dom).<blockcode>
+                                                &lt;script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"&gt;&lt;/script&gt;
+                                                &lt;script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"&gt;&lt;/script&gt;
+                                            </blockcode></li>
+                                            <li>Add babel. <blockcode>
+                                                &lt;script src="https://unpkg.com/@babel/standalone/babel.min.js"&gt;&lt;/script&gt;
+                                            </blockcode></li>
+                                            <li>Add text/babel to script as type. <blockcode>
+                                                &lt;script type="text/babel" src="js/index.js"&gt;&lt;/script&gt;
+                                            </blockcode></li>
+                                            <li>Add ReactDom.render(what you want to render, where you want to render it) to js file. render will allow you to render something that looks like html.<blockcode>
+                                                ReactDOM.render(&lt;h1&gt;Hello World&lt;/h1&gt;, document.getElementById('root'))
+                                            </blockcode></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-sub-list"><span>JS Libraries and Frameworks</span>
+                                        <ul>
+                                            <li>A library is a collection of reusable code that reduces the need to write repetitive/complex things from scratch. You control
+                                                how and when it is used. There are no or few boundaries.
+                                            </li>
+                                            <li>Frameworks have predetermined architecture. You follow a specific pattern of development. You work within the boundaries set
+                                                by the framework.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-sub-list"><span>When not to use a framework</span>
+                                        <ul>
+                                            <li>Small projects</li>
+                                            <li>Network load concerns</li>
+                                            <li>Learning curve</li>
+                                            <li>Maintenance concerns</li>
+                                            <li>Incompatibility</li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-sub-list"><span>Composable code</span>
+                                        <ul>
+                                            <li>Allows you to create custom components</li>
+                                        </ul>
+                                    </li>
+                                    <li>To assign a class in react use <blockcode>className</blockcode></li>
+                                    <li>To create your own component, create a function then return the component content <blockcode>
+                                        function Navbar() {
+                                            return (
+                                                &lt;div&gt;NavbarStuff&lt;/div&gt;
+                                            )
+                                        }
+                                        ReactDOM.render(
+                                            &lt;div&gt;
+                                            &lt;Navbar /&gt;
+                                            &lt;/div&gt;
+                                        )
+                                    </blockcode></li>
+                                    <li class="sub-sub-list"><span>Declarative</span>
+                                        <ul>
+                                            <li>Opposite of imperative, telling the computer how it should be done step by step.</li>
+                                            <li>Tell the computer waht to do, and it will figure out how to do it.</li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-sub-list"><span></span>
+                                        <ul>
+                                            <li></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-sub-list"><span></span>
+                                        <ul>
+                                            <li></li>
                                         </ul>
                                     </li>
                                     <li class="sub-sub-list"><span></span>
