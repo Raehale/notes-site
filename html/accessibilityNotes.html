@@ -130,6 +130,175 @@
                             </li>
                             <li>Use links for navigation to somewhere on the same page, within the site, or elsewhere on the internet. Use correct button vs link for accessibility.</li>
                             <li>Use <blockcode>aria-live=""</blockcode> when changing the text of something within js, so the screen-reader knows to go back and read it.</li>
+                            <li class="sub-list"><span>Assitive technologies - ATs</span>
+                                <ul>
+                                    <li>Screen Readers</li>
+                                    <li>Speech recognition software</li>
+                                    <li>Screen magnifiers</li>
+                                    <li>Alternative input devices</li>
+                                </ul>
+                            </li>
+                            <li>Using the right semantic html helps the browser feed the right information to assitive technologies.</li>
+                            <li>TO utilize the accessiblity tree through your dev tools, find the Accessibility tab  and Enable full-page accessibility tree.</li>
+                            <li class="sub-list"><span>Accessibility Testing</span>
+                                <ul>
+                                    <li>Using AT</li>
+                                    <li>Contrast Checkers</li>
+                                    <li>Automated Tools (Lighthouse, Accessibility Inspector, aXe)</li>
+                                    <li>AI Assistance</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Accessibility Guidelines</span>
+                                <ul>
+                                    <li>Web Content accessibility guidelines (WCAG) 2.0</li>
+                                    <li>WCAG Levels (A - inaccessible, AA - acceptable, AA desireable)</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Color Contrast</span>
+                                <ul>
+                                    <li>Black text on black background has a ratio of 1:1. Lowest ratio.</li>
+                                    <li>Black on white has a ratio of 1:21, the highest ratio.</li>
+                                    <li>AA - 4:5:1 contrast for normal text, 3:1 for large text (>=24px)</li>
+                                    <li>AAA - 7:1 contrast for normal text, 4:5:1 for large text (>=24px)</li>
+                                </ul>
+                            </li>
+                            <li>Instead of using just color to indicate something, use shapes and or text as well.</li>
+                            <li>There might be cultural differences for how icons are interprated.</li>
+                            <li>Use background blend mode when background image ruin text readability.<blockcode>
+                                background-color: rgba(255, 255, 255, 1);
+                                background-blend-mode: lighten;
+                            </blockcode></li>
+                            <li>Not all images should have an alternative text. This can exclude images for spacing, stylistic images, bg images ect.</li>
+                            <li>underline is a commonly understood way to make a link.</li>
+                            <li>A link shouldn't be the whole card.</li>
+                            <li>Add a period to the end of alt text to give the screen reader a pause.</li>
+                            <li>Placeholder text is not an acceptable replacement for a label. inputs should have placeholder and label.</li>
+                            <li>When making a button without the button tag be sure to use an aria-label.</li>
+                            <li>When making a radio button use fieldset around it and legend for the label.</li>
+                            <li>Make sure placeholder text isn't too light!</li>
+                            <li>CTRL + D while highlighting something will highlight the next thing like it in VS Code.</li>
+                            <li>Hold alt and press multiple locations to type in multiple locations.</li>
+                            <li>You can have a non list item in a list.</li>
+                            <li>When using a list the screen reader will announce the start and end of said list</li>
+                            <li>To accomidate user settings use rem not px.</li>
+                            <li>Buttons elements are keyboard focussable.</li>
+                            <li>Screen readers recognize button els as interactive.</li>
+                            <li>If you can use semantic html to avoid extra aria labels, do.</li>
+                            <li>role="button, switch"</li>
+                            <li>tabIndex="0"</li>
+                            <li>aria-checked="false"</li>
+                            <li class="sub-list"><span>Landmark Regions</span>
+                                <ul>
+                                    <li>nav</li>
+                                    <li>header</li>
+                                    <li>main</li>
+                                    <li>section</li>
+                                    <li>footer</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>headings</span>
+                                <ul>
+                                    <li>heading numbers should be consecutive</li>
+                                    <li>only use one h1 per page</li>
+                                    <li>apply them for structure, not style.</li>
+                                    <li>Screen readers mostly use headings for navigating.</li>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Aria live regions</span>
+                                <ul>
+                                    <li>notifications</li>
+                                    <li>page filtering</li>
+                                    <li>searches</li>
+                                    <li>aria-controlls connects the cause with the effect.</li>
+                                    <li>AriA live settings: aria-live="off" (the default) aria-live="polite" (any region that recieves updates that are important for the user to recieve but not rapid)
+                                        aria-live="assertive" (time sensitive or critical, will interupt anything else the screen reader is saying)
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Programmatic focus management</span>
+                                <ul>
+                                    <li>Controlling the browsers focus in response to certain user actions (opening a menu or dialog)</li>
+                                    <li>Used when opening modals or menus</li>
+                                    <li>After completing actions like form submissions.</li>
+                                    <li>To maintain a logical flow of navigation.</li>
+                                </ul>
+                            </li>
+                            <li>adding .focus() to an element in js will focus on that element. Avoid overusing focus.</li>
+                            <li>Mouseover is inaccessible!!! excludes users that dont use mice. Focus and blur can replace mouseover and mouseout. It's bests to just add the element to the flow.</li>
+                            <li></li>
+                            <li class="sub-list"><span>Hiding content</span>
+                                <ul>
+                                    <li>display none and visibility hidden will remove the content from the accessibility tree.</li>
+                                    <li>modals are inherantly inaccessible</li>
+                                    <li>left: 100%; tranform: translate(100%, 0); opacity: 0;</li>
+                                    <li>need to still be able to focus element</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Skip navigation link</span>
+                                <ul>
+                                    <li>Skip to main content</li>
+                                    <li>apply transition period so it doesn't disipear so fast.</li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <div class="note-section resources" id="resources">
@@ -142,8 +311,9 @@
                     <div class="note-section definitions" id="definitions">
                         <h3 class="accordion-name" data-label="accordionName">Definitions<span class="accordion-arrow"></span></h3>
                         <dl class="inner-accordion-content">
-                            <dt></dt>
-                            <dd></dd>
+                            <dt>Aria</dt>
+                                <dd>Accessible Rich Internet Applications</dd>
+                                <dd>Provides a way to make web applications and dynamic content more accessible to assistive technologies such as screen readers and voice recognition software.</dd>
                         </dl>
                     </div>
                     <div class="note-section questions" id="questions">

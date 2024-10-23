@@ -385,11 +385,30 @@
                                             </blockcode> logs Show the Details</li>
                                         </ul>
                                     </li>
-                                    <li class="sub-sub-list"><span></span>
+                                    <li class="sub-sub-list"><span>JSX</span>
                                         <ul>
-                                            <li></li>
+                                            <li>A syntax</li>
+                                            <li>Javascript XML</li>
+                                            <li>A flavor of JS that looks like HTML</li>
+                                            <li>Use className instead of class</li>
+                                            <li>JSX Creates objects</li>
+                                            <li>With JSX You can only return a single parent element.</li>
+                                            <li>You can have as many child elements as you want.</li>
+                                            <li>You can define an element in JSX then refrence it in render</li>
                                         </ul>
                                     </li>
+                                    <li>Need a package from package.JSON to load react without a CDN and import react to js file. import React from "react" and import ReactDOM from "react-dom/client"</li>
+                                    <li>ReactDOM.createRoot(location).render(content) is the new render.</li>
+                                    <li>To create a custom component make a funciton with Pascal case then return the JSX <blockcode>
+                                        function Example() {
+                                            return (
+                                                <h1>Stuff</h1>
+                                            )
+                                        }
+                                        ReactDOM.render(<Page />, location)
+                                    </blockcode></li>
+                                    <li>A react component is a function that returns React elements.</li>
+                                    <li>.js is the default for imports.</li>
                                     <li class="sub-sub-list"><span></span>
                                         <ul>
                                             <li></li>
@@ -437,7 +456,7 @@
                     <div class="note-section opinions" id="opinions">
                         <h3 class="accordion-name" data-label="accordionName">Opinions<span class="accordion-arrow"></span></h3>
                         <ul class="inner-accordion-content">
-                            <li></li>
+                            <li>Any file that houses a React Component starts with a capital letter.</li>
                         </ul>
                     </div>
 
