@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Markdown Notes</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/notes.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:wght@100..900&family=Just+Another+Hand&family=Kalam:wght@300;400;700&family=Karla:ital,wght@0,200..800;1,200..800&family=Orbitron:wght@400..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body data-id="markdown">
+    <header>
+        <div class="hero" id="hero" id="hero">
+            <h1><a href="../index.html">Coding Notes</a></h1>
+            <h2>Markdown</h2>
+            <h3>By Rae</h3>
+            <nav class="main-nav-bar">
+                <ul id="navMenu" class="nav-menu">
+                    <!-- rendered in js -->
+                </ul>
+                <div id="mobileMenu" class="mobile-menu"><li class="fa-solid fa-bars"></i></div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="head-sticky-note">
+            <div class="sticky-note-content">
+                <h2>Markdown</h2>
+                <p>Styling Text</p>
+                <p>Images</p>
+                <p>ReadMe</p>
+            </div>
+        </div>
+        <div class="page">
+            <div class="full-head">
+                <div class="page-head">
+                    <div class="search-bar">
+                        <div class="pencil-point"></div>
+                        <input id="notesSearchInput" aria-label="Search Notes" placeholder="Search All Markdown Notes" autoComplete="on" class="search-input" />
+                        <button class="btn search-btn" id="notesSearchButton">Search</button>
+                    </div>
+                    <nav class="nav">
+                        <ul id="sectionLinks">
+                            <li data-link="notes">Notes</li>
+                            <li data-link="resources">Resources</li>
+                            <li data-link="definitions">Definitions</li>
+                            <li data-link="questions">Questions</li>
+                            <li data-link="opinions">Opinions</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="content">
+                <section id="html-section">
+                    <div class="note-section first-accordion notes" id="notes">
+                        <h3 class="accordion-name" data-label="accordionName">Notes<span class="accordion-arrow first-arrow"></span></h3>
+                        <ul class="inner-accordion-content" style="display: block;">
+                            <li class="sub-list"><span>Heading</span>
+                                <ul>
+                                    <li>Add one to six # symbols efore the text. This corresponds to h1 - h6 and will determine the hierarchy level and typeface of the text.</li>
+                                    <li># Heading 1</li>
+                                    <li>## Heading 2</li>
+                                    <li>### Heading 3</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Styling Text</span>
+                                <ul>
+                                    <li>Bold text with ** or __ (Ex: **bolded text**, __bolded text__)</li>
+                                    <li>Italisize text with * or _ (Ex: *italic text*, or _italic text_)</li>
+                                    <li>Strikethrough text with ~~ (Ex: ~~strikethrough text~~)</li>
+                                    <li>Bold and Italic text with *** (Ex: ***bold and italic text***)</li>
+                                    <li>Bold text with nested Italic text (Ex: **bold text _italic text_**)</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>\ is an escape character for when you need to go to a new line</span></li>
+                            <li class="sub-list"><span>Quoting</span>
+                                <ul>
+                                    <li>Blockquote text with a > (Ex: > Blockquote text)</li>
+                                    <li>Quote code with ` (Ex: `code`)</li>
+                                    <li>Quote a block of code with ``` (Ex: ```block of code```). To close it add ``` to a new line. On github this will be copyable. You need a space below the blockquote text to escape it.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Links and Email Adresses</span>
+                                <ul>
+                                    <li>[Link Text](website.com)</li>
+                                    <li>Link text in markdown wont open in a new tab (boo) If you need to you can use HTML for a link or tell the user to right click.</li>
+                                    <li>On github you can use relative links to direct to other files in your repo. (Ex: linking to the contributing file in your readme might look liek this: [contributing.md](docs/contributing.md))</li>
+                                    <li>Link to an email address by wrapping the email in &lt;&gt; (Ex: &lt;email@email.com&gt;)</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Images</span>
+                                <ul>
+                                    <li>Link to images by adding ! in front of the square brackets [] that will wrap the alt text and parenthases () that will wrap the image URL. (Ex: ![alt text](./image.png))</li>
+                                    <li>Add a docs folder with your image directory with any screenshots for the readme.</li>
+                                    <li>Open up file explorer and drag an image into the readme file and it will place the image HTML in it.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Lists</span>
+                                <ul>
+                                    <li>Make an unordered list by preceding text with - * or +.</li>
+                                    <li>Nest lists by adding spaces in front of the list marker character.</li>
+                                    <li>You can create task lists by prefacing each item with a - a pace and a square brackets [].</li>
+                                    <li>To mark a task as complete use x inside the brackets.</li>
+                                    <li>Example: * Fruit
+                                        - grapes
+                                        - apple
+                                        - [X] Banana
+                                        - [ ] Avacado
+                                        * Vegitables
+                                        - carrot
+                                        - asparagus
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>When writing markdown in VS Code hit ctrl + K to view what it will look like on github.</span></li>
+                            <li class="sub-list"><span>What To include in your Reademe</span>
+                                <ul>
+                                    <li>Title</li>
+                                    <li>Description (what app does, tech used, challenges and goals for improving in the future)</li>
+                                    <li>Table of contents -- github wll generate a table of contents if you view the readme file in the right corner. To link to different headings to #the-heading-title.</li>
+                                    <li>Instructions and exmples for users/contributors</li>
+                                    <li>Credits (collaborators, resources used)</li>
+                                    <li>A LICENSE IF YOUR PROJECT IS OPEN SOURCE</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span><a href="https://readme.so" target="_blank">ReadMe Generator</a></span></li>
+                            <li class="sub-list"><span><a href="https://github.com/ddbeck/readme-checklist/blob/main/checklist.md" target="_blank">ReadMe Checklist</a></span></li>
+                        </ul>
+                    </div>
+                    <div class="note-section resources" id="resources">
+                        <h3 class="accordion-name" data-label="accordionName">Resources<span class="accordion-arrow"></span></h3>
+                        <dl class="inner-accordion-content">
+                            <dt></dt>
+                                <dd></dd>
+                        </dl>
+                    </div>
+                    <div class="note-section definitions" id="definitions">
+                        <h3 class="accordion-name" data-label="accordionName">Definitions<span class="accordion-arrow"></span></h3>
+                        <dl class="inner-accordion-content">
+                            <dt>Markdown</dt>
+                                <dd>An easy-to-use simplified markup language that is an alternative to using HTML.</dd>
+                                <dd>Standard HTML uses tags to surround plain text to specify how that text displays.</dd>
+                                <dd>Markdown Language simplifies formatting plain text by using keyboard strokes.</dd>
+                            <dt>Alert</dt>
+                                <dd>Alerts are markdown extention based on blockquote syntax that can be used to emphasize important information.</dd>
+                                <dd>Should be used conservatively.</dd>
+                            <dt>Markdown</dt>
+                                <dd>A readeMe is often the first item a visitor will see when visitiing your repository.</dd>
+                                <dd>Usually a simple plain text file with .txt or .md file type.</dd>
+                                <dd>A readme is a good place to land and see a summary of your project and what the code does.</dd>
+                                <dd>This may be helpful for someone who does not read programming languages.</dd>
+                        </dl>
+                    </div>
+                    <div class="note-section questions" id="questions">
+                        <h3 class="accordion-name" data-label="accordionName">Questions<span class="accordion-arrow"></span></h3>
+                        <ul class="inner-accordion-content">
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="note-section opinions" id="opinions">
+                        <h3 class="accordion-name" data-label="accordionName">Opinions<span class="accordion-arrow"></span></h3>
+                        <ul class="inner-accordion-content">        
+                            <li></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="/notes.js"></script>
+</body>
+</html>
