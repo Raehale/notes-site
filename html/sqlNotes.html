@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>SQL Notes</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/notes.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:wght@100..900&family=Just+Another+Hand&family=Kalam:wght@300;400;700&family=Karla:ital,wght@0,200..800;1,200..800&family=Orbitron:wght@400..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body data-id="sql">
+    <header>
+        <div class="hero" id="hero" id="hero">
+            <h1><a href="../index.html">Coding Notes</a></h1>
+            <h2>SQL</h2>
+            <h3>By Rae</h3>
+            <nav class="main-nav-bar">
+                <ul id="navMenu" class="nav-menu">
+                    <!-- rendered in js -->
+                </ul>
+                <div id="mobileMenu" class="mobile-menu"><li class="fa-solid fa-bars"></i></div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="head-sticky-note">
+            <div class="sticky-note-content">
+                <h2>SQL</h2>
+                <p>Structured Query Language</p>
+            </div>
+        </div>
+        <div class="page">
+            <div class="full-head">
+                <div class="page-head">
+                    <div class="search-bar">
+                        <div class="pencil-point"></div>
+                        <input id="notesSearchInput" aria-label="Search Notes" placeholder="Search All SQL Notes" autoComplete="on" class="search-input" />
+                        <button class="btn search-btn" id="notesSearchButton">Search</button>
+                    </div>
+                    <nav class="nav">
+                        <ul id="sectionLinks">
+                            <li data-link="notes">Notes</li>
+                            <li data-link="resources">Resources</li>
+                            <li data-link="definitions">Definitions</li>
+                            <li data-link="questions">Questions</li>
+                            <li data-link="opinions">Opinions</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="content">
+                <section id="html-section">
+                    <div class="note-section first-accordion notes" id="notes">
+                        <h3 class="accordion-name" data-label="accordionName">Notes<span class="accordion-arrow first-arrow"></span></h3>
+                        <ul class="inner-accordion-content" style="display: block;">
+                            <li class="sub-list"><span>Why learn SQL?</span>
+                                <ul>
+                                    <li>One of the most popular languages for development and data science.</li>
+                                    <li>Used with MySQL, PostgreSQL, Microsoft SQL, and Oracle SQL.</li>
+                                    <li>Relatively easy to learn.</li>
+                                    <li>Second most popular language for professional developers according to <a href="https://survey.stackoverflow.co/2024/technology#most-popular-technologies-language-prof" target="_blank" alt="2024 most popular languages survey for professional developers.">2024 Stack Overflow Survey</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Selecting Queries</span>
+                                <li><blockcode>Select ALL</blockcode></li>
+                                <li><blockcode>SELECT * FROM tablename;</blockcode> will get all columns in tablename.</li>
+                                <li>A semi-colon at the end of a statement lets SQL know you have finished a full statement that is ready to run.</li>
+                            </li>
+                            <li><blockcode>*</blockcode> is a wild card operator meant to get every column/row.</li>
+                            <li class="sub-list"><span>Selecting Columns</span>
+                                <ul>
+                                    <li><blockcode>SELECT columnname1, columnname2, columnname3 FROM tablename;</blockcode> will return the tablenames data for just those three columns.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list">When writing SQL it is not required that you use all caps, but it's nice and easier to read.</li>
+                            <li class="sub-list"><span>Filtering Results</span>
+                                <ul>
+                                    <li>Filter results using the WHERE clause.</li>
+                                    <li><blockcode>SELECT column1 from tablename WHERE column1 = 'string';</blockcode> will display all rows in tablename where column1 is the string 'string'.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list">SQL doesn't care about spacing or indentation, use it to format and make the code more human readable.</li>
+                            <li class="sub-list"><span>Numerical Filtering</span>
+                                <ul>
+                                    <li>Show if rows column is greater than number by <blockcode>WHERE column1 > 3;</blockcode>.</li>
+                                    <li>Show if rows column is greater than or equal to number by <blockcode>WHERE column1 >= 3;</blockcode>.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Not Equal</span>
+                                <ul>
+                                    <li>Show if rows column does not exactly equal value by <blockcode>WHERE column1 != 'value'</blockcode>.</li>
+                                    <li>Show if rows column does not exactly equal value by <blockcode>WHERE column1 &lt;&gt; 'value'</blockcode>.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span><blockcode>LIKE</blockcode> and <blockcode>NOT LIKE</blockcode></span>
+                                <ul>
+                                    <li>Used for finding posible matches.</li>
+                                    <li>You can use the <blockcode>%</blockcode> wildcard operator like <blockcode>WHERE column1 LIKE '%string%'</blockcode>. This would return any row with column1 having 'string' in the string, like 'string', 'string-otherstuff', 'other stuff string', etc.</li>
+                                    <li>You can use the <blockcode>%</blockcode> wildcard operator like <blockcode>WHERE column1 NOT LIKE '%string%'</blockcode>. This would return any row with column1 not having 'string' in the string, like 'otherstuff', 'other-stuff', 'other stuff', etc.</li>
+                                    <li>You can use the <blockcode>_</blockcode> wildcard operator like <blockcode>WHERE column1 LIKE 'string_'</blockcode>. This would return any row with column1 having 'string' in the string as well as a following character, like 'string1', 'stringb', etc.</li>
+                                    <li>You can use the <blockcode>_</blockcode> wildcard operator like <blockcode>WHERE column1 NOT LIKE 'string_'</blockcode>. This would return any row with column1 not having 'string' in the string, like 'otherstuff', 'other-stuff', 'other stuff', etc.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Wildcard Operators</span>
+                                <ul>
+                                    <li><blockcode>%</blockcode> is used for any number of any characters.</li>
+                                    <li><blockcode>_</blockcode> is used for one of any characters.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>The <blockcode>AND</blockcode> Operator</span>
+                                <ul>
+                                    <li><blockcode>WHERE column1 LIKE '%string%' AND column2 NOT LIKE 'string_';</blockcode> would return any rows with column one having 'string' with any other characters around it and column2 with 'string' and any single character after it.</li>
+                                    <li>You can add infinate <blockcode>AND</blockcode>s, just don't put the semi-colon till the end of the last one.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span><blockcode>BETWEEN</blockcode></span>
+                                <ul>
+                                    <li><blockcode>BETWEEN</blockcode> gets all cells from a column that fall between two integers, inclusive.</li>
+                                    <li><blockcode>WHERE column1 BETWEEN 1 AND 10;</blockcode> would return all rows with cells in column one that are 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>The <blockcode>OR</blockcode> Operator</span>
+                                <ul>
+                                    <li>Return one one of the conditions is true.</li>
+                                    <li><blockcode>WHERE column1 = 1 OR column2 = 2;</blockcode> would show any rows with the column1 cell equaling 1 or any rows with column2 cell equaling 2.</li>
+                                    <li>If <blockcode>AND</blockcode> comes after <blockcode>OR</blockcode> the <blockcode>AND</blockcode> is a part of the <blockcode>OR</blockcode>.</li>
+                                    <li><blockcode>WHERE column1 = 1 OR column2 = 2 AND column3 = 3;</blockcode> would show ay rows with 1 in the column1 cell or any rows with 2 in the column2 cell and 3 in the column3 cell.</li>
+                                    <li>You can surround a statement in parenthasis to group them together and separate them from any statements outside the parenthasis.</li>
+                                    <li><blockcode>WHERE (column1 = 1 OR column2 = 2) AND column3 = 3;</blockcode> would show any rows with 3 in the column3 cell and either 1 in the column1 cell or 2 in the column2 cell.</li>
+                                </ul>
+                            </li>
+                            <li>If you are going to reference a column in the <blockcode>WHERE</blockcode> you do not need to include it in the <blockcode>SELECT</blockcode>.</li>
+                            <li class="sub-list"><span>The <blockcode>IN</blockcode> Operator</span>
+                                <ul>
+                                    <li>Used to select results that are within a set of values.</li>
+                                    <li><blockcode>WHERE column1 IN ('string1', 'string2', 'string3');</blockcode> would show any rows that have column one equal to 'string1', 'string2', or 'string3'.</li>
+                                    <li>Kind of like having multiple <blockcode>OR</blockcode> clauses without writing all that.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>The <blockcode>IS</blockcode> Operator</span>
+                                <ul>
+                                    <li><blockcode>WHERE column1 IS false;</blockcode> would only display rows with the cell in column1 being false.</li>
+                                    <li>It checks if a value is null.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span><blockcode>ORDER BY</blockcode></span>
+                                <ul>
+                                    <li><blockcode>ORDER BY column1</blockcode></li>
+                                    <li>If the column is a string it will order in ascending order, if it is numberical it will order it is also ascending.</li>
+                                    <li><blockcode>ORDER BY column1 DESC</blockcode> will order by column1 in descending order.</li>
+                                    <li><blockcode>ORDER BY column1 DESC, column2</blockcode> will first order by column1 in descending order than column2 in decending order.</li>
+                                    <li><blockcode>ORDER BY column1 DESC, column2 ASC;</blockcode> will order by column1 in descending order than column2 in ascending order.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span><blockcode>LIMIT</blockcode></span>
+                                <ul>
+                                    <li><blockcode>LIMIT 1;</blockcode> would limit your results to one row.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span><blockcode>SELECT column1, column2, column3, column4 FROM tablename WHERE column1 LIKE '%string%' AND column2 IS false ORDER BY column3 LIMIT 5;</blockcode>
+                            would show top five rows in ascending order of column3 with 'string' in their cell at column1 and with column2 as false.</span></li>
+                            <li class="sub-list"><span><blockcode>COUNT</blockcode> and <blockcode>SUM</blockcode></span>
+                                <ul>
+                                    <li>Allows us to turn the values within a single column from multiple values into one single value.</li>
+                                    <li><blockcode>COUNT</blockcode>: <blockcode>SELECT COUNT(*) FROM tablename WHERE column1 IS true;</blockcode> returns the number of rows in tablename where column1 is true.</li>
+                                    <li><blockcode>SUM</blockcode>: <blockcode>SELECT SUM(column1) FROM tablename</blockcode> returns the total sum of all cells in column1.</li>
+                                    <li><blockcode>MAX</blockcode>: <blockcode>SELECT MAX(column1) FROM tablename</blockcode> returns the max value from column1.</li>
+                                    <li><blockcode>MIN</blockcode>: <blockcode>SELECT MIN(column1) FROM tablename</blockcode> returns the min value from column1.</li>
+                                    <li><blockcode>AVG</blockcode>: <blockcode>SELECT AVG(column1) FROM tablename</blockcode> returns the average of all values from column1 with lots of decimals. You can then use <blockcode>CEIL</blockcode> or <blockcode>FLOOR</blockcode> to get rid of the decimals.</li>
+                                </ul>
+                            </li>
+                            <li>You can use an alias to rename the column so <blockcode>SELECT COUNT(*) AS alias_name FROM tablename</blockcode> would return a table with the column name alias_name and a cell with the total count of rows in tablename.</li>
+                            <li class="sub-list"><span><blockcode>CEIL</blockcode> and <blockcode>FLOOR</blockcode></span>
+                                <ul>
+                                    <li><blockcode>SELECT FLOOR(AVG(column1)) FROM tablename</blockcode> will get the average of column1 and round down to the nearest whole number.</li>
+                                    <li><blockcode>SELECT CEIL(AVG(column1)) FROM tablename</blockcode> will get the average of column1 and round up to the nearest whole number.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span><blockcode>GROUP BY</blockcode></span>
+                                <ul>
+                                    <li>Used for more complex aggregates.</li>
+                                    <li><blockcode>SELECT column1, COUNT(column1) FROM tablename GROUP BY column1;</blockcode> will return two columns, column1 and the total number of times each value had been used in column1 in a count column.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span><blockcode>HAVING</blockcode></span>
+                                <ul>
+                                    <li>Allows us to write conditions which use aggregations using an aggregate column in a condition or through an error.</li>
+                                    <li><blockcode>HAVING count(column1) > 1;</blockcode> returns only rows where the count from column1 is greater than 1.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Databases are dynamic resources, we can add modify and delete data.</span>
+                                <ul>
+                                    <li>These operations are known as Data Manipulation Language (DML) or CRUD Commands.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Returning Data</span>
+                                <ul>
+                                    <li>DML Commands don't return data from the database.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span><blockcode>INSERT INTO</blockcode></span>
+                                <ul>
+                                    <li><blockcode>INSERT INTO tablename (column1, column2, column3) VALUES ('string1', 1, FALSE), ('string2', 2, TRUE);</blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span><blockcode>UPDATE</blockcode></span>
+                                <ul>
+                                    <li>Used to update previously populated data.</li>
+                                    <li><blockcode>UPDATE tablename SET column1 = TRUE WHERE column2 LIKE 'string';</blockcode> updates any rows with column2 containing 'string' to have TRUE in column1.</li>
+                                    <li><blockcode>UPDATE tablename SET column1 = TRUE, column3 = 1 WHERE column2 LIKE 'string';</blockcode> updates any rows with column2 containing 'string' to have TRUE in column1 and 1 in column3.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span><blockcode>DELETE</blockcode></span>
+                                <ul>
+                                    <li>Removes records from the table.</li>
+                                    <li><blockcode>DELETE FROM tablename WHERE column1 = 2;</blockcode> deletes all rows that have 2 in column1.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="note-section resources" id="resources">
+                        <h3 class="accordion-name" data-label="accordionName">Resources<span class="accordion-arrow"></span></h3>
+                        <dl class="inner-accordion-content">
+                            <dt></dt>
+                                <dd></dd>
+                        </dl>
+                    </div>
+                    <div class="note-section definitions" id="definitions">
+                        <h3 class="accordion-name" data-label="accordionName">Definitions<span class="accordion-arrow"></span></h3>
+                        <dl class="inner-accordion-content">
+                            <dt>SQL</dt>
+                                <dd>Structured Query Language</dd>
+                                <dd>Used to store, access, and manipulate data within a database.</dd>
+                                <dd>We write commands or queries to perform actions on tables within a database.</dd>
+                            <dt>CRUD</dt>
+                                <dd>Create, Read, Update, and Delete.</dd>
+                                <dd>These are the four main commands for manipulation.</dd>
+                        </dl>
+                    </div>
+                    <div class="note-section questions" id="questions">
+                        <h3 class="accordion-name" data-label="accordionName">Questions<span class="accordion-arrow"></span></h3>
+                        <ul class="inner-accordion-content">
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="note-section opinions" id="opinions">
+                        <h3 class="accordion-name" data-label="accordionName">Opinions<span class="accordion-arrow"></span></h3>
+                        <ul class="inner-accordion-content">        
+                            <li></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="/notes.js"></script>
+</body>
+</html>
