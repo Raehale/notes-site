@@ -80,8 +80,10 @@
                                     <li>cd .. - goes one level back / one folder</li>
                                     <li>open . - opens the current folder or directory in Finder (start . - windows)</li>
                                     <li>open &lt;folder&gt; - opens folder in Finder (start &lt;folder&gt; - windows)</li>
-                                    <li>clear - clears the Terminal</li>
+                                    <li>clear - clears the Terminal visually, no actions are done</li>
                                     <li>code . - opens in VS code, you need to connect the terminal to VS code (LINK)</li>
+                                    <li>ls .. - lists the contents of the parent directory (dir .. - Windows)</li>
+                                    <li>cd ../.. - takes you two levels back / two folders</li>
                                 </ul>
                             </li>
                             <li class="sub-list"><span>Creating and deleting folders</span>
@@ -90,6 +92,8 @@
                                     <li>touch index.js styles.css - creates multiple files (ni file.js file.css - Windows)</li>
                                     <li>touch Oldagram/index.html - creates a file in a specific directory without being in that directory</li>
                                     <li>mkdir unit-converter - creates a folder</li>
+                                    <li>rmdir unit-converter - removes a folder, only if the folder is empty.</li>
+                                    <li>rm -r unit-converter - removes a folder, even if it is not empty.</li>
                                     <li>mkdir Projects/Scrimba/solo-project-1 - createa  folder in a specific directory</li>
                                     <li>rm index.js - deletes a file</li>
                                     <li>rm Oldagram.index.js - deletes a specific file inside a folder</li>
@@ -268,6 +272,40 @@
                                     <li>git stash clear - clears the stash</li>
                                 </ul>
                             </li>
+                            <li class="sub-list"><span>Why use terminal over visual finder app?</span>
+                                <ul>
+                                    <li>File management - terminal is faster and more efficient.</li>
+                                    <li>Install packages and dependancies.</li>
+                                    <li>Control development environment.</li>
+                                    <li>Can automate repetative tasks.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Rules of Navigation in the File Tree</span>
+                                <ul>
+                                    <li>To navigate to a sibling directory you must return to the parent directory first.</li>
+                                    <li>When deleting or adding files you are defaulted to the current working directory. You can use paths to delete or create files elsewhere. <blockcode>rm ../filename.txt will remove the file filename.txt from the parent file to the one you are in.</blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>echo</span>
+                                <ul>
+                                    <li>You can use echo to print text to your terminal.</li>
+                                    <li><blockcode>echo 'text'</blockcode> would result in the word "text" printed in your terminal.</li>
+                                    <li>To print to a file you redirect echo.</li>
+                                    <li><blockcode>echo 'text' > filename.txt</blockcode> prints "text" to the file filename.txt. If upon writing the echo filename.txt does not exist, the file filename.txt will be created.</li>
+                                    <li>The redirection operator <blockcode>></blockcode> overwrites all existing content.</li>
+                                    <li>To avoid overriting and instaed append to the existing content use <blockcode>>></blockcode>.</li>
+                                    <li><blockcode>echo 'text' >> filename.txt</blockcode> adds "text" to the file filename.txt.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>cat</span>
+                                <ul>
+                                    <li><blockcode>cat</blockcode> can be used to read from files in the terminal.</li>
+                                    <li>Short for concatinate.</li>
+                                    <li><blockcode>cat filename.txt</blockcode> would return the text in filename.txt, reguardless of language.</li>
+                                    <li>To copy the text from a file to a new file use <blockcode>cat filename.txt > copyfilename.txt</blockcode>. If copyfilename.txt does not already exist cat will create it.</li>
+                                    <li>To copy the text from a file and append it to another file use <blockcode>cat filename.txt >> copyfilename.txt</blockcode>.</li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <div class="note-section resources" id="resources">
@@ -302,6 +340,12 @@
                                 <dd>Git doesn't know the files exist yet and thus can't track the changes.</dd>
                             <dt>Atomic Commit</dt>
                                 <dd>A commit should encopasss a single feature, change, or fix. This makes it easier to undo or rollback changes later on. It also makes your code or project easier to review.</dd>
+                            <dt>Command Line</dt>
+                                <dd>A user interface, also called "command line interface" or CLI that allows us to utilize the funcitons of the operating system.</dd>
+                                <dd>Works by means of typing commands instead of clicking icons like we do in GUI.</dd>
+                                <dd>CLI stands for command line interface.</dd>
+                            <dt>cd</dt>
+                                <dd>Change directory</dd>
                         </dl>
                     </div>
                     <div class="note-section questions" id="questions">
