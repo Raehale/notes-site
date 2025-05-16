@@ -18,6 +18,7 @@ navMenuEl.innerHTML = /*HTML*/
             <li><a href="/html/javascriptNotes.html" id="javascriptLink">Javascript</a></li>    
             <li><a href="/html/reactNotes.html" id="reactLink">React</a></li>
             <li><a href="/html/sqlNotes.html" id="sqlLink">SQL</a></li>
+            <li><a href="/html/markdownNotes.html" id="markdownLink">Markdown</a></li>
         </ul>
     </li>
     <li><a href="/html/firebaseNotes.html" id="firebaseLink">Firebase</a></li>
