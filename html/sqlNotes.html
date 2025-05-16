@@ -206,109 +206,22 @@
                                     <li>DML Commands don't return data from the database.</li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span></span>
+                            <li class="sub-list"><span><blockcode>INSERT INTO</blockcode></span>
                                 <ul>
-                                    <li></li>
+                                    <li><blockcode>INSERT INTO tablename (column1, column2, column3) VALUES ('string1', 1, FALSE), ('string2', 2, TRUE);</blockcode></li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span></span>
+                            <li class="sub-list"><span><blockcode>UPDATE</blockcode></span>
                                 <ul>
-                                    <li></li>
+                                    <li>Used to update previously populated data.</li>
+                                    <li><blockcode>UPDATE tablename SET column1 = TRUE WHERE column2 LIKE 'string';</blockcode> updates any rows with column2 containing 'string' to have TRUE in column1.</li>
+                                    <li><blockcode>UPDATE tablename SET column1 = TRUE, column3 = 1 WHERE column2 LIKE 'string';</blockcode> updates any rows with column2 containing 'string' to have TRUE in column1 and 1 in column3.</li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span></span>
+                            <li class="sub-list"><span><blockcode>DELETE</blockcode></span>
                                 <ul>
-                                    <li></li>
-                                </ul>
-                            </li>
-                            <li class="sub-list"><span></span>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </li>
-                            <li class="sub-list"><span></span>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </li>
-                            <li class="sub-list"><span></span>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </li>
-                            <li class="sub-list"><span></span>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </li>
-                            <li class="sub-list"><span></span>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </li>
-                            <li class="sub-list"><span></span>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </li>
-                            <li class="sub-list"><span></span>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </li>
-                            <li class="sub-list"><span></span>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </li>
-                            <li class="sub-list"><span></span>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </li>
-                            <li class="sub-list"><span></span>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </li>
-                            <li class="sub-list"><span></span>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </li>
-                            <li class="sub-list"><span></span>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </li>
-                            <li class="sub-list"><span></span>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </li>
-                            <li class="sub-list"><span></span>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </li>
-                            <li class="sub-list"><span></span>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </li>
-                            <li class="sub-list"><span></span>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </li>
-                            <li class="sub-list"><span></span>
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </li>
-                            <li class="sub-list"><span></span>
-                                <ul>
-                                    <li></li>
+                                    <li>Removes records from the table.</li>
+                                    <li><blockcode>DELETE FROM tablename WHERE column1 = 2;</blockcode> deletes all rows that have 2 in column1.</li>
                                 </ul>
                             </li>
                         </ul>
