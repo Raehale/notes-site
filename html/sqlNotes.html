@@ -167,6 +167,150 @@
                             </li>
                             <li class="sub-list"><span><blockcode>SELECT column1, column2, column3, column4 FROM tablename WHERE column1 LIKE '%string%' AND column2 IS false ORDER BY column3 LIMIT 5;</blockcode>
                             would show top five rows in ascending order of column3 with 'string' in their cell at column1 and with column2 as false.</span></li>
+                            <li class="sub-list"><span><blockcode>COUNT</blockcode> and <blockcode>SUM</blockcode></span>
+                                <ul>
+                                    <li>Allows us to turn the values within a single column from multiple values into one single value.</li>
+                                    <li><blockcode>COUNT</blockcode>: <blockcode>SELECT COUNT(*) FROM tablename WHERE column1 IS true;</blockcode> returns the number of rows in tablename where column1 is true.</li>
+                                    <li><blockcode>SUM</blockcode>: <blockcode>SELECT SUM(column1) FROM tablename</blockcode> returns the total sum of all cells in column1.</li>
+                                    <li><blockcode>MAX</blockcode>: <blockcode>SELECT MAX(column1) FROM tablename</blockcode> returns the max value from column1.</li>
+                                    <li><blockcode>MIN</blockcode>: <blockcode>SELECT MIN(column1) FROM tablename</blockcode> returns the min value from column1.</li>
+                                    <li><blockcode>AVG</blockcode>: <blockcode>SELECT AVG(column1) FROM tablename</blockcode> returns the average of all values from column1 with lots of decimals. You can then use <blockcode>CEIL</blockcode> or <blockcode>FLOOR</blockcode> to get rid of the decimals.</li>
+                                </ul>
+                            </li>
+                            <li>You can use an alias to rename the column so <blockcode>SELECT COUNT(*) AS alias_name FROM tablename</blockcode> would return a table with the column name alias_name and a cell with the total count of rows in tablename.</li>
+                            <li class="sub-list"><span><blockcode>CEIL</blockcode> and <blockcode>FLOOR</blockcode></span>
+                                <ul>
+                                    <li><blockcode>SELECT FLOOR(AVG(column1)) FROM tablename</blockcode> will get the average of column1 and round down to the nearest whole number.</li>
+                                    <li><blockcode>SELECT CEIL(AVG(column1)) FROM tablename</blockcode> will get the average of column1 and round up to the nearest whole number.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span><blockcode>GROUP BY</blockcode></span>
+                                <ul>
+                                    <li>Used for more complex aggregates.</li>
+                                    <li><blockcode>SELECT column1, COUNT(column1) FROM tablename GROUP BY column1;</blockcode> will return two columns, column1 and the total number of times each value had been used in column1 in a count column.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span><blockcode>HAVING</blockcode></span>
+                                <ul>
+                                    <li>Allows us to write conditions which use aggregations using an aggregate column in a condition or through an error.</li>
+                                    <li><blockcode>HAVING count(column1) > 1;</blockcode> returns only rows where the count from column1 is greater than 1.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Databases are dynamic resources, we can add modify and delete data.</span>
+                                <ul>
+                                    <li>These operations are known as Data Manipulation Language (DML) or CRUD Commands.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Returning Data</span>
+                                <ul>
+                                    <li>DML Commands don't return data from the database.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <div class="note-section resources" id="resources">
@@ -183,6 +327,9 @@
                                 <dd>Structured Query Language</dd>
                                 <dd>Used to store, access, and manipulate data within a database.</dd>
                                 <dd>We write commands or queries to perform actions on tables within a database.</dd>
+                            <dt>CRUD</dt>
+                                <dd>Create, Read, Update, and Delete.</dd>
+                                <dd>These are the four main commands for manipulation.</dd>
                         </dl>
                     </div>
                     <div class="note-section questions" id="questions">
