@@ -84,59 +84,165 @@
                                     <li>extracting query params</li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span></span>
+                            <li class="sub-list"><span>Package.json</span>
                                 <ul>
-                                    <li></li>
+                                    <li>Package.json is the blueprint</li>
+                                    <li>It contains metadata (name, version, author, description, etc.)</li>
+                                    <li>Simplifies collaboration (manages dependencies, defines start script)</li>
+                                    <li>Using <blockcode>npm init</blockcode> in the terminal will include creating a Package.json file for you.
+                                    It will ask for the name, version, description, entry point, test command, git repository, keywords, author, and license.</li>
+                                    <li>After creating the package.json it will look something like <blockcode>
+                                        {
+                                            "name": "entered-name",
+                                            "version": "1.0.0",
+                                            "description": "entered description",
+                                            "main": "server.js",
+                                            "scripts": {
+                                                "test": "echo \"Error: no test specified\" && exit 1",
+                                                "start": "node server.js"
+                                            },
+                                            "author": "entered author name",
+                                            "license": "ISC"
+                                        }
+                                    </blockcode></li>
+                                    <li>After creating the package.json file you can start your project by writing <blockcode>npm start</blockcode> in the terminal instead of <blockcode>node server.js</blockcode>.</li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span></span>
+                            <li>With node.js you can write javaScript into the terminal.</li>
+                            <li class="sub-list"><span>The HTTP Module</span>
                                 <ul>
-                                    <li></li>
+                                    <li>In server.js put <blockcode>import http from 'node:http'</blockcode>. You could write just <blockcode>import http from 'http'</blockcode>, but it is best practice to include node as it tells the app that it is a node module not a javaScript module. This can speed up performance.</li>
+                                    <li>In the package.json file add <blockcode>"type": "module",</blockcode> to the object below "main".</li>
+                                    <li>Allows data to be transferred over the HTTP protocol.</li>
+                                    <li>Used to create servers.</li>
+                                    <li>Used to handle requests from clients.</li>
+                                    <li>Used to provide responses to requests.</li>
+                                    <li><blockcode>
+                                        import http from 'node:http'
+
+                                        const PORT = 8000
+                                        const server = http.createServer((request, response) => {
+                                            response.end('whatever')
+                                        })
+                                        server.listen(PORT, () => console.log(`server is running on port: ${PORT}`))
+                                    </blockcode></li>
+                                    <li>The end method <blockcode>response.end()</blockcode> sends data over HTTP and ends the response. To get a response you need to be running <blockcode>npm start</blockcode></li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span></span>
+                            <li>A 200 response is success!</li>
+                            <li class="sub-list"><span>The response object</span>
                                 <ul>
-                                    <li></li>
+                                    <li class="sub-sub-list"><span>Has methods which allow us to:</span>
+                                        <ul>
+                                            <li>Specify content type</li>
+                                            <li>set status codes (200, 400 etc.)</li>
+                                            <li>provide content (html, JSON, images)</li>
+                                        </ul>
+                                    </li>
+                                    <li>The write method <blockcode>
+                                        const server = http.createServer((req, res) => {
+                                            res.write('whatever')
+                                            res.end()
+                                        })
+                                    </blockcode> allows you to write seperately from ending. You do still need to end.</li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span></span>
+                            <li class="sub-list"><span>The Request Response Cycle</span>
                                 <ul>
-                                    <li></li>
+                                    <li>The client makes an HTTP request to the server and the server sends an HTTP response to the client.</li>
+                                    <li>Example API: Client makes HTTP request containing (Method: GET, Request Path: /api, and Data: query string/ path params) to the server.
+                                        The server handles the requestion which could include filtering data, throwing an error, and generating a response. That response is than
+                                        passed from the server containing the Resourse (JSON), Content-Type (application/json), the Status code (200, 404, etc.), and the Satus message
+                                        to the client.
+                                    </li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span></span>
+                            <li class="sub-list"><span>The Request Object</span>
                                 <ul>
-                                    <li></li>
+                                    <li>Gives us access to the incoming request. The URL the client used, headers being sent, data being sent, and the method (GET, POST, DELETE).</li>
+                                    <li><blockcode>
+                                        const server = htt.createServer((req, res) => {
+                                            if (req.url === '/specific-url') {
+                                                res.write('specific to url')
+                                            }
+
+                                            res.end()
+                                        })
+                                    </blockcode></li>
+                                    <li>On the request you can get the url <blockcode>req.url</blockcode>, </li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span></span>
+                            <li class="sub-list"><span>Methods</span>
                                 <ul>
-                                    <li></li>
+                                    <li class="sub-sub-list"><span>non-exhastive list</span>
+                                        <ul>
+                                            <li>GET</li>
+                                            <li>POST</li>
+                                            <li>DELETE</li>
+                                            <li>PUT</li>
+                                            <li>PATCH</li>
+                                        </ul>
+                                    </li>
+                                    <li><blockcode>const server = http.createServer((req, res) => {
+                                            if (req.method === 'GET') {
+                                                res.end('This will be sent from the server if the request is a GET method.')
+                                            }
+                                        })
+                                    </blockcode></li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span></span>
+                            <li class="sub-list"><span>JSON</span>
                                 <ul>
-                                    <li></li>
+                                    <li>Human readble</li>
+                                    <li>HTTP is a text-based protocol. All data transferred between the client and the server must be in the form of strings.</li>
+                                    <li>To convert JSON to a string you can use stringify: <blockcode>JSON.stringify(dataToConvert)</blockcode></li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span></span>
+                            <li>Accessing the database is an async process.</li>
+                            <li class="sub-list"><span>Creating the server when waiting for data?</span>
                                 <ul>
-                                    <li></li>
+                                    <li><blockcode>
+                                        const server = http.createServer(async (req, res) => {
+                                            const dataYouWant = await getDataFromDB();
+
+                                            res.end(JSON.stringify(dataYouWant))
+                                        })
+                                    </blockcode></li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span></span>
+                            <li class="sub-list"><span>Setting the Content-Type</span>
                                 <ul>
-                                    <li></li>
+                                    <li class="sub-sub-list"><span>Common Content-Types (Mime types)</span>
+                                        <ul>
+                                            <li>application.json</li>
+                                            <li>text/html</li>
+                                            <li>text.css</li>
+                                            <li>application/javascript</li>
+                                        </ul>
+                                    </li>
+                                    <li>To change the Content-Type of a response: <blockcode>
+                                        res.setHeader("Content-Type", "application/json")
+                                    </blockcode>. Note: it is case sensitive.</li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span></span>
+                            <li class="sub-list"><span>Setting the StatusCode Property</span>
                                 <ul>
-                                    <li></li>
+                                    <li><blockcode>
+                                        res.statusCode = 200
+                                    </blockcode></li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span></span>
+                            <li class="sub-list"><span>Not Found?</span>
                                 <ul>
-                                    <li></li>
+                                    <li><blockcode>
+                                        const server= http.createServer(async (req, res) => {
+                                            if (res.url = "/bad-url") {
+                                                res.setHeader('content-Type', 'application/json')
+                                                res.statusCode = 404
+                                                res.end(JSON.stringify({error: "not found", message: "The requested route doesn't exist"}))
+                                            }
+                                        })
+                                    </blockcode></li>
                                 </ul>
                             </li>
                             <li class="sub-list"><span></span>
