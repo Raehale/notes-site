@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Node.js Notes</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/notes.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:wght@100..900&family=Just+Another+Hand&family=Kalam:wght@300;400;700&family=Karla:ital,wght@0,200..800;1,200..800&family=Orbitron:wght@400..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body data-id="node">
+    <header>
+        <div class="hero" id="hero" id="hero">
+            <h1><a href="../index.html">Coding Notes</a></h1>
+            <h2>Node.js</h2>
+            <h3>By Rae</h3>
+            <nav class="main-nav-bar">
+                <ul id="navMenu" class="nav-menu">
+                    <!-- rendered in js -->
+                </ul>
+                <div id="mobileMenu" class="mobile-menu"><li class="fa-solid fa-bars"></i></div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="head-sticky-note">
+            <div class="sticky-note-content">
+                <h2></h2>
+                <p></p>
+            </div>
+        </div>
+        <div class="page">
+            <div class="full-head">
+                <div class="page-head">
+                    <div class="search-bar">
+                        <div class="pencil-point"></div>
+                        <input id="notesSearchInput" aria-label="Search Notes" placeholder="Search All Node.js Notes" autoComplete="on" class="search-input" />
+                        <button class="btn search-btn" id="notesSearchButton">Search</button>
+                    </div>
+                    <nav class="nav">
+                        <ul id="sectionLinks">
+                            <li data-link="notes">Notes</li>
+                            <li data-link="resources">Resources</li>
+                            <li data-link="definitions">Definitions</li>
+                            <li data-link="questions">Questions</li>
+                            <li data-link="opinions">Opinions</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="content">
+                <section id="html-section">
+                    <div class="note-section first-accordion notes" id="notes">
+                        <h3 class="accordion-name" data-label="accordionName">Notes<span class="accordion-arrow first-arrow"></span></h3>
+                        <ul class="inner-accordion-content" style="display: block;">
+                            <li>Node.js allows developers to build fast and scalable applications using a single language, JavaScript.</li>
+                            <li class="sub-list"><span>Where Node.Js is Found</span>
+                                <ul>
+                                    <li>Server-rendered apps</li>
+                                    <li>Microservices</li>
+                                    <li>Backend services for mobile</li>
+                                    <li>Bots and scrapers</li>
+                                    <li>Desktop Apps</li>
+                                    <li>Automation tools</li>
+                                    <li>Internet of Things devices</li>
+                                </ul>
+                            </li>
+                            <li>Node.js is <strong>NOT</strong> a language, it's an environment in which you can write JavaScript.</li>
+                            <li class="sub-list"><span>The core HTTP model</span>
+                                <ul>
+                                    <li>creating a server</li>
+                                    <li>sending status codes (200, 400, etc.)</li>
+                                    <li>sending readers</li>
+                                    <li>handling requests/responses</li>
+                                    <li>filtering data</li>
+                                    <li>extracting query params</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Package.json</span>
+                                <ul>
+                                    <li>Package.json is the blueprint</li>
+                                    <li>It contains metadata (name, version, author, description, etc.)</li>
+                                    <li>Simplifies collaboration (manages dependencies, defines start script)</li>
+                                    <li>Using <blockcode>npm init</blockcode> in the terminal will include creating a Package.json file for you.
+                                    It will ask for the name, version, description, entry point, test command, git repository, keywords, author, and license.</li>
+                                    <li>After creating the package.json it will look something like <blockcode>
+                                        {
+                                            "name": "entered-name",
+                                            "version": "1.0.0",
+                                            "description": "entered description",
+                                            "main": "server.js",
+                                            "scripts": {
+                                                "test": "echo \"Error: no test specified\" && exit 1",
+                                                "start": "node server.js"
+                                            },
+                                            "author": "entered author name",
+                                            "license": "ISC"
+                                        }
+                                    </blockcode></li>
+                                    <li>After creating the package.json file you can start your project by writing <blockcode>npm start</blockcode> in the terminal instead of <blockcode>node server.js</blockcode>.</li>
+                                </ul>
+                            </li>
+                            <li>With node.js you can write javaScript into the terminal.</li>
+                            <li class="sub-list"><span>The HTTP Module</span>
+                                <ul>
+                                    <li>In server.js put <blockcode>import http from 'node:http'</blockcode>. You could write just <blockcode>import http from 'http'</blockcode>, but it is best practice to include node as it tells the app that it is a node module not a javaScript module. This can speed up performance.</li>
+                                    <li>In the package.json file add <blockcode>"type": "module",</blockcode> to the object below "main".</li>
+                                    <li>Allows data to be transferred over the HTTP protocol.</li>
+                                    <li>Used to create servers.</li>
+                                    <li>Used to handle requests from clients.</li>
+                                    <li>Used to provide responses to requests.</li>
+                                    <li><blockcode>
+                                        import http from 'node:http'
+
+                                        const PORT = 8000
+                                        const server = http.createServer((request, response) => {
+                                            response.end('whatever')
+                                        })
+                                        server.listen(PORT, () => console.log(`server is running on port: ${PORT}`))
+                                    </blockcode></li>
+                                    <li>The end method <blockcode>response.end()</blockcode> sends data over HTTP and ends the response. To get a response you need to be running <blockcode>npm start</blockcode></li>
+                                </ul>
+                            </li>
+                            <li>A 200 response is success!</li>
+                            <li class="sub-list"><span>The response object</span>
+                                <ul>
+                                    <li class="sub-sub-list"><span>Has methods which allow us to:</span>
+                                        <ul>
+                                            <li>Specify content type</li>
+                                            <li>set status codes (200, 400 etc.)</li>
+                                            <li>provide content (html, JSON, images)</li>
+                                        </ul>
+                                    </li>
+                                    <li>The write method <blockcode>
+                                        const server = http.createServer((req, res) => {
+                                            res.write('whatever')
+                                            res.end()
+                                        })
+                                    </blockcode> allows you to write seperately from ending. You do still need to end.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>The Request Response Cycle</span>
+                                <ul>
+                                    <li>The client makes an HTTP request to the server and the server sends an HTTP response to the client.</li>
+                                    <li>Example API: Client makes HTTP request containing (Method: GET, Request Path: /api, and Data: query string/ path params) to the server.
+                                        The server handles the requestion which could include filtering data, throwing an error, and generating a response. That response is than
+                                        passed from the server containing the Resourse (JSON), Content-Type (application/json), the Status code (200, 404, etc.), and the Satus message
+                                        to the client.
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>The Request Object</span>
+                                <ul>
+                                    <li>Gives us access to the incoming request. The URL the client used, headers being sent, data being sent, and the method (GET, POST, DELETE).</li>
+                                    <li><blockcode>
+                                        const server = htt.createServer((req, res) => {
+                                            if (req.url === '/specific-url') {
+                                                res.write('specific to url')
+                                            }
+
+                                            res.end()
+                                        })
+                                    </blockcode></li>
+                                    <li>On the request you can get the url <blockcode>req.url</blockcode>, </li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Methods</span>
+                                <ul>
+                                    <li class="sub-sub-list"><span>non-exhastive list</span>
+                                        <ul>
+                                            <li>GET</li>
+                                            <li>POST</li>
+                                            <li>DELETE</li>
+                                            <li>PUT</li>
+                                            <li>PATCH</li>
+                                        </ul>
+                                    </li>
+                                    <li><blockcode>const server = http.createServer((req, res) => {
+                                            if (req.method === 'GET') {
+                                                res.end('This will be sent from the server if the request is a GET method.')
+                                            }
+                                        })
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>JSON</span>
+                                <ul>
+                                    <li>Human readble</li>
+                                    <li>HTTP is a text-based protocol. All data transferred between the client and the server must be in the form of strings.</li>
+                                    <li>To convert JSON to a string you can use stringify: <blockcode>JSON.stringify(dataToConvert)</blockcode></li>
+                                </ul>
+                            </li>
+                            <li>Accessing the database is an async process.</li>
+                            <li class="sub-list"><span>Creating the server when waiting for data?</span>
+                                <ul>
+                                    <li><blockcode>
+                                        const server = http.createServer(async (req, res) => {
+                                            const dataYouWant = await getDataFromDB();
+
+                                            res.end(JSON.stringify(dataYouWant))
+                                        })
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Setting the Content-Type</span>
+                                <ul>
+                                    <li class="sub-sub-list"><span>Common Content-Types (Mime types)</span>
+                                        <ul>
+                                            <li>application.json</li>
+                                            <li>text/html</li>
+                                            <li>text.css</li>
+                                            <li>application/javascript</li>
+                                        </ul>
+                                    </li>
+                                    <li>To change the Content-Type of a response: <blockcode>
+                                        res.setHeader("Content-Type", "application/json")
+                                    </blockcode>. Note: it is case sensitive.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Setting the StatusCode Property</span>
+                                <ul>
+                                    <li><blockcode>
+                                        res.statusCode = 200
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Not Found?</span>
+                                <ul>
+                                    <li><blockcode>
+                                        const server= http.createServer(async (req, res) => {
+                                            if (res.url = "/bad-url") {
+                                                res.setHeader('content-Type', 'application/json')
+                                                res.statusCode = 404
+                                                res.end(JSON.stringify({error: "not found", message: "The requested route doesn't exist"}))
+                                            }
+                                        })
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Path Parameters</span>
+                                <ul>
+                                    <li><blockcode>
+                                        if (req.url.startsWith('/api/whatever') && req.method === 'GET') {
+                                            const filteredBy = req.url.split('/').pop()
+                                            const filteredData = data.filter((obj) => {
+                                            return obj[filteredBy].toLowerCase() === filteredTo.toLowerCase()
+                                            })
+                                            res.setHeader('Content-Type', 'application/json')
+                                            res.statusCode = 200
+                                            res.end(JSON.stringify(filteredData))
+                                        }
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Query Params</span>
+                                <ul>
+                                    <li>? introduces the query string.</li>
+                                    <li>key=value</li>
+                                    <li>& is breaking between key value pairs.</li>
+                                    <li><blockcode>/api?key1=value1&key2=value2</blockcode></li>
+                                    <li>Turning query params into an object: <blockcode>
+                                        const urlObj = new URL(req.url, `http://${req.headers.host}`)
+                                    </blockcode> will return an object including searchParams. <blockcode>
+                                        const queryObj = Object.fromEntries(urlObj.searchParams)
+                                    </blockcode> will return an object of the search params in the search query.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="note-section resources" id="resources">
+                        <h3 class="accordion-name" data-label="accordionName">Resources<span class="accordion-arrow"></span></h3>
+                        <dl class="inner-accordion-content">
+                            <dt></dt>
+                                <dd></dd>
+                        </dl>
+                    </div>
+                    <div class="note-section definitions" id="definitions">
+                        <h3 class="accordion-name" data-label="accordionName">Definitions<span class="accordion-arrow"></span></h3>
+                        <dl class="inner-accordion-content">
+                            <dt></dt>
+                                <dd></dd>
+                                <dd></dd>
+                        </dl>
+                    </div>
+                    <div class="note-section questions" id="questions">
+                        <h3 class="accordion-name" data-label="accordionName">Questions<span class="accordion-arrow"></span></h3>
+                        <ul class="inner-accordion-content">
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div class="note-section opinions" id="opinions">
+                        <h3 class="accordion-name" data-label="accordionName">Opinions<span class="accordion-arrow"></span></h3>
+                        <ul class="inner-accordion-content">        
+                            <li></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="/notes.js"></script>
+</body>
+</html>

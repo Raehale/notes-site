@@ -17,6 +17,7 @@ navMenuEl.innerHTML = /*HTML*/
             <li><a href="/html/cssNotes.html" id="cssLink">CSS</a></li>
             <li><a href="/html/javascriptNotes.html" id="javascriptLink">Javascript</a></li>    
             <li><a href="/html/reactNotes.html" id="reactLink">React</a></li>
+            <li><a href="/html/nodeJsNotes.html" id="reactLink">Node.js</a></li>
             <li><a href="/html/sqlNotes.html" id="sqlLink">SQL</a></li>
             <li><a href="/html/markdownNotes.html" id="markdownLink">Markdown</a></li>
         </ul>
