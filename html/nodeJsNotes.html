@@ -245,14 +245,32 @@
                                     </blockcode></li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span></span>
+                            <li class="sub-list"><span>Path Parameters</span>
                                 <ul>
-                                    <li></li>
+                                    <li><blockcode>
+                                        if (req.url.startsWith('/api/whatever') && req.method === 'GET') {
+                                            const filteredBy = req.url.split('/').pop()
+                                            const filteredData = data.filter((obj) => {
+                                            return obj[filteredBy].toLowerCase() === filteredTo.toLowerCase()
+                                            })
+                                            res.setHeader('Content-Type', 'application/json')
+                                            res.statusCode = 200
+                                            res.end(JSON.stringify(filteredData))
+                                        }
+                                    </blockcode></li>
                                 </ul>
                             </li>
-                            <li class="sub-list"><span></span>
+                            <li class="sub-list"><span>Query Params</span>
                                 <ul>
-                                    <li></li>
+                                    <li>? introduces the query string.</li>
+                                    <li>key=value</li>
+                                    <li>& is breaking between key value pairs.</li>
+                                    <li><blockcode>/api?key1=value1&key2=value2</blockcode></li>
+                                    <li>Turning query params into an object: <blockcode>
+                                        const urlObj = new URL(req.url, `http://${req.headers.host}`)
+                                    </blockcode> will return an object including searchParams. <blockcode>
+                                        const queryObj = Object.fromEntries(urlObj.searchParams)
+                                    </blockcode> will return an object of the search params in the search query.</li>
                                 </ul>
                             </li>
                             <li class="sub-list"><span></span>
