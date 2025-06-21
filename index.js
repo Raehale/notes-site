@@ -17,7 +17,7 @@ navMenuEl.innerHTML = /*HTML*/
             <li><a href="/html/cssNotes.html" id="cssLink">CSS</a></li>
             <li><a href="/html/javascriptNotes.html" id="javascriptLink">Javascript</a></li>    
             <li><a href="/html/reactNotes.html" id="reactLink">React</a></li>
-            <li><a href="/html/nodeJsNotes.html" id="reactLink">Node.js</a></li>
+            <li><a href="/html/nodeJsNotes.html" id="nodeLInk">Node.js</a></li>
             <li><a href="/html/sqlNotes.html" id="sqlLink">SQL</a></li>
             <li><a href="/html/markdownNotes.html" id="markdownLink">Markdown</a></li>
         </ul>
@@ -26,6 +26,7 @@ navMenuEl.innerHTML = /*HTML*/
     <li><a href="/html/terminalNotes.html" id="terminalLink">Terminal</a></li>
     <li><a href="/html/accessibilityNotes.html" id="acessibilityLink">Accessibility</a></li>
     <li><a href="/html/codeReviewsNotes.html" id="reviewsLink">Code Reviews</a></li>
+    <li><a href="/html/AIEngineeringNotes.html" id="aiEngineering">AI Engineering</a></li>
     <li><a href="/html/apiNotes.html" id="apisLink">APIs</a></li>
     <li><a href="/projects.html" id="projectsLink">Projects</a></li>
     <li><a href="/html/miscNotes.html" id="miscLink">MISC</a></li>`
