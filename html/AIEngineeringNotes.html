@@ -74,6 +74,63 @@
                         <h3 class="accordion-name" data-label="accordionName">Notes<span class="accordion-arrow first-arrow"></span></h3>
                         <ul class="inner-accordion-content" style="display: block;">
                             <li><a href="https://polygon.io" target="_blank" alt="Stock Data API">Polygon.io</a> is a Stock Data API with a generous free tier.</li>
+                            <li>gpt-4 is ideal for text generation. gpt-3.5-turbo is an acceptable cheaper alternative.</li>
+                            <li class="sub-list"><span>When communicating with an AI for a user you will send a messages array.</span>
+                                <ul>
+                                    <li>This will include a systems object. This contains instructions for the AI on how to behave and what to expect from the user.</li>
+                                    <li>The system object message should be structured as what you want, what you're expecting, and how to behave.</li>
+                                    <li>This will also include a user object. This contains the users input.</li>
+                                    <li>Once the user object is added the messages array is sent to the AI.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>The AI will respond with an assistant object as the output.</span>
+                                <ul>
+                                    <li>This object will contain the AI's response to the users input fallowing the layed out guidlines.</li>
+                                </ul>
+                            </li>
+                            <li>To install the package for OpenAI use <codeblock>npm install openai</codeblock></li>
+                            <li class="sub-list"><span>The OpenAI Dependancy</span>
+                                <ul>
+                                    <li>The OpenAI API will prevent you from exposing your API key <blockcode>
+                                        import OpenAI from 'openai'
+
+                                        const openai = new OpenAI({
+                                            apiKey: '123456',
+                                        });
+                                        console.log(openai.apiKey)
+                                    </blockcode>. In this example you will reseive a console error stating "Error: It looks like you're running in a browser-like environment. This is disabled by default, as it risks exposing your secret API credentials to attackers. If you understand the risks and have appropriate mitigations in place, you can set the `dangerouslyAllowBrowser` option to `true`, e.g., new OpenAI({ apiKey, dangerouslyAllowBrowser: true }); https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety".</li>
+                                    <li>To override this safeguard you can add <blockcode>dangerouslyAllowBrowser</blockcode> and set it to <blockcode>true</blockcode>.</li>
+                                    <li>Adding <blockcode>dangerouselyAllowBrowser</blockcode> looks like <blockcode>import OpenAI from 'openai'
+                                        const openai = new OpenAI({
+                                            apiKey: '123456',
+                                            dangerouslyAllowBrowser: true
+                                        })
+
+                                        console.log(openai.apiKey)</blockcode>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="https://platform.openai.com/docs/guides/text?api-mode=responses" target="_blank" alt="Text Generation Prompting">Instructions on text generation prompting with OpenAI</a></li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span></span>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
                             <li class="sub-list"><span></span>
                                 <ul>
                                     <li></li>
@@ -91,8 +148,8 @@
                     <div class="note-section definitions" id="definitions">
                         <h3 class="accordion-name" data-label="accordionName">Definitions<span class="accordion-arrow"></span></h3>
                         <dl class="inner-accordion-content">
-                            <dt></dt>
-                                <dd></dd>
+                            <dt>Large Language Model</dt>
+                                <dd>An Algorithm that uses training data to recognize patterns and make predictions or decisions.</dd>
                                 <dd></dd>
                         </dl>
                     </div>
