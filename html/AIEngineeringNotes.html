@@ -111,6 +111,33 @@
                                 </ul>
                             </li>
                             <li><a href="https://platform.openai.com/docs/guides/text?api-mode=responses" target="_blank" alt="Text Generation Prompting">Instructions on text generation prompting with OpenAI</a></li>
+                            <li>Chat Completions API: Chat models take a list of messages as inputs and return a model-generated message as an 
+                                output. Although the chat format is designed to make multi-turn conversations easy, it's just as useful for 
+                                single-turn tasks without any conversation.
+                            </li>
+                            <li>You will need to send an array of message objects: <blockcode>
+                                const messages = [
+                                    {
+                                        role: 'system',
+                                        content: 'Tell the AI its purpose'
+                                    },
+                                    {
+                                        role: 'user',
+                                        content: 'Users input'
+                                    }
+                                ]
+
+                                const response = await openai.chat.completions.create({
+                                    model: 'gpt-4',
+                                    messages: messages
+                                })
+                            </blockcode></li>
+                            <li>You will get an object in return: <blockcode>
+                                {
+                                    role: "assistant", 
+                                    content: "Whatever the response is"
+                                }
+                            </blockcode></li>
                             <li class="sub-list"><span></span>
                                 <ul>
                                     <li></li>
