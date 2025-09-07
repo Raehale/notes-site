@@ -69,6 +69,159 @@
                                     <li><a href="https://v2.vuejs.org/v2/api/#ref" alt="refs doc">Vues documentation on refs</a>.</li>
                                 </ul>
                             </li>
+                            <li class="sub-list"><span>Using Vue</span>
+                                <ul>
+                                    <li>In your HTML put a div around what you want to use view and give it the id of app.</li>
+                                    <li>In your script (which is in your body tag) get createApp and ref from Vue <blockcode>{createApp, ref} = Vue</blockcode></li>
+                                    <li>Create your Vue app instance <blockcode>
+                                        createApp({})
+                                    </blockcode></li>
+                                    <li>Within createApp add the setup function and use it to define your data <blockcode>
+                                        createApp({
+                                            setup(){
+                                                const dataThing = ref('whatever you want')
+
+                                                return dataThing
+                                            }
+                                        })
+                                    </blockcode></li>
+                                    <li>Add mount with the id you want your vue code mounted on at the end of createApp <blockcode>
+                                        createApp({...}).mount('#app')
+                                    </blockcode></li>
+                                </ul>
+                            </li>
+                            <li>To get vue on your project in your terminal write <blockode>npm create vue@latest</blockode>, say yes you'd like
+                            to proceed, choose your projects location (use . for the current directive), give your project a name, choose what you want
+                            to include, run npm install, then npm run dev.</li>
+                            <li class="sub-list"><span>Vue Project Anatomy</span>
+                                <ul>
+                                    <li class="sub-sub-list"><span>src folder</span>
+                                        <ul>
+                                            <li>The assets folder holds the assets off your project (shocking) like css</li>
+                                            <li>The compoennts holds the pre-uploade icons</li>
+                                            <li>App.vue is the home of your project</li>
+                                            <li>main.js linkes all your files together</li>
+                                        </ul>
+                                    </li>
+                                    <li>The index.html file is your main html file.</li>
+                                    <li>The jsconfig.json file determines which files should be compiled when we build the project.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Vue Component</span>
+                                <ul>
+                                    <li>The Vue component is a special file format that contains the HTML CSS and JS in one package.</li>
+                                    <li>The structure is like <blockcode>
+                                        &lt;script setup&gt;
+                                        JAVASCRIPT GOES HERE
+                                        &lt;/script&gt;
+
+                                        &lt;template&gt;
+                                        HTML GOES HERE
+                                        &lt;/template&gt;
+
+                                        &lt;style scoped&gt;
+                                        CSS GOES HERE
+                                        &lt;/style&gt;
+                                    </blockcode></li>
+                                    <li>The naming convension for a Vue component is Name.vue</li>
+                                </ul>
+                            </li>
+                            <li>Separation of concerns is not equal to separation of file types. Vue focuses more on separation by concern instead
+                                of file type specifically.
+                            </li>
+                            <li class="sub-list"><span>Layout Components</span>
+                                <ul>
+                                    <li>Sometimes called structural components.</li>
+                                    <li>Examples include Header Main and Footer.</li>
+                                </ul>
+                            </li>
+                            <li>To import another component into App.vue in the script area <blockcode>
+                                import Name from @/components/Name.vue
+                            </blockcode> and in the template <blockcode>
+                                &lt;Name /&gt;
+                            </blockcode></li>
+                            <li>The App file is the top level component that pulls all other components together.</li>
+                            <li class="sub-list"><span>The @ Alias</span>
+                                <ul>
+                                    <li>@ can be used as a path indecator.</li>
+                                    <li>Given to us by Vite</li>
+                                    <li>tells vite if it sees @ replace the file path to ./src, always taking use back to the src file and moving from there.</li>
+                                </ul>
+                            </li>
+                            <li>npm i && npm run dev</li>
+                            <li class="sub-list"><span>Reactivity Basics</span>
+                                <ul>
+                                    <li>A reactive state is something vue does that watches certain variables for change and rerenders the component if the value changes</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Template Syntax</span>
+                                <ul>
+                                    <li class="sub-sub-list"><span>Text Interpolation</span>
+                                        <ul>
+                                            <li>This is when you use {{whatever}} to place a specific ref in your html.</li>
+                                            <li>You can change the value of a ref in the script by using .value <blockcode>refName.value = 'new value'</blockcode></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-sub-list"><span>Attribute Binding</span>
+                                        <ul>
+                                            <li>Helps us bind data to HTML attributes.</li>
+                                            <li>Vue uses the v-bind directive. v-bind attributes are data bound. <blockcode>
+                                                &lt;a v-bind:href="hrefRef"&gt;
+                                            </blockcode></li>
+                                            <li>v-bind works with boolean attributes (like disabled) too! <blockcode>
+                                                v-bind:disabled="isBtnDisabled"
+                                            </blockcode></li>
+                                            <li>v-bind has shorthand which is just the colon. <blockcode>
+                                                :disabled="isBtnDisabled"
+                                            </blockcode></li>
+                                            <li>If the attribute value is the same as the sign you can remove the =value. <blockcode>
+                                                :href
+                                            </blockcode> is equal to <blockcode>
+                                                v-bind:href="href"
+                                            </blockcode></li>
+                                        </ul>
+                                    </li>
+                                    <li class="sub-list"><span>Images In Vue</span>
+                                        <ul>
+                                            <li class="sub-sub-list"><span>Absolute Path</span>
+                                                <ul>
+                                                    <li>Absolute path to /public folder. It is for static assets. They don't go through the bundling process
+                                                        and don't get optimized. Any file in thepublic folder canbe accessed directly via the root slash URL.
+                                                        <blockquote>
+                                                            &lt;img src="/images/imageName.jpg" /&gt;
+                                                        </blockquote>
+                                                    </li>
+                                                    <li>The absolute path is best for large and/or static assets that don't need optimisation (pdfs).</li>
+                                                    <li>The absolute path is simple and straightforward, files that are served as-is, and is very accessible from external CSS files.</li>
+                                                    <li>The absolute path has no Vite optimization, is harder to organize, and may not update due to browswer caching.</li>
+                                                </ul>
+                                            </li>
+                                            <li class="sub-sub-list"><span>Relative Path</span>
+                                                <ul>
+                                                    <li>Relative path to /assets folder. assets folder is in src folder. Images can live here, referenced using @/assets/... <blockcode>
+                                                        &lt;img src="@/assets/images/imageName.jpg" />&gt;
+                                                    </blockcode></li>
+                                                    <li>The relative path is best for small, static assets in simple projects.</li>
+                                                    <li>The relative path is super easy and works without special imports.</li>
+                                                    <li>The relative path does not have Vite optimization, has no dynamic images, and is not modular.</li>
+                                                </ul>
+                                            </li>
+                                            <li class="sub-sub-list"><span>Importing Assets</span>
+                                                <ul>
+                                                    <li>Import assets into component. involves importing it from the assets folder and then binding it to an image source attribute. <blockcode>
+                                                        import imageName from "@/assets/images/theimageName.jpg"
+                                                    </blockcode> and in the template <blockcode>
+                                                        &lt;img :src="imageName" /&gt;
+                                                    </blockcode></li>
+                                                    <li>Importing assets is best for dynamic images (product photos).</li>
+                                                    <li>Importing assets is optimized by Vite, has conditional loading, and is modular and scalable.</li>
+                                                    <li>Importing assets is more verbose and may be confusing at first.</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <div class="note-section resources" id="resources">
