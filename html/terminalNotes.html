@@ -306,6 +306,136 @@
                                     <li>To copy the text from a file and append it to another file use <blockcode>cat filename.txt >> copyfilename.txt</blockcode>.</li>
                                 </ul>
                             </li>
+                            <li>The theory and terminology is important as it helps you understand what you are actually doing on your computer.</li>
+                            <li class="sub-list"><span>How is the Terminal Connected</span>
+                                <ul>
+                                    <li>OS, all devices have one, this system is in charge of all communcation between the hardware and all of the software.</li>
+                                    <li>Shell, used to control the systems OS, this is a program that can communcate with the OS.</li>
+                                    <li>CLI, controls the shell, here we type commands out to give the shell (which then gives those to the OS).</li>
+                                    <li>Terminal app, used to access a CLI.</li>
+                                </ul>
+                            </li>
+                            <li>Linux is a widely used OS for coding, and knowing how to control the OS through a shell and a CLI is a must when working in Linux.</li>
+                            <li><blockcode>mv &lt;old_folder_name&gt; &lt;new_folder_name&gt;</blockcode> can be used to rename a folder, technically <blockcode>mv</blockcode> stands for "move" though and is used to move folders.</li>
+                            <li class="sub-list"><span>options</span>
+                                <ul>
+                                    <li>delete a directory that is not emtpy: <blockcode>rm -r [dir_name]</blockcode>, the -r here is an option and means recursive.</li>
+                                    <li>List items with detailed info: <blockcode>ls -l</blockcode>, the l option stands for long format.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Option syntax</span>
+                                <ul>
+                                    <li>Use a single dash for short options (like used in -r or -l)</li>
+                                    <li>Use two dashes for long options (like used in --recursive)</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Some Options</span>
+                                <ul>
+                                    <li>Case insensitive</li>
+                                    <li>Recursive</li>
+                                    <li>Show line number</li>
+                                    <li>Global</li>
+                                    <li>Search by name</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Find files and directories</span>
+                                <ul>
+                                    <li>Done using the find command</li>
+                                    <li>Syntax: <blockcode>find [path] [option] [expression]</blockcode></li>
+                                    <li><blockcode>.</blockcode> as a path means start looking in the current directory</li>
+                                    <li><blockcode>..</blockcode> as a path means start looking in the parent directory</li>
+                                    <li><blockcode>-name</blockcode> as the option means we are looking by name using hte expression as the name</li>
+                                    <li>Example: <blockcode>find . -name 'forest*'</blockcode></li>
+                                    <li>The <blockcode>*</blockcode> (used after forest in example above) is used to say there could be other characters after that.</li>
+                                    <li>Case sensitive searches: <blockcode>-iname 'forest*'</blockcode></li>
+                                    <li>Search by type: <blockcode>-type f</blockcode></li>
+                                    <li>Options can be combined: <blockcode>find ..  -type f -iname 'large*'</blockcode></li>
+                                    <li>You can use relative file paths (<blockcode>../forests</blockcode>) or absolute file paths (<blockcode>/Users/ajo/Coding/Scrimba/command_line/geography_game/forests</blockcode>)</li>
+                                    <li>To reference the home directory you can use <blockcode>~</blockcode>, or the root directory use <blockcode>/</blockcode> but use these with caution!</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Kill a process</span>
+                                <ul>
+                                    <li>Use <blockcode>CTRL + C</blockcode></li>
+                                    <li>Use this to exist an unfinished action, for example a command you ran that doesn't have an ending quote.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Rename</span>
+                                <ul>
+                                    <li>Use the same synx for files and directories.</li>
+                                    <li>Syntax: <blockcode>mv [old_name] [new_name]</blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Move</span>
+                                <ul>
+                                    <li>Use the same synx for files and directories.</li>
+                                    <li>Syntax: <blockcode>mv [name] [new_location]</blockcode></li>
+                                    <li>If the new location does not exist, the <blockcode>mv</blockcode> will rename the file instead of moving it.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Copy</span>
+                                <ul>
+                                      <li>Copy File Syntax: <blockcode>cp [original_name] [copy_name]</blockcode></li>
+                                    <li>Copy Directory Syntax: <blockcode>cp -r [original_name] [copy_name]</blockcode></li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Search in Files</span>
+                                <ul>
+                                    <li>Syntax: <blockcode>grep [pattern] [file(s)]</blockcode></li>
+                                    <li><blockcode>grep</blockcode> or <blockcode>g/re/p</blockcode> stands for Global Regular Expression Print </li>
+                                    <li>The pattern is the thing we are searching for.</li>
+                                    <li>Finally the files allow you to search in one or multiple files separated by spaces. You can use the wildcard character.</li>
+                                    <li class="sub-sub-list"><span>Some useful options:</span>
+                                        <ul>
+                                            <li>Show line numbers with <blockcode>-n</blockcode></li>
+                                            <li>Case insensitive with <blockcode>-i</blockcode></li>
+                                            <li>Search recursively with <blockcode>-r</blockcode>, when searching recursively you search a directory not a file <blockcode>grep -r [pattern] [directory]</blockcode></li>
+                                        </ul>
+                                    </li>
+                                    <li>Searching <blockcode>grep -r ',' .</blockcode> will return every line containing a comma in every file that lives in the current directory or a subdirectory at any depth.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Replace Content in Files</span>
+                                <ul>
+                                    <li>Syntax: <blockcode>sed 's/[pattern]/[replacement]/' [filename]</blockcode></li>
+                                    <li>The command <blockcode>sed</blockcode> stands for stream editor.</li>
+                                    <li>The next thing in the syntax starts with a <blockcode>s/</blockcode> always and lives within single quotes. This means "search for whatever comes next".</li>
+                                    <li>The <blockcode>sed</blockcode> commands default behavior is only the first instance of the search pattern in each line is replaced. Additionally, the file itself is not modified. Only the printed output contains the replacement.</li>
+                                    <li>If you add options to the search replace you can override the default behavior: <blockcode>sed 's/[pattern]/[replacement]/[option(s)]' [filename]</blockcode></li>
+                                    <li>Example: <blockcode>sed 's/a/z/gI' filename*</blockcode> Here the optino g stands for global and the option I stands for case insitive so everywhere in the found files a will be replaced with z any number of times within a line and regardless of capitalization. Previously capital As will now be a lowercase z.</li>
+                                    <li>(SAFEST CHOICE) If you want your output to be placed into a file you can use the redirection option <blockcode>sed 's/,/:/' filename* > new_filename.txt</blockcode></li>
+                                    <li>If you want to directly modify the file you can use -i. <blockcode>sed -i 's/.../.../[option(s)]' [filename]</blockcode></li>
+                                    <li>To do the above in a zsh shell use <blockcode>sed -i '' 's/.../.../' [file]</blockcode> adding an empty string after the option.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Count Values in Files</span>
+                                <ul>
+                                    <li>Syntax: <blockcode>wc [filename]</blockcode> will count the number of lines, words, and bytes of the file.</li>
+                                    <li><blockcode>wc -l [filename]</blockcode> gives just the number of lines in the file.</li>
+                                    <li><blockcode>wc -w [filename]</blockcode> gives just the number of words in the file.</li>
+                                    <li><blockcode>wc -c [filename]</blockcode> gives just the number of bytes in the file.</li>
+                                    <li><blockcode>wc -m [filename]</blockcode> gives just the number of characters in the file.</li>
+                                    <li>Note: Bytes and charactersoften have the same value in plain english text because 1 UTF-8 character = 1 byte.</li>
+                                </ul>
+                            </li>
+                            <li class="sub-list"><span>Sort File Contents</span>
+                                <ul>
+                                    <li>Syntax: <blockcode>sort [filename]</blockcode> running this command will result in the contents of this file be sorted A-Z line by line. It looks at the whole line of text, not just the first letter (Rae woudl be before Ray)</li>
+                                    <li>Syntax: <blockcode>sort [option] [filename]</blockcode></li>
+                                    <li class="sub-sub-list"><span>Useful options for Sort:</span>
+                                        <ul>
+                                            <li>Reverse (Z-A): -r <blockcode>sort -r [filename]</blockcode></li>
+                                            <li>Numeric (Z-A): -n <blockcode>sort -n [filename]</blockcode></li>
+                                        </ul>
+                                    </li>
+                                    <li>Note: by default, <blockcode>sort</blockcode> treats everything as strings. Without the <blockcode>-n</blockcode> option, "11" comes before "2".</li>
+                                    <li>You can also remove any adjacent duplicate lines with the syntax <blockode>uniq [filename]</blockode></li>
+                                    <li>Note: To remove all duplicates - not just the adjacent ones - you must first sort the contents alphabetically.</li>
+                                    <li>To combine two commands together use the pipe character <blockcode>[cmd 1] | [cmd 2]</blockcode>. This takes the output of command one and turns it into the input of command two.</li>
+                                    <li>To combaine sort and uniq use the pipe character: <blockcode>sort filename.txt | uniq</blockcode></li>
+                                    <li>One default behavior of both <blockcode>sort</blockcode> and <blockcode>uniq</blockcode> is that only the printed output is modified. The file itself stays unchanged. You can use the redirect to solve this problem. <blockcode>sort filename.txt | uniq > new_filename.txt</blockcode></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <div class="note-section resources" id="resources">
@@ -346,6 +476,19 @@
                                 <dd>CLI stands for command line interface.</dd>
                             <dt>cd</dt>
                                 <dd>Change directory</dd>
+                            <dt>Linux</dt>
+                                <dd>An operating system</dd>
+                                <dd>Open source & customisable</dd>
+                                <dd>Commonly use for servers & supercomputers</dd>
+                                <dd>Commonly operated through the CLI</dd>
+                            <dt>shell</dt>
+                                <dd>A programme that lets you interact with the operating system, e.g. Linux</dd>
+                                <dd>Interprets the commands you type in the CLI</dd>
+                                <dd>Several different shells, e.g. Bash, zsh, etc.</dd>
+                            <dt>command line interface (CLI)</dt>
+                                <dd>The concept of interacting with the OS through typing commands</dd>
+                                <dd>Displayed inside an app, e.g. Terminal (MacOS), VS Code, etc.</dd>
+                                <dd>Same app and CLI can run several different hells</dd>
                         </dl>
                     </div>
                     <div class="note-section questions" id="questions">
